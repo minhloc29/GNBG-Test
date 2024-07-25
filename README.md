@@ -12,7 +12,8 @@ There are 24 test functions of varying dimensions and varying problem landscapes
 ## How to participate
 
 Submit your results in the following [form](). You have to submit the following items:
-* Results in the format specified below
+* Title of your algorithm
+* ZIP file with results in the format specified below
 * The used LLM with specified settings (e.g. *OpenAI GPT 4 turbo, temperature = 0.8*)
 * Algorithm code (for validity check)
 * Generating prompts (how did you arrive to the solution)
