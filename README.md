@@ -13,22 +13,22 @@ There are 24 test functions of varying dimensions and varying problem landscapes
 
 Submit your results in the following [form](). You have to submit the following items:
 * Results in the format specified below
-* The used LLM with specified settings (e.g. OpenAI GPT 4 turbo, temperature = 0.8)
+* The used LLM with specified settings (e.g. *OpenAI GPT 4 turbo, temperature = 0.8*)
 * Algorithm code (for validity check)
 * Generating prompts (how did you arrive to the solution)
 
 ## Results format
 
-You should run 31 independent runs of each test function with a stopping criterion defined by either maximum number of function evaluations (500,000 for f1-f15 and 1,000,000 for f16-f24) or reaching the acceptance threshold set to an absolute error (difference between best-found and optimum value) = 10^-8.
+You should run **31** independent runs of each test function with a stopping criterion defined by either maximum number of function evaluations (500,000 for f1-f15 and 1,000,000 for f16-f24) or reaching the acceptance threshold set to an absolute error (difference between best-found and optimum value) = 10^-8.
 
-The results will be reported for each function by a tuple of text files - f_x_value.txt and f_x_param.txt (where x denotes the function number).
-The format of the f_x_value.txt should be:
+The results will be reported for each function by a tuple of text files - *f_x_value.txt* and *f_x_param.txt* (where x denotes the function number).
+The format of the *f_x_value.txt* should be:
 * 31 best-found values - one for each run on a separate line
-* example in []
+* example in [f_x_value.txt](f_x_value.txt)
 
-The format of the f_x_params.txt should be:
+The format of the *f_x_params.txt* should be:
 * 31 parameter vectors of best-found solutions (dimensions separated by a comma ,) - one for each run on a separate line
-* example in []
+* example for a 5D problem in [f_x_params.txt](f_x_params.txt)
 
 ## Evaluation criteria
 
