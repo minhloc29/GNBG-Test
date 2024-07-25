@@ -9,6 +9,11 @@ The first edition of the competition will be held at the [IEEE SSCI 2025](https:
 We will be using GNBG benchmark for box-constrained numerical global optimization [A. H. Gandomi, D. Yazdani, M. N. Omidvar, and K. Deb, "GNBG-Generated Test Suite for Box-Constrained Numerical Global Optimization," arXiv preprint arXiv:2312.07034, 2023](https://arxiv.org/abs/2312.07034).
 There are 24 test functions of varying dimensions and varying problem landscapes.
 
+The benchmark is provided in 3 languages
+* Python [link](codes/GNBG-Python/)
+* MATLAB [link](codes/GNBG-Matlab/)
+* C++ [link](codes/GNBG-C/)
+
 ## How to participate
 
 Submit your results in the following [form](). You have to submit the following items:
