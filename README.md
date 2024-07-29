@@ -38,6 +38,7 @@ The format of the *f_x_params.txt* should be:
 
 ## Rules
 
+* A LLM has to be used during the design process of the algorithm
 * You can fine-tune the algorithm parameters but the values have to be consistent across the whole benchmark
 * No modification of the benchmark is allowed
 * The benchmark has to be treated as a blackbox
