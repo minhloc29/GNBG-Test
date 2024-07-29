@@ -16,7 +16,7 @@ The benchmark is provided in 3 languages
 
 ## How to participate
 
-Submit your results in the following [form](). You have to submit the following items:
+Submit your results in the following [form](https://forms.gle/HVStaicFG7GytrTN8). You have to submit the following items:
 * Title of your algorithm
 * ZIP file with results in the format specified below
 * The used LLM with specified settings (e.g. *OpenAI GPT 4 turbo, temperature = 0.8*)
@@ -35,6 +35,12 @@ The format of the *f_x_value.txt* should be:
 The format of the *f_x_params.txt* should be:
 * 31 parameter vectors of best-found solutions (dimensions separated by a comma ,) - one for each run on a separate line
 * example for a 5D problem in [f_x_params.txt](f_x_params.txt)
+
+## Rules
+
+* You can fine-tune the algorithm parameters but the values have to be consistent across the whole benchmark
+* No modification of the benchmark is allowed
+* The benchmark has to be treated as a blackbox
 
 ## Evaluation criteria
 
