@@ -4,6 +4,11 @@ We are launching a competition centered on the innovative use of large language 
 
 The first edition of the competition will be held at the [IEEE SSCI 2025](https://ieee-ssci.org/) (Pending acceptance).
 
+## Deadlines
+* Submission deadline: **10th January 2025**
+* Notification of acceptance: 20th January 2025
+* Early registration deadline (for competition attendees ONLY): **27th January 2025**
+
 ## Benchmark definition
 
 We will be using GNBG benchmark for box-constrained numerical global optimization [A. H. Gandomi, D. Yazdani, M. N. Omidvar, and K. Deb, "GNBG-Generated Test Suite for Box-Constrained Numerical Global Optimization," arXiv preprint arXiv:2312.07034, 2023](https://arxiv.org/abs/2312.07034).
