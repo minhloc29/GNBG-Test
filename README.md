@@ -2,7 +2,7 @@
 
 We are launching a competition centered on the innovative use of large language models (LLMs) to design evolutionary algorithms (EAs). This contest aims to explore the potential of LLMs in creating sophisticated EAs that can tackle complex optimization problems. Join us in contributing to this emerging field, showcasing how LLMs can enhance and accelerate the development of evolutionary algorithms.
 
-The first edition of the competition will be held at the [GECCO 2025](https://ieee-ssci.org/](https://gecco-2025.sigevo.org/HomePage).
+The first edition of the competition will be held at the [GECCO 2025](https://gecco-2025.sigevo.org/HomePage/).
 
 ## Deadlines
 * Submission deadline: **30th June 2025**
