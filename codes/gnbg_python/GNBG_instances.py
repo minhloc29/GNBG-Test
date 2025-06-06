@@ -38,14 +38,15 @@ import numpy as np
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
 from scipy.optimize import differential_evolution
+from calc_aocc_from_gnbg import calculate_aocc_from_gnbg_history
 
 
 # Define the GNBG class
 class GNBG:
     def __init__(self, MaxEvals, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate, CompMinPos, CompSigma, CompH, Mu, Omega, Lambda, RotationMatrix, OptimumValue, OptimumPosition):
-        self.MaxEvals = MaxEvals
+        self.MaxEvals = MaxEvals # max number of evaluation or iteration
         self.AcceptanceThreshold = AcceptanceThreshold
-        self.Dimension = Dimension
+        self.Dimension = Dimension #  An integer indicating the number of variables your optimization algorithm needs to find
         self.CompNum = CompNum
         self.MinCoordinate = MinCoordinate
         self.MaxCoordinate = MaxCoordinate
@@ -66,7 +67,13 @@ class GNBG:
     def fitness(self, X):
         if len(X.shape)<2:
             X = X.reshape(1,-1)
+        print(f"GNBG.fitness called with X shape: {X.shape}, self.FE: {self.FE}, self.MaxEvals: {self.MaxEvals}")
+        print(f"AOCC: {calculate_aocc_from_gnbg_history(self.FEhistory, optimum_value=self.OptimumValue, 
+              budget_B=self.MaxEvals, log_error_lower_bound=self.MinCoordinate,
+              log_error_upper_bound=self.MaxCoordinate)}")
+        
         SolutionNumber = X.shape[0]
+        print(f'Solution number is: {SolutionNumber}')
         result = np.nan * np.ones(SolutionNumber)
         for jj in range(SolutionNumber):
             x = X[jj, :].reshape(-1, 1)  # Ensure column vector
@@ -141,23 +148,9 @@ gnbg = GNBG(MaxEvals, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, Ma
 # The Differential Evolution (DE) optimizer is used here as an example. You can replace it with any other optimizer of your choice.
 
 # Set a random seed for the optimizer
-np.random.seed()  # This uses a system-based source to seed the random number generator
 
-# Define the bounds for the optimizer based on the bounds of the problem instance    
-lb = -100*np.ones(Dimension)
-ub = 100*np.ones(Dimension)
-bounds = []
-for i in range(0,Dimension):
-    bounds.append(tuple((lb[i],ub[i])))
-
-# Run the optimizer where the fitness function is gnbg.fitness    
-
-popsize = 15  # population size for DE
-maxiter = MaxEvals // popsize # number of generations/iterations for DE
-
-results = differential_evolution(gnbg.fitness, bounds=bounds, disp=True, polish=False, popsize=popsize, maxiter=maxiter)
-
-# If you use your own algorithm (not from a library), you can use result = gnbg.fitness(X) to calculate the fitness values of multiple solutions stored in a matrix X.
+# If you use your own algorithm (not from a library), you can use result = gnbg.fitness(X) to calculate the fitness 
+# values of multiple solutions stored in a matrix X.
 # The function returns the fitness values of the solutions in the same order as they are stored in the matrix X.
 
 # After running the algorithm, the best fitness value is stored in gnbg.BestFoundResult.
@@ -165,18 +158,35 @@ results = differential_evolution(gnbg.fitness, bounds=bounds, disp=True, polish=
 # The function evaluation number where the algorithm reached the acceptance threshold is stored in gnbg.AcceptanceReachPoint. If the algorithm did not reach the acceptance threshold, it is set to infinity.
 # For visualizing the convergence behavior, the history of the objective values is stored in gnbg.FEhistory, however it needs to be processed as follows:
 
-convergence = []
-best_error = float('inf')
-for value in gnbg.FEhistory:
-    error = abs(value - OptimumValue)
-    if error < best_error:
-        best_error = error
-    convergence.append(best_error)
+if __name__ == "__main__":
+    np.random.seed()  # This uses a system-based source to seed the random number generator
 
-# Plotting the convergence
-plt.plot(range(1, len(convergence) + 1), convergence)
-plt.xlabel('Function Evaluation Number (FE)')
-plt.ylabel('Error')
-plt.title('Convergence Plot')
-plt.yscale('log')  # Set y-axis to logarithmic scale
-plt.show()
+    # Define the bounds for the optimizer based on the bounds of the problem instance    
+    lb = -100*np.ones(Dimension)
+    ub = 100*np.ones(Dimension)
+    bounds = []
+    for i in range(0,Dimension):
+        bounds.append(tuple((lb[i],ub[i])))
+
+    # Run the optimizer where the fitness function is gnbg.fitness    
+
+    popsize = 15  # population size for DE
+    maxiter = MaxEvals // popsize # number of generations/iterations for DE
+
+    results = differential_evolution(gnbg.fitness, bounds=bounds, disp=True, polish=False, popsize=popsize, maxiter=maxiter)
+
+    convergence = []
+    best_error = float('inf')
+    for value in gnbg.FEhistory:
+        error = abs(value - OptimumValue)
+        if error < best_error:
+            best_error = error
+        convergence.append(best_error)
+
+    # Plotting the convergence
+    plt.plot(range(1, len(convergence) + 1), convergence)
+    plt.xlabel('Function Evaluation Number (FE)')
+    plt.ylabel('Error')
+    plt.title('Convergence Plot')
+    plt.yscale('log')  # Set y-axis to logarithmic scale
+    plt.show()

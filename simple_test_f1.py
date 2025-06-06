@@ -1,16 +1,15 @@
 import logging
 import os
 
-os.makedirs('logging', exist_ok=True)  # Create the directory if it doesn't exist
-# Configure the logging
-logging.basicConfig(
-    level=logging.INFO,                                # Set the minimum level of logs to capture
-    format='%(asctime)s - %(levelname)s - %(message)s',  # Log message format
-    filename='logging/app.log',                                # File to write logs to
-    filemode='a'                                       # Append mode ('w' for overwrite)
-)
+# os.makedirs('logging', exist_ok=True)  # Create the directory if it doesn't exist
+# # # Configure the logging
+# # logging.basicConfig(
+# #     level=logging.INFO,                                # Set the minimum level of logs to capture
+# #     format='%(asctime)s - %(levelname)s - %(message)s',  # Log message format
+# #     filename='logging/app.log',                                # File to write logs to
+# #     filemode='a'                                       # Append mode ('w' for overwrite)
+# # )
 
-import os
 import numpy as np
 # from ioh import get_problem, logger
 import re
@@ -51,7 +50,8 @@ if __name__ == "__main__":
         detail_aucs = []
         algorithm = None
         for dim in [5]: # loading logic of BBOB, this is the dimension
-            for fid in np.arange(1, 25): # cal 24 functions from GNBG
+            for fid in [1, 8, 20]: # cal 24 functions from GNBG
+                # representative of 3 function group
                 filename = f'f{fid}.mat'
                 GNBG_tmp = loadmat(os.path.join("codes/gnbg_python", filename))['GNBG']
                 MaxEvals = np.array([item[0] for item in GNBG_tmp['MaxEvals'].flatten()])[0, 0]
@@ -99,15 +99,15 @@ if __name__ == "__main__":
                 logging.info(f'Aucs is: {aucs}')
                 print(f'Detail_aucs is: {detail_aucs}')
                 logging.info(f'Detail_aucs is: {detail_aucs}')
-                if fid == 6:
+                if fid == 1:
                     detailed_aucs[0] = np.mean(detail_aucs)
                     detail_aucs = []
                 # group 2: multimodal instances with single component, 
-                if fid == 15:
+                if fid == 8:
                     detailed_aucs[1] = np.mean(detail_aucs)
                     detail_aucs = []
                 # group 3: multimodal instances with multiple component
-                if fid == 24:
+                if fid == 20:
                     detailed_aucs[2] = np.mean(detail_aucs)
                     detail_aucs = []
 
@@ -131,7 +131,7 @@ if __name__ == "__main__":
 
         return solution
 
-    for experiment_i in [10]:
+    for experiment_i in [1]:
         # A 1+1 strategy
         es = LLaMEA(
             evaluateGNBG,
@@ -140,11 +140,10 @@ if __name__ == "__main__":
             llm=llm,
             task_prompt=simplified_task_prompt,
             experiment_name=experiment_name,
+            adaptive_mutation=True, # mutate the prompt
             elitism=True,
             HPO=False,
-            budget=10,
-            log=False, 
-            adaptive_mutation=True, 
-            minimization=True
+            budget=20,
+            log=False,
         )
         print(es.run())

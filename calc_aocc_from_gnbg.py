@@ -7,6 +7,7 @@ def calculate_aocc_from_gnbg_history(fe_history, optimum_value, budget_B,
     Higher AOCC is better (1.0 is optimal).
     """
     if len(fe_history) == 0:
+        print(f"Length of fe_history is 0, aocc is 0")
         return 0.0 # No evaluations, worst AOCC
 
     actual_evals = len(fe_history)
