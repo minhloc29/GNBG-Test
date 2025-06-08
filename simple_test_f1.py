@@ -18,13 +18,11 @@ from codes.gnbg_python.GNBG_instances import GNBG
 from calc_aocc_from_gnbg import calculate_aocc_from_gnbg_history
 from scipy.io import loadmat
 from task_prompt import task_prompt_gnbg, simplified_task_prompt
+from crispe_inspired_prompt import prompt
 
 
 
-
-if __name__ == "__main__":
-    problem_idx_to_load = 1
-    
+if __name__ == "__main__":    
     
     # Execution code starts here
     # AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs
@@ -135,15 +133,14 @@ if __name__ == "__main__":
         # A 1+1 strategy
         es = LLaMEA(
             evaluateGNBG,
-            n_parents=1,
-            n_offspring=1,
+            n_parents=5,
+            n_offspring=10,
             llm=llm,
-            task_prompt=simplified_task_prompt,
+            task_prompt=prompt,
             experiment_name=experiment_name,
             adaptive_mutation=True, # mutate the prompt
             elitism=True,
             HPO=False,
             budget=20,
-            log=False,
         )
         print(es.run())
