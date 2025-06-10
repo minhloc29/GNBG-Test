@@ -86,7 +86,7 @@ if __name__ == "__main__":
                     print("Can not run the algorithm")
                     logging.error("Can not run the algorithm")
                     
-                auc = calculate_aocc_from_gnbg_history(fe_history=problem.FEhistory,
+                auc = calculate_aocc_from_gnbg_history(fe_history= 1000,
                                                         optimum_value=problem.OptimumValue, 
                                                     budget_B=problem.MaxEvals
                                                 )
@@ -129,12 +129,12 @@ if __name__ == "__main__":
 
         return solution
 
-    for experiment_i in [1, 2, 3]:
+    for experiment_i in [1]:
         # A 1+1 strategy
         es = LLaMEA(
             evaluateGNBG,
-            n_parents=1,
-            n_offspring=11,
+            n_parents=5,
+            n_offspring=10,
             llm=llm,
             task_prompt=prompt,
             experiment_name=experiment_name,

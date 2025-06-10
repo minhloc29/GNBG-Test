@@ -68,8 +68,6 @@ class GNBG:
         if len(X.shape)<2:
             X = X.reshape(1,-1)
         print(f"GNBG.fitness called with X shape: {X.shape}, self.FE: {self.FE}, self.MaxEvals: {self.MaxEvals}")
-        print(f"AOCC: {calculate_aocc_from_gnbg_history(self.FEhistory, optimum_value=self.OptimumValue, 
-              budget_B=self.MaxEvals)}")
         
         SolutionNumber = X.shape[0]
         print(f'Solution number is: {SolutionNumber}')
