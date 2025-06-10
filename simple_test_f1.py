@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
               
                 try:
-                    algorithm = globals()[algorithm_name](budget=1, dim=problem.Dimension,
+                    algorithm = globals()[algorithm_name](budget=1000, dim=problem.Dimension,
                         lower_bounds = [problem.MinCoordinate] * problem.Dimension,
                         upper_bounds = [problem.MaxCoordinate] * problem.Dimension
                         )
@@ -86,7 +86,7 @@ if __name__ == "__main__":
                     print("Can not run the algorithm")
                     logging.error("Can not run the algorithm")
                     
-                auc = calculate_aocc_from_gnbg_history(fe_history= 1000,
+                auc = calculate_aocc_from_gnbg_history(fe_history=problem.FEhistory,
                                                         optimum_value=problem.OptimumValue, 
                                                     budget_B=problem.MaxEvals
                                                 )

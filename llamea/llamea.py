@@ -21,7 +21,7 @@ from .utils import NoCodeException, handle_timeout, discrete_power_law_distribut
 # Implement diversity selection mechanisms (none, prefer short code, update population only when (distribution of) results is different, AST / code difference)
 
 logging.basicConfig(
-    filename="log/app.log",
+    filename="logging/app.log",
     level=logging.INFO,
     format="%(asctime)s %(levelname)s %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
