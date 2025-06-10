@@ -31,7 +31,7 @@ if __name__ == "__main__":
     # api_key = "AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs"
     ai_model = "gemini-1.5-flash"
     experiment_name = "pop1-5"
-    llm = Gemini_LLM(api_key, ai_model)
+    llm = Gemini_LLM("AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs", ai_model)
     
     def evaluateGNBG(solution, explogger=None, details=False): # we need to change this function to GNBG 
         auc_mean = 0
