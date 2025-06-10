@@ -11,6 +11,7 @@ import os, contextlib
 import numpy as np
 from ConfigSpace import ConfigurationSpace
 from joblib import Parallel, delayed
+from datetime import datetime
 
 from .solution import Solution
 from .loggers import ExperimentLogger
@@ -20,11 +21,13 @@ from .utils import NoCodeException, handle_timeout, discrete_power_law_distribut
 # TODOs:
 # Implement diversity selection mechanisms (none, prefer short code, update population only when (distribution of) results is different, AST / code difference)
 
+log_filename = f"logging/run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+
 logging.basicConfig(
-    filename="logging/app.log",
+    filename=log_filename,
     level=logging.INFO,
     format="%(asctime)s %(levelname)s %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S",
+    datefmt="%Y-%m-%d %H:%M:%S"
 )
 
 

@@ -1,17 +1,6 @@
 import logging
 import os
-
-# os.makedirs('logging', exist_ok=True)  # Create the directory if it doesn't exist
-# # # Configure the logging
-# # logging.basicConfig(
-# #     level=logging.INFO,                                # Set the minimum level of logs to capture
-# #     format='%(asctime)s - %(levelname)s - %(message)s',  # Log message format
-# #     filename='logging/app.log',                                # File to write logs to
-# #     filemode='a'                                       # Append mode ('w' for overwrite)
-# # )
-
 import numpy as np
-# from ioh import get_problem, logger
 import re
 from llamea import LLaMEA, Gemini_LLM
 from codes.gnbg_python.GNBG_instances import GNBG
@@ -76,11 +65,9 @@ if __name__ == "__main__":
                         upper_bounds = [problem.MaxCoordinate] * problem.Dimension
                         )
                     algorithm.optimize(objective_function=problem.fitness, acceptance_threshold = 1e-8)
-                    print(f"Run on dim {dim}, function {fid}")
-                    logging.info(f"Run on dim {dim}, function {fid}")
-                    print(f"FeHistory: {problem.FEhistory}")
+                    print(f"Run on function {fid}")
+                    logging.info(f"Run on function {fid}")
                     logging.info(f"FeHistory: {problem.FEhistory}")
-                    print(f"Expected Optimum FE: {problem.OptimumValue}")
                     logging.info(f"Expected Optimum FE: {problem.OptimumValue}")
                 except Exception:
                     print("Can not run the algorithm")
@@ -88,9 +75,9 @@ if __name__ == "__main__":
                     
                 auc = calculate_aocc_from_gnbg_history(fe_history=problem.FEhistory,
                                                         optimum_value=problem.OptimumValue, 
-                                                    budget_B=problem.MaxEvals
-                                                )
-                # fuck, it get low because MaxEvals is so large   
+                                                    budget_B=1000
+                                            )
+                # budget of auc and algorithm must match  
                 aucs.append(auc)
                 detail_aucs.append(auc)
                 print(f'Aucs is: {aucs}')
