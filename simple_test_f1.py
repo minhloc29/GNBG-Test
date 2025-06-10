@@ -13,7 +13,7 @@ import os
 import numpy as np
 # from ioh import get_problem, logger
 import re
-from LLaMEA.llamea import LLaMEA, Gemini_LLM
+from llamea import LLaMEA, Gemini_LLM
 from codes.gnbg_python.GNBG_instances import GNBG
 from calc_aocc_from_gnbg import calculate_aocc_from_gnbg_history
 from scipy.io import loadmat
@@ -27,8 +27,8 @@ if __name__ == "__main__":
     # Execution code starts here
     # AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs
     # AIzaSyCbiZx7Pmr5kWUihPXQ8nGvEsuo80kaiWE
-    # api_key = os.getenv("GEMINI_API_KEY")
-    api_key = "AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs"
+    api_key = os.getenv("GEMINI_API_KEY")
+    # api_key = "AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs"
     ai_model = "gemini-1.5-flash"
     experiment_name = "pop1-5"
     llm = Gemini_LLM(api_key, ai_model)
@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
               
                 try:
-                    algorithm = globals()[algorithm_name](budget=10, dim=problem.Dimension,
+                    algorithm = globals()[algorithm_name](budget=1, dim=problem.Dimension,
                         lower_bounds = [problem.MinCoordinate] * problem.Dimension,
                         upper_bounds = [problem.MaxCoordinate] * problem.Dimension
                         )
@@ -129,18 +129,18 @@ if __name__ == "__main__":
 
         return solution
 
-    for experiment_i in [1]:
+    for experiment_i in [1, 2, 3]:
         # A 1+1 strategy
         es = LLaMEA(
             evaluateGNBG,
-            n_parents=5,
-            n_offspring=10,
+            n_parents=1,
+            n_offspring=11,
             llm=llm,
             task_prompt=prompt,
             experiment_name=experiment_name,
             adaptive_mutation=True, # mutate the prompt
             elitism=True,
             HPO=False,
-            budget=20,
+            budget=100,
         )
         print(es.run())
