@@ -28,9 +28,7 @@ if __name__ == "__main__":
         detailed_aucs = [0, 0, 0] # 3 function groups of GNBG benchmark, 3 detaiteed fedback       code = solution.code
         algorithm_name = solution.name
         code = solution.code
-        print("Gonna execute")
         exec(code, globals()) # extract the code part inside the string, ex exec("a = 3 + 4") -> print(a) -> 7
-        print("Finish execute")
         error = ""
         
         aucs = []
@@ -56,8 +54,8 @@ if __name__ == "__main__":
                 RotationMatrix = np.array(GNBG_tmp['RotationMatrix'][0, 0])
                 OptimumValue = np.array([item[0] for item in GNBG_tmp['OptimumValue'].flatten()])[0, 0]
                 OptimumPosition = np.array(GNBG_tmp['OptimumPosition'][0, 0])
-                problem = GNBG(MaxEvals, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate, CompMinPos, CompSigma, CompH, Mu, Omega, Lambda, RotationMatrix, OptimumValue, OptimumPosition)
-
+                problem = GNBG(10000, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate, CompMinPos, CompSigma, CompH, Mu, Omega, Lambda, RotationMatrix, OptimumValue, OptimumPosition)
+                # max eval is just 1000
               
                 try:
                     algorithm = globals()[algorithm_name](budget=1000, dim=problem.Dimension,
@@ -75,7 +73,7 @@ if __name__ == "__main__":
                     
                 auc = calculate_aocc_from_gnbg_history(fe_history=problem.FEhistory,
                                                         optimum_value=problem.OptimumValue, 
-                                                    budget_B=1000
+                                                    budget_B=10000
                                             )
                 # budget of auc and algorithm must match  
                 aucs.append(auc)

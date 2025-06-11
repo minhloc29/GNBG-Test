@@ -70,7 +70,6 @@ class GNBG:
         print(f"GNBG.fitness called with X shape: {X.shape}, self.FE: {self.FE}, self.MaxEvals: {self.MaxEvals}")
         
         SolutionNumber = X.shape[0]
-        print(f'Solution number is: {SolutionNumber}')
         result = np.nan * np.ones(SolutionNumber)
         for jj in range(SolutionNumber):
             x = X[jj, :].reshape(-1, 1)  # Ensure column vector

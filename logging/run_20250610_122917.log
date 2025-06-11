@@ -1,0 +1,115 @@
+2025-06-10 12:29:24 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-10 12:29:25 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-10 12:29:25 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-10 12:29:25 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-10 12:29:26 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-10 12:32:19 INFO Run function 1 complete. FEHistory len: 500000, AOCC: 0.2450
+2025-06-10 12:32:19 INFO FeHistory: [175654.10273958 159966.75081492 138464.03775201 ...  -1081.80809933
+  -1081.80809933  -1081.80809933]
+2025-06-10 12:32:19 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-10 12:32:19 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-10 12:32:27 INFO Run function 1 complete. FEHistory len: 500000, AOCC: 0.5235
+2025-06-10 12:32:27 INFO FeHistory: [209369.12842877 171330.20587924 214365.78878597 ...  -1081.9837994
+  -1081.9837994   -1081.9837994 ]
+2025-06-10 12:32:27 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-10 12:32:27 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-10 12:32:32 INFO Run function 1 complete. FEHistory len: 500000, AOCC: 0.0000
+2025-06-10 12:32:32 INFO FeHistory: [163132.83288692 218119.59880457 146579.85453725 ...  13638.38505321
+  13638.17893643  13637.65676978]
+2025-06-10 12:32:32 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-10 12:32:32 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-10 12:34:36 INFO Run function 8 complete. FEHistory len: 500000, AOCC: 0.0351
+2025-06-10 12:34:36 INFO FeHistory: [104425.89064112 229724.64378947 246896.81509533 ...   -615.95272615
+   -615.95272615   -615.95272615]
+2025-06-10 12:34:36 INFO Expected Optimum FE: -656.7889979935655
+2025-06-10 12:34:36 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
+2025-06-10 12:34:54 INFO Run function 8 complete. FEHistory len: 500000, AOCC: 0.6172
+2025-06-10 12:34:54 INFO FeHistory: [223191.81991923 194442.27523075 125341.07392822 ...   -656.78899799
+   -656.78899799   -656.78899799]
+2025-06-10 12:34:54 INFO Expected Optimum FE: -656.7889979935655
+2025-06-10 12:34:54 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
+2025-06-10 12:35:08 INFO Run function 8 complete. FEHistory len: 500000, AOCC: 0.0348
+2025-06-10 12:35:08 INFO FeHistory: [110263.00245911 247165.44198509 214816.84386081 ...   -656.77734957
+   -656.7739426    -656.76992159]
+2025-06-10 12:35:08 INFO Expected Optimum FE: -656.7889979935655
+2025-06-10 12:35:08 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
