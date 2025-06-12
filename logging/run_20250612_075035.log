@@ -1,0 +1,3173 @@
+2025-06-12 07:50:44 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-12 07:50:44 INFO Run function 1 complete. FEHistory len: 100, AOCC: 0.0000
+2025-06-12 07:50:44 INFO FeHistory: [149936.02774577 195240.47104899 200736.56964926 150925.96602305
+ 201309.93451668 167107.37638769 159460.49156048 110934.35631748
+ 135224.22960211 189170.34106875 201701.73634631 183729.31691558
+ 180908.08682071 158664.4052333  167986.87158139 166004.71075539
+ 154008.25362397 158071.78506678 184868.05859493 149632.7678117
+ 152364.31283254 197434.49181785 137430.116511   165853.23121336
+ 134689.61172317 181250.92308506 191823.96261865 184724.16872244
+ 147529.8022401  151849.07343369 206832.05010417 132487.45454202
+ 172077.75622355 200747.12488189 243947.89801077 161439.04520022
+ 148557.88349412 159254.45422805 243832.50389166 108752.91488338
+ 154522.90305837 170187.18027625 106279.07291801 196595.87187574
+ 213550.99392298 156591.3789799  163938.69049933 214948.51033349
+ 189729.75617317 159854.68560551 249064.9348111  219591.18939219
+ 157870.36829505 126598.33934977 201258.81312199 189476.57206946
+  74581.2129194  188118.10063591 191614.21886245 108463.7023738
+ 177940.81698498 152903.36254186 213328.17143188 145131.4101379
+ 125961.63474531 223801.9086854  116920.32899063  78275.84204459
+ 184770.70750609 180717.24522769 141847.32541521 159942.35915616
+ 130743.4327594  255818.7082962  157815.17735793 204837.30748812
+ 141403.83105677 170935.0641258  254957.12772097  93575.85553814
+ 183512.5166051  173756.60522803 157575.91251806 150517.5284013
+ 191408.57622735 175876.06339031 196258.84984071 130862.43850796
+ 163177.61212705 217857.72001695 259812.4843315  150142.74588154
+ 154485.82694045 110333.99234338 172745.51053154 186300.82678984
+ 145358.47203898 199122.99918108 118286.11334235 208104.61483606]
+2025-06-12 07:50:44 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-12 07:50:44 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-12 07:50:44 INFO Run function 8 complete. FEHistory len: 100, AOCC: 0.0000
+2025-06-12 07:50:44 INFO FeHistory: [217151.92801587 237146.58037311 214519.43729991 136663.74223242
+ 210967.99349357 192756.17603914 183007.89081047 171189.69034698
+ 117703.11810423 213561.77679907 169817.48908192 170333.7873935
+ 171140.17422309 199087.93468808 238932.2187232  198189.85262168
+ 170346.52311046 195600.72969393 187915.83256429 181240.61163431
+ 292526.41683471 183661.85644567 127452.46979651 148216.77988373
+ 183101.29728289 200582.04003049 234823.73798516 240035.77573073
+ 246499.53884807 195406.46021865 148468.38996661 196112.04694269
+ 235837.54149241 309206.24987981 235859.57716136 193726.30375377
+ 138266.25205369 206457.24108949 236483.75096617 148400.67583668
+ 176000.13352264 167766.77915124 167451.30081235 218763.06914255
+ 188416.29567958 215302.38625059 126597.53573511 346970.16117214
+ 171264.39681145 284985.81626288 236580.19603732 183899.5607067
+ 167835.82338834 156261.3159059  144218.69257102 230375.10058697
+ 222433.99832056 168885.26820137 148381.92075412 261426.15124966
+ 189758.72529088 142678.73984187 154266.94626211 256753.35592525
+ 275516.74825521 177050.09147669 136233.88221268 167633.20279572
+ 173100.61232188 178649.12096072 179340.55503867 291260.16409548
+ 252436.9625926  186234.75875386 230041.88513581 217436.6981438
+ 272239.3812631  198577.92968879 108860.81648041 113821.52171344
+ 185536.45392385 300186.34637213 134785.95744632 141452.50157339
+ 167572.17697745 189573.35258028 183328.37986711 195265.96235599
+ 149249.84021159 136458.25018325 160185.4754611  251989.51186612
+ 170135.92860374 125506.60371936 162932.2558839  218900.76122156
+ 135702.22560066 235818.65171477 216587.76587669  95769.56479921]
+2025-06-12 07:50:44 INFO Expected Optimum FE: -656.7889979935655
+2025-06-12 07:50:44 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
+2025-06-12 07:50:44 INFO Run function 20 complete. FEHistory len: 100, AOCC: 0.0766
+2025-06-12 07:50:44 INFO FeHistory: [-79.87669126 -77.04347589 -77.73542668 -81.29365332 -78.34032958
+ -79.26775213 -77.68083355 -79.62307341 -76.75380977 -78.12123311
+ -80.21419645 -78.68108688 -77.31664728 -78.84405087 -76.44459926
+ -81.5475084  -79.46634797 -78.30860312 -78.06894657 -78.48405855
+ -78.73901368 -78.15289176 -78.1626934  -78.96954339 -78.00451723
+ -80.47339878 -76.54576176 -77.12011485 -77.47470666 -78.03821371
+ -77.72528784 -83.49918823 -80.27893849 -78.62354224 -80.40354502
+ -78.17844559 -79.33677869 -76.83264957 -79.85996592 -77.00464868
+ -79.74160079 -77.78816179 -79.18292379 -77.76810485 -76.97503152
+ -80.21249851 -77.30386353 -77.94997066 -77.70401121 -79.57195928
+ -79.33679316 -78.5446853  -79.10917832 -77.98014951 -79.62426742
+ -80.61974968 -78.86712053 -81.10371293 -78.20678882 -78.97528456
+ -76.69069886 -78.36369411 -80.1787125  -76.43777623 -77.90423968
+ -78.0811541  -78.3317624  -76.82154018 -77.17322712 -80.36742267
+ -77.32501722 -81.52701597 -77.03241805 -77.08048235 -79.06562922
+ -76.77017523 -78.27578463 -80.32459423 -76.55957319 -82.51944488
+ -77.17202597 -74.05117498 -79.82365185 -77.30857967 -77.41243971
+ -78.10978248 -78.15961201 -76.91433267 -78.52264245 -77.70741991
+ -77.35535571 -77.25057591 -81.93228311 -79.22566878 -75.68648369
+ -77.79909736 -79.06983077 -80.05661503 -78.08338784 -78.3136541 ]
+2025-06-12 07:50:44 INFO Expected Optimum FE: -100
+2025-06-12 07:50:44 INFO Unimodal AOCC mean: 0.0000
+2025-06-12 07:50:44 INFO Multimodal (single component) AOCC mean: 0.0000
+2025-06-12 07:50:44 INFO Multimodal (multiple components) AOCC mean: 0.0766
+2025-06-12 07:50:44 INFO AOCC mean: 0.0255
+2025-06-12 07:50:45 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-12 07:50:45 INFO Run function 1 complete. FEHistory len: 100, AOCC: 0.0000
+2025-06-12 07:50:45 INFO FeHistory: [214279.84430628 136571.07969003 198550.99901632 109793.86842511
+ 199034.17908305 182932.84755743 185833.58921478 145237.07309627
+ 218085.04992503 143985.94070992 244632.69837734 131490.05920274
+ 192949.06249515 206514.78579551 168691.55370558 213219.01743001
+ 197101.96391197 178606.12849175 174049.68642318 159223.25653215
+ 255225.19033419 212787.52090151 182215.20988471 202874.16077127
+ 211644.30449227 122061.03981115 176261.48034707 119891.61499535
+ 189013.05527912 240251.24254901 250070.82128706 148184.21385831
+ 224389.13188431 178573.43306631 211373.82259642 184206.19737208
+ 128817.86079922 229045.65056024 194496.38247822 228787.78990223
+ 128838.22471579 134365.50806956 166066.22436069 158145.38298275
+ 210177.56272291 165694.25604998 110258.54216552 245549.61827764
+ 176836.87038078 191228.92496508 132261.16005167 113760.41533794
+ 266770.56774265 187478.55082572 190764.63224858 146953.87860277
+ 203825.83593778 210936.03044584 174492.60135887 118921.72035766
+ 177756.10131977 221682.03762886 180834.49027287 166841.49392018
+ 184573.78376974 134709.05848477 138159.19314606 124047.3514534
+ 149599.92247073 229776.94095352  84339.75799132 178892.07383818
+ 183006.59068344 136811.90816278 166548.45345977 208466.48372249
+ 167032.41673187 191870.2242268  177038.06863297 174906.59636126
+ 128400.80083045 168123.9806935  145353.25001608 130071.7345393
+ 136470.85546082 155966.51892484 215839.10815628 157304.89015678
+ 180744.61108009 225553.99885761 197797.45038958 225181.00230135
+ 153694.75086972 152632.86565534 212105.05978848 200397.28389675
+ 176547.2163703  187388.6923644  188210.31862909 195814.13102855]
+2025-06-12 07:50:45 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-12 07:50:45 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-12 07:50:45 INFO Run function 8 complete. FEHistory len: 100, AOCC: 0.0000
+2025-06-12 07:50:45 INFO FeHistory: [170631.59646662 161466.87243612 160683.42686103 163189.83753068
+ 166063.88416428 263872.34141501 156740.17647389 154538.8411276
+ 277376.70585441 202162.77181844 196859.8290396  258309.61620088
+ 159393.08268345 206710.67066061 144089.62229901 204635.02361905
+ 221298.10925401 129843.48099039 254909.07494761 217110.5666464
+ 228859.78462806 144166.57526516 120250.43800906 165191.19391059
+ 132928.19923545 236498.75948793 178290.40699368 179108.03727783
+ 173951.29454368 109665.14093781 181247.04252624 160015.03265168
+  93585.12334286 151692.47137671 171594.42620588 203293.40376846
+ 239185.58872651 169719.21274957 155640.88987227 165125.57322942
+ 172095.29995427 130425.92999701 117925.17240819 200059.37841291
+ 213131.24642574 157504.81709336 214236.20190002 211615.42990739
+ 112114.48673124 295070.58958797 193616.23885474 133100.16280467
+ 254046.71365042 147892.27951539 130956.60697902 202428.879891
+ 125642.51250561 150887.39684301 171247.64679576 335323.2805158
+ 198331.95197825 156517.23737867 297807.12879655 205612.69092104
+ 255058.81856445 208673.35330295 266932.1575148  184432.22113044
+ 184163.03835547 142032.87234036 131101.62269095 163299.64998269
+ 154543.00752961 225758.66941913 172621.63195874 172747.68312215
+ 230560.66197863 227116.91771285 187912.4348306  200031.12109607
+ 146388.40307392 183534.48762007 253776.38374801 168801.26018694
+ 148298.86502119 185721.95634558 196706.41933755 223389.43207036
+ 221960.09138702 146225.42767895 112582.13394864 132450.3554859
+ 236055.85225401 294658.45434752 253936.90545582 145379.70361321
+ 260489.00988256 131189.64065315 177816.88676156 158919.77179456]
+2025-06-12 07:50:45 INFO Expected Optimum FE: -656.7889979935655
+2025-06-12 07:50:45 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
+2025-06-12 07:50:45 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-12 07:50:45 INFO Run function 20 complete. FEHistory len: 100, AOCC: 0.0735
+2025-06-12 07:50:45 INFO FeHistory: [-76.66403176 -77.66863525 -76.64304103 -76.58569639 -78.55423196
+ -78.01817405 -78.75482686 -77.34995452 -79.12567109 -79.18852527
+ -80.19256888 -75.85399265 -76.72977296 -77.36018259 -77.17132949
+ -79.37272976 -80.85390237 -78.38774444 -78.3077611  -79.25514058
+ -76.7696282  -79.10025856 -82.15887151 -75.13105131 -77.55910333
+ -76.91424953 -80.16648419 -77.20928711 -75.09536034 -79.15470761
+ -80.13149377 -78.13620018 -77.91535084 -78.28038875 -77.4399953
+ -80.8768571  -78.08484231 -77.90761678 -78.20907435 -78.05133665
+ -77.89903347 -76.87699216 -76.87984507 -75.53626371 -76.05466518
+ -76.47651081 -78.55898324 -76.88787679 -78.25619256 -77.36537347
+ -78.81757453 -79.12381875 -78.58297408 -77.75096456 -77.87947444
+ -78.59584479 -79.11211948 -78.6383432  -78.50481246 -77.95338034
+ -80.09979519 -78.43596355 -78.32440607 -77.48327449 -78.97686017
+ -79.74932305 -79.00200205 -79.89329361 -79.78200096 -79.01769411
+ -80.45182894 -81.61777503 -79.249934   -76.00842432 -79.69792356
+ -79.53339536 -79.5243779  -79.9360211  -78.13085385 -76.3676649
+ -78.49828881 -78.835379   -76.57647294 -77.55809716 -80.60093221
+ -76.18739343 -78.00488678 -76.29959894 -75.55704787 -75.82012123
+ -76.86037058 -79.83127475 -77.3232958  -79.30981126 -79.22912673
+ -78.41682135 -79.97271889 -78.2946866  -77.67887024 -77.27757731]
+2025-06-12 07:50:45 INFO Expected Optimum FE: -100
+2025-06-12 07:50:45 INFO Unimodal AOCC mean: 0.0000
+2025-06-12 07:50:45 INFO Multimodal (single component) AOCC mean: 0.0000
+2025-06-12 07:50:45 INFO Multimodal (multiple components) AOCC mean: 0.0735
+2025-06-12 07:50:45 INFO AOCC mean: 0.0245
+2025-06-12 07:50:45 INFO Run function 1 complete. FEHistory len: 100, AOCC: 0.0000
+2025-06-12 07:50:45 INFO FeHistory: [173498.6371393  130725.59941767 158972.08635797 218497.67703194
+ 179691.88355759 176445.59888097 132177.50815435 112465.17671687
+ 189923.02200975 208299.50697038 166259.81501824 120443.06379876
+ 216431.56585784 152716.74049458 171995.70077208 202628.06953424
+ 240355.38652747 204909.94548149 225408.33128134 108467.49013029
+ 181911.37736686 139808.11738942 198897.77994358 185045.5636437
+ 119411.12620169 187139.07946141 126183.30399661 206111.09537845
+ 131392.37970095 177184.63917187 187539.76669143 148828.20845316
+ 163257.78080211 161984.56276508 147774.79586443 171167.72321473
+ 126355.28140277 166397.55300577 151655.46622879 181505.98340592
+ 202227.82419033 173868.11368013 224835.76566729 153772.21969393
+ 245567.20651308 212400.37169385 202739.27629507 224028.53742307
+ 166281.52258863 253370.3034522  258832.87138889 169658.91717678
+  96285.74154015 241691.76035117 159923.40569438 173036.40159772
+ 237659.40501527 150132.9752088  144492.8406194  184435.99417314
+ 114756.58531586 191063.17483502 169866.62741872 176113.39184109
+ 216614.48311076 133200.21900077 259186.46345114 154482.9622086
+ 196919.63171237 115034.29814906 140080.49142761 168779.9131115
+ 207855.73902567 209993.59181477 186785.35919477 254554.32984127
+ 213511.87207636 166500.177713   145884.74871963 118000.78972319
+ 219363.91391529 192018.14775654 151542.8057947  200582.20091888
+ 143862.86923021 133956.40450626 160769.56080214 234050.40243953
+ 185880.90135391 218880.10641687 139423.78317189 216324.71642046
+ 213744.5328335  217716.77523716 168333.91964323 110666.23675079
+ 160454.40416579 153902.68091028 129984.26011613 185583.46893589]
+2025-06-12 07:50:45 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-12 07:50:45 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-12 07:50:45 INFO Run function 8 complete. FEHistory len: 100, AOCC: 0.0000
+2025-06-12 07:50:45 INFO FeHistory: [236667.22303854 118327.25864729 192557.3387847  134641.98418727
+ 250500.81282491 240200.02415311 215477.95755022 157117.98480928
+ 257520.38378867 127218.02185688 159118.43184595 193111.32068018
+ 124948.22207228 227777.46119972 135864.27377339 241776.88196423
+ 190562.48540671 156719.10658753 175520.05971484 235963.23776736
+ 376321.77187197 143078.50716308 115717.40146258 180850.635665
+ 176248.60026809 200340.40329442 203461.63409529 250293.64013126
+ 194626.7185059  154897.27536431 124108.04950227 226994.10184331
+ 239445.02614487 192803.68415512 115388.53797498 189074.39378478
+ 274125.56606628 197671.17660583 219535.19548024 115580.37573095
+ 228511.02864323 159830.03164398 150063.60381473 163153.34939204
+ 174445.46213034 240957.89503503 101480.81620584 248468.853175
+ 190382.03243336 204536.4608983  150134.53826082 228462.77446083
+ 282507.27411003 132066.47261441 193893.3078324  213328.13975592
+ 183651.95519093 280344.05469849 161541.89668965 130740.9619783
+ 121729.51450577 163473.03196177 213996.76517179 185923.20622339
+ 123490.56528351 220394.53935623 197513.98686041 243851.95889572
+ 190465.46518319 110643.00078231 213306.17569    169981.71732393
+ 179213.76593188 210991.53091536 182328.10338886 183033.67452544
+ 241339.80253202 139388.21387709 148931.63567733 175409.79962268
+  76748.58707994 219426.54293214 198716.98492977 158931.22501472
+  83184.1350978  297958.99330251 311630.19838607 155558.55920247
+ 164447.65369256 163694.34969159 203890.76207452 187164.21228058
+ 187228.43139115 180401.75562704 223764.63632686 134324.91053745
+ 217680.7022037  191738.40962626 199084.0765621  147160.76430007]
+2025-06-12 07:50:45 INFO Expected Optimum FE: -656.7889979935655
+2025-06-12 07:50:45 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
+2025-06-12 07:50:45 INFO Run function 20 complete. FEHistory len: 100, AOCC: 0.0725
+2025-06-12 07:50:45 INFO FeHistory: [-80.22630454 -80.55448479 -79.54388085 -78.84030451 -79.09856446
+ -75.38564361 -79.17580793 -77.25454076 -80.84675564 -80.37544251
+ -77.12113499 -76.47338695 -78.01790837 -77.19563071 -75.82696641
+ -80.02363151 -78.10275503 -76.00813338 -78.54978629 -79.15226557
+ -77.1501507  -79.19312629 -81.01633741 -79.53464987 -75.31396167
+ -79.83584977 -78.95244064 -76.65319541 -76.32338078 -79.25694034
+ -78.10542689 -77.98346123 -75.95064272 -80.47409931 -77.83177071
+ -77.03815456 -79.62411329 -79.90929753 -78.04304607 -78.67427831
+ -78.3872146  -76.10228247 -79.75201907 -75.14972347 -78.8076703
+ -77.33027052 -74.0321673  -78.84448636 -77.9560154  -77.43780537
+ -80.27211998 -79.25888592 -78.94496727 -76.81206925 -77.15300419
+ -81.00756483 -78.35560975 -77.58651352 -80.92261862 -77.57971741
+ -80.12686915 -80.55858839 -77.20556068 -76.99129186 -80.38037273
+ -79.13231439 -78.97761244 -79.72116032 -78.01850598 -76.74233168
+ -80.37118365 -77.4321707  -80.08278543 -79.29993813 -81.57531602
+ -77.34602373 -79.20916562 -77.49827141 -80.70497017 -79.61509069
+ -78.83430486 -78.58059502 -74.88006587 -78.56293177 -78.16604657
+ -75.78655333 -77.57484132 -80.15481874 -76.74532815 -80.79380882
+ -82.31290973 -78.63920702 -78.67787248 -76.9987072  -76.42346495
+ -79.4009073  -77.6895128  -76.47085991 -79.24292332 -81.34576304]
+2025-06-12 07:50:45 INFO Expected Optimum FE: -100
+2025-06-12 07:50:45 INFO Unimodal AOCC mean: 0.0000
+2025-06-12 07:50:45 INFO Multimodal (single component) AOCC mean: 0.0000
+2025-06-12 07:50:45 INFO Multimodal (multiple components) AOCC mean: 0.0725
+2025-06-12 07:50:45 INFO AOCC mean: 0.0242
+2025-06-12 07:50:45 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-12 07:50:45 INFO Run function 1 complete. FEHistory len: 100, AOCC: 0.0000
+2025-06-12 07:50:45 INFO FeHistory: [123357.9266406  149228.66691641 163523.87988443 147672.07600213
+ 240441.7605821  148446.63157325 146674.6037265  197938.13474322
+ 136481.384703   141562.03038918 197693.25152951 182508.82267604
+ 181747.48556228 180861.33973406 222141.38655826 181104.8379422
+ 208117.07629616 150469.08810386 160538.0668338  219195.37928357
+ 160576.85127163 121815.55437799 203557.54618527 163332.42582375
+ 103553.98943239 117369.6477444  132264.66890889 161092.61812198
+ 181172.16250399 189267.19350916 171683.86571655 184604.11110602
+ 123091.41246529 135280.79677621 174418.96958383 132954.54379181
+ 166546.20691134 164426.31228396 179268.16680879 219280.82796284
+ 174599.50567847 210692.99688679 189030.07847391 212227.52213158
+  99263.69700065 178549.40547631 212443.27073312 176566.28530448
+ 151810.25655819 230747.99657971 133318.52937623 146134.58288798
+ 161088.69703577 223202.84349542 135824.97967876 121306.52963278
+ 150640.6976922  154625.7088978  153628.75753734 203385.77960175
+ 223225.08255525 122150.45155379 135805.06181483 214382.82151489
+ 210344.46926298 128016.08145744 147066.71803791 188558.37247729
+ 163091.97390615 155184.9106275  192017.74909078 249788.37477689
+ 169871.85193017 155873.9457487  105652.7224206  104751.31246676
+ 143695.45973351 195132.14760186 129890.58086474 163650.17688382
+ 168616.10798574 142470.29057444 165993.65730881 120961.37848418
+ 128371.53899341 179457.81624328 132203.88057298 114373.47255631
+ 215832.77554861 148900.63860121 161208.19256969 161141.02081511
+ 151155.2319428  173271.57753127 183702.71257828 129050.77043724
+ 169477.03370364 215061.73937492 242012.74623246 160168.60647974]
+2025-06-12 07:50:45 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-12 07:50:45 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-12 07:50:45 INFO Run function 8 complete. FEHistory len: 100, AOCC: 0.0000
+2025-06-12 07:50:45 INFO FeHistory: [192177.15120667 219476.26485501 237783.38222185 296030.25109718
+ 178044.04385199 229104.70478495 208839.14592563 166781.96926488
+ 259923.3775053  210414.90151479 186404.15595237 193741.73220282
+ 201535.43694633 138830.39057069 120963.50895666 176169.28152586
+ 147988.96923419 178385.22872972 159629.43102118 189146.66530896
+ 153440.93207342 193653.56381564 221346.17774318 200254.01525493
+ 206172.60398859 195131.90238574 145184.24021257 248111.17599905
+ 199396.01090713 208369.51110587 115145.5090567  195140.3688398
+ 150705.70617044 193184.78405994 185175.95664686 248111.65286285
+ 202174.87792134 121888.79891635 277249.95629597 237853.6070203
+ 157958.42924074 121179.09955783 176488.05089376 172377.88842059
+ 187730.39281284 236724.56575089 110195.75802085 159946.36629896
+ 162479.31761283 278356.04329273 151214.74281881 180013.02870174
+ 149465.71483844 169312.09969191 317621.15976213 144980.23803527
+ 216925.13053252 155428.64230297 268603.052331   304014.24032726
+ 241322.83731838 167219.80325342 227892.62275581 215786.45361497
+ 165868.37479314 221549.75408558 135249.22607696 143479.05173746
+ 166418.69645898 245818.6348652  160264.94232909 201207.93468407
+ 233955.06708361 207341.76856408 213940.31191959 287391.87725303
+ 159155.87793488 215849.19202502 262226.91566119 190671.77195028
+ 166598.13953492 166861.83254295 189973.06535881 143755.95106042
+ 178441.30443355 222483.57097082 210597.62419276 210983.1189302
+ 201909.85791656 264376.37948234 207782.79204617 181796.29733444
+ 136449.6002369  246552.0506556  192684.39419773 171836.05127708
+ 104889.50489732 154932.00445285 305348.59297582 372566.63131927]
+2025-06-12 07:50:45 INFO Expected Optimum FE: -656.7889979935655
+2025-06-12 07:50:45 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
+2025-06-12 07:50:45 INFO Run function 20 complete. FEHistory len: 100, AOCC: 0.0742
+2025-06-12 07:50:45 INFO FeHistory: [-76.99628188 -81.49985071 -78.22766567 -78.61058735 -78.84086035
+ -78.82891385 -80.47422975 -81.96561675 -77.73063722 -75.66916213
+ -80.57864085 -79.51263723 -77.48831562 -76.59669532 -81.12874726
+ -76.91442274 -79.46083036 -75.47625502 -79.52628373 -80.17793535
+ -76.65578552 -75.71762263 -77.93031919 -77.58054996 -78.12116821
+ -81.08096219 -77.1262176  -77.98776401 -76.04168662 -76.88467776
+ -79.43023675 -81.55272296 -77.87858445 -80.36680775 -79.2960577
+ -78.01424959 -76.15709725 -81.33536618 -78.60375573 -77.05560766
+ -79.06231857 -78.56973347 -77.86949874 -79.30837051 -75.72482727
+ -76.96017061 -76.22889281 -76.64981452 -79.37947552 -77.95138868
+ -77.49030084 -80.42937437 -78.3439407  -78.20402982 -78.22652037
+ -80.14375865 -76.98885382 -74.13943333 -78.34373584 -76.26265607
+ -78.88010999 -76.68543952 -80.07029078 -79.57391633 -78.33393885
+ -79.23877191 -76.89917279 -77.55649267 -80.96198391 -77.75889479
+ -78.97471545 -78.65697357 -77.66120324 -79.87889748 -78.50732
+ -79.32213884 -78.35841759 -80.36039201 -77.31018671 -79.01765816
+ -81.33818924 -75.55982142 -78.2986708  -77.26301332 -75.72500498
+ -77.08179528 -78.40289602 -78.5343153  -80.83635917 -77.80283788
+ -78.81844082 -78.32019521 -77.99078141 -77.63580924 -76.82402029
+ -78.68939533 -76.65027415 -75.90872374 -80.62163877 -79.08274683]
+2025-06-12 07:50:45 INFO Expected Optimum FE: -100
+2025-06-12 07:50:45 INFO Unimodal AOCC mean: 0.0000
+2025-06-12 07:50:45 INFO Multimodal (single component) AOCC mean: 0.0000
+2025-06-12 07:50:45 INFO Multimodal (multiple components) AOCC mean: 0.0742
+2025-06-12 07:50:45 INFO AOCC mean: 0.0247
+2025-06-12 07:50:46 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 369, in evolve_solution
+    evolved_individual = self.evaluate_fitness(evolved_individual)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 251, in evaluate_fitness
+    updated_individual = self.f(individual, self.logger)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea_gnbg_run_test_v2.py", line 34, in evaluateGNBG
+    exec(code, globals()) # extract the code part inside the string, ex exec("a = 3 + 4") -> print(a) -> 7
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 89
+    optimization_info = {
+IndentationError: expected an indented block after 'if' statement on line 78
+.
+2025-06-12 07:50:46 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 13
+}
+]
+.
+2025-06-12 07:50:46 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 13
+}
+]
+.
+2025-06-12 07:50:46 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 13
+}
+]
+.
+2025-06-12 07:50:46 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 13
+}
+]
+.
+2025-06-12 07:50:55 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-12 07:50:55 INFO Run function 1 complete. FEHistory len: 100, AOCC: 0.0000
+2025-06-12 07:50:55 INFO FeHistory: [145852.96833711 173637.41832349 126684.8291342  194750.12137169
+ 141556.31301213 170594.30693878 112497.76730804 208272.70451816
+ 176159.49406947 179128.52676485 125337.15627983 111766.98635982
+ 176616.31117107 113521.72483392 137307.62392894 172242.5663162
+ 222146.4593886  118436.70212787 146828.07154597 138186.12782815
+ 196546.76374609 232025.75248648 154508.67146216 145895.28654383
+ 175668.10262407 151265.79956252 253142.04706113 171319.93102928
+ 213805.27153432 175531.09964128 181530.08338163 144988.79285864
+ 174283.83531634 154630.13652549 242420.90101319 187724.88749326
+ 138038.23756479 113097.15634639 185013.39341248 119151.48333294
+ 184776.59445785 149516.79935623 163743.40964934 189570.06289821
+ 197935.78603205 207742.50519252 136913.00074647 163346.60306659
+ 181298.27288713 135783.27276125 151277.41609675 180515.41192422
+ 183225.12650886 238446.85767945 165328.57993687 231392.63793438
+ 179637.12462133 184666.26749686 180929.86863281 188908.66377081
+ 185265.0529899  202423.93269722 136432.36828601 155843.7967547
+ 219869.58441523 206805.89214704 154425.30967182 109456.56191843
+ 215091.58873512 145924.65316212 155640.97773906 203189.44979066
+ 158437.14705054 207100.21124131 143824.23966522 178251.80449599
+ 119479.71954421 195241.20239946 109830.36247936 132002.76966824
+ 129989.23530705 304570.24897242 201925.31020201 184603.01765543
+ 194530.80011868 149966.72132126 130768.34952618 205544.92643789
+ 206073.81536387 212560.18629057 158438.48596554 163572.09918503
+ 156363.56529078 187664.32921451 161917.19045466 201446.40750565
+ 145092.41870422 160504.25102539 119497.67278289 178038.73200447]
+2025-06-12 07:50:55 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-12 07:50:55 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-12 07:50:55 INFO Run function 8 complete. FEHistory len: 100, AOCC: 0.0000
+2025-06-12 07:50:55 INFO FeHistory: [171712.16406774 141035.47390339 185710.16791397 119979.77600606
+ 303044.45179498 225874.6715425  188964.85078957 196421.66916075
+ 112787.39054751 232703.23909923 248833.20453254 221572.27529621
+ 167098.51785918 198285.71791882 215011.45495681 158571.77201581
+ 194374.44353969 242799.41160677 105182.14336821 176161.21611252
+ 229081.02996432 156830.82744881 171251.97386616 193545.13826532
+ 158562.00775614 240668.76408662 204390.84660358 183375.09855425
+ 174192.72703798 190342.10516736 162103.72574439 137460.44699106
+ 251934.68521126 162424.7876656  171398.55663483 161666.39025313
+ 242762.19216775 146371.12824598 159431.91963175 252117.45355944
+ 242297.91255499 143544.14976861 135062.00885924 197566.66520447
+ 305730.48659147 235026.016247   234573.72592373 215787.07581165
+ 220509.79446053 202497.90731745 190143.87859105 126544.02756509
+ 173028.84856334 208406.66315412 197327.3248655  172802.61412239
+ 190649.98112174 202049.57663701 218698.52756015 168542.39168215
+ 153055.31295169 188440.10485299 179955.21643261 191587.11250442
+ 253104.24326299  95300.80357662 146859.76126602 173372.02029957
+ 161921.2960316  270439.65241628 200505.3150514  116441.47697993
+ 156283.66011793 257887.27240304 101373.92530723 281139.79147933
+ 151038.6521361  198613.23743857 267468.40194381 126703.76999924
+ 184734.00488936 219228.17431625 163287.29859054 204554.3223985
+ 111192.59548299 169944.26439854 247200.94823441 178624.54947638
+ 202273.14849984 181537.49205584 138701.84215951 172868.27127376
+ 204808.34290522 196966.95504018 170524.26969069 166527.02445027
+ 123925.89028277 192998.63082366 133783.07163524 189366.23395448]
+2025-06-12 07:50:55 INFO Expected Optimum FE: -656.7889979935655
+2025-06-12 07:50:55 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
+2025-06-12 07:50:55 INFO Run function 20 complete. FEHistory len: 100, AOCC: 0.0722
+2025-06-12 07:50:55 INFO FeHistory: [-78.97569604 -78.93964584 -77.23792626 -77.04216999 -76.44443844
+ -79.73814632 -79.22052544 -75.96114123 -77.59042071 -78.64658637
+ -78.03269873 -81.04220734 -80.58571057 -75.21997122 -77.98174906
+ -79.44075112 -78.19012718 -80.2417995  -77.96375345 -80.94220134
+ -80.5567133  -77.62077405 -76.90926499 -76.98350087 -75.96404133
+ -78.05630689 -76.54375578 -78.63681083 -78.40802107 -80.13334755
+ -79.14229704 -80.38056339 -78.48110687 -79.11282856 -77.34524433
+ -75.56812771 -77.11014202 -78.72443336 -77.46600016 -78.91655373
+ -78.05090442 -78.88900128 -79.45958032 -77.12342977 -76.78298138
+ -79.18962662 -79.696624   -79.8812059  -79.86479578 -77.61157328
+ -79.51878136 -76.78026928 -78.12158758 -75.68435338 -77.55510896
+ -80.90339299 -78.78846952 -77.44911777 -77.92592501 -80.33011377
+ -78.56240264 -79.2442515  -76.82319593 -78.26205464 -76.37977798
+ -80.29218425 -78.01538092 -76.60564536 -76.88279145 -81.57793517
+ -80.1876673  -80.1182446  -75.63926795 -77.010291   -77.21845602
+ -79.08827093 -79.35507134 -79.67946111 -77.7161785  -79.02148496
+ -79.98015101 -77.19222127 -76.92727886 -77.96763791 -78.33939951
+ -76.93372915 -81.66211313 -79.69813989 -79.7906276  -79.7119399
+ -78.98670821 -79.28846984 -78.53186085 -80.3630368  -77.44844137
+ -81.71238556 -79.81105509 -76.16923673 -76.9582971  -78.30779325]
+2025-06-12 07:50:55 INFO Expected Optimum FE: -100
+2025-06-12 07:50:55 INFO Unimodal AOCC mean: 0.0000
+2025-06-12 07:50:55 INFO Multimodal (single component) AOCC mean: 0.0000
+2025-06-12 07:50:55 INFO Multimodal (multiple components) AOCC mean: 0.0722
+2025-06-12 07:50:55 INFO AOCC mean: 0.0241
+2025-06-12 07:50:56 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+.
+2025-06-12 07:50:56 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+.
+2025-06-12 07:50:56 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+.
+2025-06-12 07:50:56 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+.
+2025-06-12 07:50:56 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+.
+2025-06-12 07:50:57 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+.
+2025-06-12 07:50:57 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+.
+2025-06-12 07:50:57 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+.
+2025-06-12 07:50:57 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+.
+2025-06-12 07:50:57 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+.
+2025-06-12 07:50:57 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+.
+2025-06-12 07:50:57 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+.
+2025-06-12 07:50:57 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+.
+2025-06-12 07:50:57 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+.
+2025-06-12 07:50:58 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+.
+2025-06-12 07:50:58 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+.
+2025-06-12 07:50:58 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+.
+2025-06-12 07:50:58 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+.
+2025-06-12 07:50:58 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+.
+2025-06-12 07:50:58 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+.
+2025-06-12 07:50:58 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+.
+2025-06-12 07:50:58 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+.
+2025-06-12 07:50:58 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+.
+2025-06-12 07:50:58 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+.
+2025-06-12 07:50:59 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+}
+]
+.
+2025-06-12 07:50:59 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+}
+]
+.
+2025-06-12 07:50:59 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+}
+]
+.
+2025-06-12 07:50:59 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+}
+]
+.
+2025-06-12 07:50:59 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+}
+]
+.
+2025-06-12 07:50:59 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+}
+]
+.
+2025-06-12 07:51:00 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 59
+}
+]
+.
+2025-06-12 07:51:00 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 59
+}
+]
+.
+2025-06-12 07:51:00 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 59
+}
+]
+.
+2025-06-12 07:51:00 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 59
+}
+]
+.
+2025-06-12 07:51:00 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 59
+}
+]
+.
+2025-06-12 07:51:00 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 59
+}
+]
+.
+2025-06-12 07:51:00 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 59
+}
+]
+.
+2025-06-12 07:51:00 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 59
+}
+]
+.
+2025-06-12 07:51:00 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 59
+}
+]
+.
+2025-06-12 07:51:01 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 365, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 106, in sample_solution
+    message = self.query(session_messages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 277, in query
+    response = chat_session.send_message(last["content"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 578, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/miniconda3/envs/eoh/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 58
+}
+]
+.

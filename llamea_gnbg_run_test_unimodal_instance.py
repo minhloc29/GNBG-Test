@@ -8,7 +8,7 @@ from calc_aocc_from_gnbg import calculate_aocc_from_gnbg_history
 from scipy.io import loadmat
 from task_prompt import task_prompt_gnbg, simplified_task_prompt
 from crispe_inspired_prompt import prompt
-
+from unimodal_specialist_prompt import unimodal_prompt
 
 
 if __name__ == "__main__":    
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # api_key = "AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs"
     ai_model = "gemini-1.5-flash"
     experiment_name = "pop1-5"
-    llm = Gemini_LLM("AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs", ai_model)
+    llm = Gemini_LLM("AIzaSyAl9PJULvholPUitUGMH7knztrQ7E4OKPc", ai_model)
     # llm = Ollama_LLM(model="llama3.2:3b-instruct-fp16")
     def evaluateGNBG(solution, explogger=None, details=True): # we need to change this function to GNBG 
         logger = logging.getLogger(__name__)
@@ -37,7 +37,7 @@ if __name__ == "__main__":
         aucs = []
         detail_aucs = []
         algorithm = None
-        problem_indices_to_test = [1, 8, 20] 
+        problem_indices_to_test = [1, 2, 3] 
         
         for fid in problem_indices_to_test: # cal 24 functions from GNBG
             # representative of 3 function group
@@ -101,16 +101,16 @@ if __name__ == "__main__":
             
             all_run_aocc_scores.append(current_run_aocc)
             if 1 <= fid <= 6: unimodal_aoccs.append(current_run_aocc)
-            elif 7 <= fid <= 15: multimodal_single_aoccs.append(current_run_aocc)
-            elif 16 <= fid <= 24: multimodal_multi_aoccs.append(current_run_aocc)
+            # elif 7 <= fid <= 15: multimodal_single_aoccs.append(current_run_aocc)
+            # elif 16 <= fid <= 24: multimodal_multi_aoccs.append(current_run_aocc)
         
         unimodal_means = np.mean(unimodal_aoccs)
-        multimodal_single_means = np.mean(multimodal_single_aoccs)
-        multimodal_multi_means = np.mean(multimodal_multi_aoccs)
+        # multimodal_single_means = np.mean(multimodal_single_aoccs)
+        # multimodal_multi_means = np.mean(multimodal_multi_aoccs)
         
         logging.info(f"Unimodal AOCC mean: {unimodal_means:.4f}")
-        logging.info(f"Multimodal (single component) AOCC mean: {multimodal_single_means:.4f}")
-        logging.info(f"Multimodal (multiple components) AOCC mean: {multimodal_multi_means:.4f}")
+        # logging.info(f"Multimodal (single component) AOCC mean: {multimodal_single_means:.4f}")
+        # logging.info(f"Multimodal (multiple components) AOCC mean: {multimodal_multi_means:.4f}")
 
         auc_mean = np.mean(all_run_aocc_scores)
         auc_std = np.std(all_run_aocc_scores)
@@ -125,8 +125,8 @@ if __name__ == "__main__":
         if details:
             feedback = (
                 f"{feedback}\nThe mean AOCC score of the algorithm {algorithm_name} on Unimodal instances was {unimodal_means:.02f}, "
-                f"on Multimodal instances with a single component {multimodal_single_means:.02f}, "
-                f"on Multimodal instances with multiple components {multimodal_multi_means:.02f}" 
+                # f"on Multimodal instances with a single component {multimodal_single_means:.02f}, "
+                # f"on Multimodal instances with multiple components {multimodal_multi_means:.02f}" 
             )
 
         print(algorithm_name, algorithm, auc_mean, auc_std)
@@ -142,7 +142,7 @@ if __name__ == "__main__":
             n_parents=5,
             n_offspring=10,
             llm=llm,
-            task_prompt=prompt,
+            task_prompt=unimodal_prompt,
             experiment_name=experiment_name,
             adaptive_mutation=True, # mutate the prompt
             elitism=True,

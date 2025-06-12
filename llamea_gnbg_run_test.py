@@ -118,7 +118,7 @@ if __name__ == "__main__":
         # A 1+1 strategy
         es = LLaMEA(
             evaluateGNBG,
-            n_parents=5,
+            n_parents=,
             n_offspring=10,
             llm=llm,
             task_prompt=prompt,

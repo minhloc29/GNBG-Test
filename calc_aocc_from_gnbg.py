@@ -2,6 +2,7 @@ import numpy as np
 def calculate_aocc_from_gnbg_history(fe_history, optimum_value, budget_B, 
                                      log_error_lower_bound=-8.0,  # Corresponds to 10^-8 error
                                      log_error_upper_bound=2.0):   # Corresponds to 10^2 error
+    # To evaluate this, we consider the fe-history length up to budget B
     """
     Calculates Area Over the Convergence Curve (AOCC) from GNBG FEhistory.
     Higher AOCC is better (1.0 is optimal).
@@ -10,7 +11,7 @@ def calculate_aocc_from_gnbg_history(fe_history, optimum_value, budget_B,
         print(f"Length of fe_history is 0, aocc is 0")
         return 0.0 # No evaluations, worst AOCC
 
-    actual_evals = len(fe_history)
+    actual_evals = len(fe_history) # should be equal to budget
     
     best_error_so_far = float('inf')
     best_error_history_at_fe = []
@@ -27,8 +28,11 @@ def calculate_aocc_from_gnbg_history(fe_history, optimum_value, budget_B,
 
     # If fe_history is shorter than budget_B, extend with the last best error
     if actual_evals < budget_B:
+        print("When calculating aocc, acutal evaluation < budget B")
         best_error_history_at_fe.extend([best_error_so_far] * (budget_B - actual_evals))
-    
+    else:    
+        print("When calculating aocc, acutal evaluation >= budget B")
+
     aocc_terms = []
     for error_at_fe in best_error_history_at_fe[:budget_B]: # Ensure we only consider up to budget_B
         # Floor error at a very small positive number to avoid log(0) or log(<0)

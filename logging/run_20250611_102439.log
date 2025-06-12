@@ -1,0 +1,410 @@
+2025-06-11 10:26:40 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:26:40 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 364, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 112, in sample_solution
+    name = re.findall(
+           ^^^^^^^^^^^
+IndexError: list index out of range
+.
+2025-06-11 10:27:04 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:27:04 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 364, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 112, in sample_solution
+    name = re.findall(
+           ^^^^^^^^^^^
+IndexError: list index out of range
+.
+2025-06-11 10:27:33 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:27:33 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-11 10:27:33 ERROR Can not run the algorithm
+2025-06-11 10:27:33 INFO Run function 1 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:27:33 INFO FeHistory: []
+2025-06-11 10:27:33 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-11 10:27:33 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-11 10:27:33 ERROR Can not run the algorithm
+2025-06-11 10:27:33 INFO Run function 8 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:27:33 INFO FeHistory: []
+2025-06-11 10:27:33 INFO Expected Optimum FE: -656.7889979935655
+2025-06-11 10:27:33 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
+2025-06-11 10:27:33 ERROR Can not run the algorithm
+2025-06-11 10:27:33 INFO Run function 20 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:27:33 INFO FeHistory: []
+2025-06-11 10:27:33 INFO Expected Optimum FE: -100
+2025-06-11 10:27:33 INFO Unimodal AOCC mean: 0.0000
+2025-06-11 10:27:33 INFO Multimodal (single component) AOCC mean: 0.0000
+2025-06-11 10:27:33 INFO Multimodal (multiple components) AOCC mean: 0.0000
+2025-06-11 10:27:33 INFO AOCC mean: 0.0000
+2025-06-11 10:27:47 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:27:47 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 368, in evolve_solution
+    evolved_individual = self.evaluate_fitness(evolved_individual)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 251, in evaluate_fitness
+    updated_individual = self.f(individual, self.logger)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea_gnbg_run_test_v2.py", line 34, in evaluateGNBG
+    exec(code, globals()) # extract the code part inside the string, ex exec("a = 3 + 4") -> print(a) -> 7
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 35
+    if len([member for member in self.ensemble_members if np.sum(np.abs(candidate_batch - member)) < 0.1 * np.linalg.norm(candidate_batch))] > self.ensemble_size / 2:
+                                                                                                                                          ^
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '['
+.
+2025-06-11 10:27:52 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:27:53 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 368, in evolve_solution
+    evolved_individual = self.evaluate_fitness(evolved_individual)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 251, in evaluate_fitness
+    updated_individual = self.f(individual, self.logger)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea_gnbg_run_test_v2.py", line 34, in evaluateGNBG
+    exec(code, globals()) # extract the code part inside the string, ex exec("a = 3 + 4") -> print(a) -> 7
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 8
+    self/archive = np.zeros((self.archive_size, len(lower_bounds)))
+    ^^^^^^^^^^^^
+SyntaxError: cannot assign to expression here. Maybe you meant '==' instead of '='?
+.
+2025-06-11 10:29:18 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:29:18 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 364, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 111, in sample_solution
+    code = self.extract_algorithm_code(message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 168, in extract_algorithm_code
+    raise NoCodeException
+llamea.utils.NoCodeException
+.
+2025-06-11 10:29:46 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:29:46 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 364, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 112, in sample_solution
+    name = re.findall(
+           ^^^^^^^^^^^
+IndexError: list index out of range
+.
+2025-06-11 10:30:22 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:30:22 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 364, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 112, in sample_solution
+    name = re.findall(
+           ^^^^^^^^^^^
+IndexError: list index out of range
+.
+2025-06-11 10:30:26 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:30:26 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 364, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 111, in sample_solution
+    code = self.extract_algorithm_code(message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 168, in extract_algorithm_code
+    raise NoCodeException
+llamea.utils.NoCodeException
+.
+2025-06-11 10:31:20 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:31:20 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-11 10:31:20 ERROR Can not run the algorithm
+2025-06-11 10:31:20 INFO Run function 1 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:31:20 INFO FeHistory: []
+2025-06-11 10:31:20 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-11 10:31:20 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-11 10:31:20 ERROR Can not run the algorithm
+2025-06-11 10:31:20 INFO Run function 8 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:31:20 INFO FeHistory: []
+2025-06-11 10:31:20 INFO Expected Optimum FE: -656.7889979935655
+2025-06-11 10:31:20 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
+2025-06-11 10:31:20 ERROR Can not run the algorithm
+2025-06-11 10:31:20 INFO Run function 20 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:31:20 INFO FeHistory: []
+2025-06-11 10:31:20 INFO Expected Optimum FE: -100
+2025-06-11 10:31:20 INFO Unimodal AOCC mean: 0.0000
+2025-06-11 10:31:20 INFO Multimodal (single component) AOCC mean: 0.0000
+2025-06-11 10:31:20 INFO Multimodal (multiple components) AOCC mean: 0.0000
+2025-06-11 10:31:20 INFO AOCC mean: 0.0000
+2025-06-11 10:31:59 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:31:59 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 364, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 112, in sample_solution
+    name = re.findall(
+           ^^^^^^^^^^^
+IndexError: list index out of range
+.
+2025-06-11 10:32:51 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:32:51 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 364, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 112, in sample_solution
+    name = re.findall(
+           ^^^^^^^^^^^
+IndexError: list index out of range
+.
+2025-06-11 10:33:00 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:33:00 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-11 10:33:00 ERROR Can not run the algorithm
+2025-06-11 10:33:00 INFO Run function 1 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:33:00 INFO FeHistory: []
+2025-06-11 10:33:00 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-11 10:33:00 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-11 10:33:00 ERROR Can not run the algorithm
+2025-06-11 10:33:00 INFO Run function 8 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:33:00 INFO FeHistory: []
+2025-06-11 10:33:00 INFO Expected Optimum FE: -656.7889979935655
+2025-06-11 10:33:00 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
+2025-06-11 10:33:00 ERROR Can not run the algorithm
+2025-06-11 10:33:00 INFO Run function 20 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:33:00 INFO FeHistory: []
+2025-06-11 10:33:00 INFO Expected Optimum FE: -100
+2025-06-11 10:33:00 INFO Unimodal AOCC mean: 0.0000
+2025-06-11 10:33:00 INFO Multimodal (single component) AOCC mean: 0.0000
+2025-06-11 10:33:00 INFO Multimodal (multiple components) AOCC mean: 0.0000
+2025-06-11 10:33:00 INFO AOCC mean: 0.0000
+2025-06-11 10:33:23 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:33:23 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 364, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 111, in sample_solution
+    code = self.extract_algorithm_code(message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 168, in extract_algorithm_code
+    raise NoCodeException
+llamea.utils.NoCodeException
+.
+2025-06-11 10:33:48 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:33:48 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 364, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 112, in sample_solution
+    name = re.findall(
+           ^^^^^^^^^^^
+IndexError: list index out of range
+.
+2025-06-11 10:35:37 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:35:37 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 364, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 112, in sample_solution
+    name = re.findall(
+           ^^^^^^^^^^^
+IndexError: list index out of range
+.
+2025-06-11 10:35:46 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:35:46 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-11 10:35:46 ERROR Can not run the algorithm
+2025-06-11 10:35:46 INFO Run function 1 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:35:46 INFO FeHistory: []
+2025-06-11 10:35:46 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-11 10:35:46 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-11 10:35:46 ERROR Can not run the algorithm
+2025-06-11 10:35:46 INFO Run function 8 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:35:46 INFO FeHistory: []
+2025-06-11 10:35:46 INFO Expected Optimum FE: -656.7889979935655
+2025-06-11 10:35:46 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
+2025-06-11 10:35:46 ERROR Can not run the algorithm
+2025-06-11 10:35:46 INFO Run function 20 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:35:46 INFO FeHistory: []
+2025-06-11 10:35:46 INFO Expected Optimum FE: -100
+2025-06-11 10:35:46 INFO Unimodal AOCC mean: 0.0000
+2025-06-11 10:35:46 INFO Multimodal (single component) AOCC mean: 0.0000
+2025-06-11 10:35:46 INFO Multimodal (multiple components) AOCC mean: 0.0000
+2025-06-11 10:35:46 INFO AOCC mean: 0.0000
+2025-06-11 10:36:33 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:36:33 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-11 10:36:33 ERROR Can not run the algorithm
+2025-06-11 10:36:33 INFO Run function 1 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:36:33 INFO FeHistory: []
+2025-06-11 10:36:33 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-11 10:36:33 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-11 10:36:33 ERROR Can not run the algorithm
+2025-06-11 10:36:33 INFO Run function 8 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:36:33 INFO FeHistory: []
+2025-06-11 10:36:33 INFO Expected Optimum FE: -656.7889979935655
+2025-06-11 10:36:33 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
+2025-06-11 10:36:33 ERROR Can not run the algorithm
+2025-06-11 10:36:33 INFO Run function 20 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:36:33 INFO FeHistory: []
+2025-06-11 10:36:33 INFO Expected Optimum FE: -100
+2025-06-11 10:36:33 INFO Unimodal AOCC mean: 0.0000
+2025-06-11 10:36:33 INFO Multimodal (single component) AOCC mean: 0.0000
+2025-06-11 10:36:33 INFO Multimodal (multiple components) AOCC mean: 0.0000
+2025-06-11 10:36:33 INFO AOCC mean: 0.0000
+2025-06-11 10:36:54 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:36:54 INFO An exception occured: Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llamea.py", line 364, in evolve_solution
+    evolved_individual = self.llm.sample_solution(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/llamea/llm.py", line 112, in sample_solution
+    name = re.findall(
+           ^^^^^^^^^^^
+IndexError: list index out of range
+.
+2025-06-11 10:38:24 INFO HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-06-11 10:38:24 INFO --- GNBG Problem Parameters for f1 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -1081.983799
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0 0]
+----------------------------------------
+2025-06-11 10:38:24 ERROR Can not run the algorithm
+2025-06-11 10:38:24 INFO Run function 1 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:38:24 INFO FeHistory: []
+2025-06-11 10:38:24 INFO Expected Optimum FE: -1081.9837994003399
+2025-06-11 10:38:24 INFO --- GNBG Problem Parameters for f8 ---
+  Dimension: 30, MaxEvals: 500000
+  Search Bounds: [-100, 100]
+  Number of Components: 1
+  Known Optimum Value: -656.788998
+  Lambda (Curvature): [1]
+  Mu (Asymmetry/Depth): [0.2 0.2]
+----------------------------------------
+2025-06-11 10:38:24 ERROR Can not run the algorithm
+2025-06-11 10:38:24 INFO Run function 8 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:38:24 INFO FeHistory: []
+2025-06-11 10:38:24 INFO Expected Optimum FE: -656.7889979935655
+2025-06-11 10:38:24 INFO --- GNBG Problem Parameters for f20 ---
+  Dimension: 30, MaxEvals: 1000000
+  Search Bounds: [-100, 100]
+  Number of Components: 5
+  Known Optimum Value: -100.000000
+  Lambda (Curvature): [0.25 0.25 0.25 0.25 0.25]
+  Mu (Asymmetry/Depth): [0.4901829  0.25862884 0.37043014 0.37440768 0.26098797 0.491006
+ 0.27569772 0.45404864 0.42314776 0.27195433]
+----------------------------------------
+2025-06-11 10:38:24 ERROR Can not run the algorithm
+2025-06-11 10:38:24 INFO Run function 20 complete. FEHistory len: 0, AOCC: 0.0000
+2025-06-11 10:38:24 INFO FeHistory: []
+2025-06-11 10:38:24 INFO Expected Optimum FE: -100
+2025-06-11 10:38:24 INFO Unimodal AOCC mean: 0.0000
+2025-06-11 10:38:24 INFO Multimodal (single component) AOCC mean: 0.0000
+2025-06-11 10:38:24 INFO Multimodal (multiple components) AOCC mean: 0.0000
+2025-06-11 10:38:24 INFO AOCC mean: 0.0000

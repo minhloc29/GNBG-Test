@@ -60,7 +60,7 @@ class GNBG:
         self.OptimumValue = OptimumValue
         self.OptimumPosition = OptimumPosition
         self.FEhistory = []
-        self.FE = 0
+        self.FE = 0 # not the fitness but the current evaluation index
         self.AcceptanceReachPoint = np.inf
         self.BestFoundResult = np.inf
 
