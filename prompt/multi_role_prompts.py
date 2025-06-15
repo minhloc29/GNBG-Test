@@ -16,7 +16,6 @@ Use the fitness values of a small neighborhood of points around a candidate solu
 
 role4= '''
 Your objective is to design a novel optimization algorithm for a specific class of GNBG problems (like f8). These functions have a single global basin of attraction, but their interior is highly rugged, filled with a very large number of narrow local optima.
-
 The challenge is to maintain exploration while exploiting good solutions. Your task is to provide an excellent and novel algorithm inspired by archive-guided Differential Evolution (like JADE or SHADE). The algorithm should maintain an external archive of recently successful solutions. The DE mutation strategy (e.g., DE/current-to-pbest/1) should select one of the "best" parents (pbest) from this archive, rather than just from the current population, to guide the generation of new candidate solutions.'''
 
 role5 = '''

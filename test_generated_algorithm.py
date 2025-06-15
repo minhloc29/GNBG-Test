@@ -29,7 +29,7 @@ logging.basicConfig(
 
 import random
 
-class AdaptiveGaussianDEImprovedLocalSearch:
+class EnhancedArchiveGuidedDE:
     def __init__(self, budget: int, dim: int, lower_bounds: list[float], upper_bounds: list[float]):
         self.budget = int(budget)
         self.dim = int(dim)
@@ -39,95 +39,81 @@ class AdaptiveGaussianDEImprovedLocalSearch:
         self.eval_count = 0
         self.best_solution_overall = None
         self.best_fitness_overall = float('inf')
-        self.population_size = 5 * self.dim + 50
-        self.F = 0.8
-        self.CR = 0.9
-        self.archive = []
+
+        self.population_size = 10 * self.dim  # common heuristic
         self.archive_size = 100
-        self.C = np.eye(self.dim)
-        self.F_adapt_rate = 0.05
-        self.CR_adapt_rate = 0.02
-        self.sigma = 0.5
-        self.local_search_iterations = 10
+        self.archive = []
+        self.population = None
+        self.F_scale = 0.5 #initial scaling factor
+
 
     def optimize(self, objective_function: callable, acceptance_threshold: float = 1e-8) -> tuple:
         self.eval_count = 0
-        self.best_solution_overall = np.random.uniform(self.lower_bounds, self.upper_bounds, self.dim)
-        self.best_fitness_overall = objective_function(self.best_solution_overall.reshape(1, -1))[0]
-        self.eval_count += 1
-        population = np.random.uniform(self.lower_bounds, self.upper_bounds, (self.population_size, self.dim))
-        fitness_values = objective_function(population)
+        self.population = np.random.uniform(self.lower_bounds, self.upper_bounds, size=(self.population_size, self.dim))
+        fitness = objective_function(self.population)
         self.eval_count += self.population_size
 
-        for i in range(self.budget - self.population_size):
-            mutated = np.zeros((self.population_size, self.dim))
-            for j in range(self.population_size):
-                a, b, c = np.random.choice(np.arange(self.population_size), size=3, replace=False)
-                while a == j or b == j or c == j:
-                    a, b, c = np.random.choice(np.arange(self.population_size), size=3, replace=False)
-                mutated[j] = population[a] + self.F * (population[b] - population[c])
+        self.best_solution_overall = self.population[np.argmin(fitness)]
+        self.best_fitness_overall = np.min(fitness)
 
-            crossed = np.zeros((self.population_size, self.dim))
-            for j in range(self.population_size):
-                rand = np.random.rand(self.dim)
-                crossed[j] = np.where(rand < self.CR, mutated[j], population[j])
+        while self.eval_count < self.budget:
+            offspring = self.generate_offspring(self.population, fitness)
+            offspring_fitness = objective_function(offspring)
+            self.eval_count += len(offspring)
 
-            if len(self.archive) > self.dim and len(self.archive) > 0:
-                from sklearn.mixture import GaussianMixture
-                gm = GaussianMixture(n_components=min(len(self.archive), 10), covariance_type='full', random_state=0)
-                gm.fit(np.array([sol for sol, _ in self.archive]))
+            # Update archive
+            self.update_archive(offspring, offspring_fitness)
 
-                new_mutations = gm.sample(self.population_size)[0]
-                new_mutations = np.clip(new_mutations, self.lower_bounds, self.upper_bounds)
-                new_mutations = np.random.multivariate_normal(np.zeros(self.dim), self.C * (self.sigma**2), self.population_size)
-                crossed = np.clip(crossed + new_mutations * 0.2, self.lower_bounds, self.upper_bounds)
+            # Select best solutions for next generation
+            combined_population = np.concatenate((self.population, offspring))
+            combined_fitness = np.concatenate((fitness, offspring_fitness))
+            indices = np.argsort(combined_fitness)
+            self.population = combined_population[indices[:self.population_size]]
+            fitness = combined_fitness[indices[:self.population_size]]
 
-                if len(self.archive) > 0:
-                    best_archive_sol = np.array([sol for sol, _ in self.archive])[np.argmin([f for _, f in self.archive])]
-                    self.C = 0.9 * self.C + 0.1 * np.outer(best_archive_sol - np.mean([sol for sol, _ in self.archive], axis=0), best_archive_sol - np.mean([sol for sol, _ in self.archive], axis=0))
-                    self.sigma *= 0.99
-
-            offspring_fitness = objective_function(crossed)
-            self.eval_count += self.population_size
-            for j in range(self.population_size):
-                if offspring_fitness[j] < fitness_values[j]:
-                    fitness_values[j] = offspring_fitness[j]
-                    population[j] = crossed[j]
-                    if offspring_fitness[j] < self.best_fitness_overall:
-                        self.best_fitness_overall = offspring_fitness[j]
-                        self.best_solution_overall = crossed[j]
-                        current_solution = self.best_solution_overall.copy()
-                        for k in range(self.local_search_iterations):
-                            neighbor = current_solution + np.random.normal(0, 0.1, self.dim)
-                            neighbor = np.clip(neighbor, self.lower_bounds, self.upper_bounds)
-                            neighbor_fitness = objective_function(neighbor.reshape(1, -1))[0]
-                            self.eval_count += 1
-                            if neighbor_fitness < self.best_fitness_overall:
-                                self.best_fitness_overall = neighbor_fitness
-                                self.best_solution_overall = neighbor.copy()
-                                current_solution = neighbor.copy()
-
-            for j in range(self.population_size):
-                if len(self.archive) < self.archive_size:
-                    self.archive.append((population[j], fitness_values[j]))
-
-                else:
-                    if fitness_values[j] < np.max([f for _, f in self.archive]):
-                        self.archive.pop(np.argmax([f for _, f in self.archive]))
-
-                        self.archive.append((population[j], fitness_values[j]))
-
-            self.F = self.F * (1 + self.F_adapt_rate * np.random.randn()) 
-            self.CR = self.CR * (1 + self.CR_adapt_rate * np.random.randn()) 
-            self.F = np.clip(self.F, 0.1, 1) 
-            self.CR = np.clip(self.CR, 0.1, 1) 
+            #Update best solution
+            self.best_solution_overall = self.population[np.argmin(fitness)]
+            self.best_fitness_overall = np.min(fitness)
 
 
         optimization_info = {
             'function_evaluations_used': self.eval_count,
-            'final_best_fitness': self.best_fitness_overall
+            'final_best_fitness': self.best_fitness_overall,
+            'archive_size': len(self.archive)
         }
         return self.best_solution_overall, self.best_fitness_overall, optimization_info
+
+    def generate_offspring(self, population, fitness):
+        offspring = np.zeros((self.population_size, self.dim))
+        #Adaptive scaling factor
+        self.F_scale = 0.5 + 0.3*np.random.rand() #scale factor with slight variation
+
+        for i in range(self.population_size):
+            # Select pbest from archive (if available)
+            if self.archive:
+                pbest_index = np.random.choice(len(self.archive))
+                pbest = self.archive[pbest_index][0]
+            else:
+                pbest = population[np.argmin(fitness)]
+
+            a, b, c = random.sample(range(self.population_size), 3)
+            while a == i or b == i or c == i:
+                a, b, c = random.sample(range(self.population_size), 3)
+
+            offspring[i] = population[i] + self.F_scale * (pbest - population[i] + population[a] - population[b])
+            offspring[i] = np.clip(offspring[i], self.lower_bounds, self.upper_bounds) #Boundary handling
+
+        return offspring
+
+    def update_archive(self, offspring, offspring_fitness):
+        for i in range(len(offspring)):
+            if len(self.archive) < self.archive_size:
+                self.archive.append((offspring[i], offspring_fitness[i]))
+            else:
+                #Prioritize diversity in archive
+                worst_index = np.argmax([f for _, f in self.archive])
+                if offspring_fitness[i] < self.archive[worst_index][1] or len(self.archive) < self.archive_size * 0.8 :
+                    self.archive[worst_index] = (offspring[i], offspring_fitness[i])
 
 
 def run_optimization(MaxEvals, AcceptanceThreshold, 
@@ -166,7 +152,7 @@ def run_optimization(MaxEvals, AcceptanceThreshold,
         # Initialize algorithm
        
         
-        optimizer = AdaptiveGaussianDEImprovedLocalSearch(
+        optimizer = EnhancedArchiveGuidedDE(
             budget=MaxEvals,
             dim=gnbg.Dimension,
             lower_bounds=[gnbg.MinCoordinate for _ in range(gnbg.Dimension)],
@@ -193,7 +179,7 @@ def run_optimization(MaxEvals, AcceptanceThreshold,
 if __name__ == "__main__":
     folder_path = "codes/gnbg_python"
     # Example usage
-    ProblemIndex = 1
+    ProblemIndex = 9
     if 1 <= ProblemIndex <= 24:
         
         filename = f'f{ProblemIndex}.mat'
@@ -214,7 +200,7 @@ if __name__ == "__main__":
         OptimumValue = np.array([item[0] for item in GNBG_tmp['OptimumValue'].flatten()])[0, 0]
         OptimumPosition = np.array(GNBG_tmp['OptimumPosition'][0, 0])
         
-        best_values, best_solutions, aoccs = run_optimization(100000, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate,
+        best_values, best_solutions, aoccs = run_optimization(500000, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate,
                                                        CompMinPos, CompSigma, CompH, Mu, Omega, Lambda, RotationMatrix, OptimumValue, OptimumPosition)
     else:
         raise ValueError('ProblemIndex must be between 1 and 24.')
