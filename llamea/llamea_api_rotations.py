@@ -41,7 +41,7 @@ class LLaMEA: # with key. rotations
     def __init__(
         self,
         f,
-        llm,
+        llms: list,
         n_parents=5,
         n_offspring=10,
         role_prompt="",
@@ -81,9 +81,9 @@ class LLaMEA: # with key. rotations
             minimization (bool): Whether we minimize or maximize the objective function. Defaults to False.
             _random (bool): Flag to switch to random search (purely for debugging).
         """
-        self.llm = llm
+        self.llms = llms
+        self.llm_index = 0
         self.i = 0 # circle the role prompt around
-        self.model = llm.model
         self.eval_timeout = eval_timeout
         self.f = f  # evaluation function, provides an individual as output.
         self.role_prompt = role_prompt
@@ -119,15 +119,22 @@ class LLaMEA: # with key. rotations
         self.experiment_name = experiment_name
 
         if self.log:
-            modelname = self.model.replace(":", "_")
-            self.logger = ExperimentLogger(f"LLaMEA-{modelname}-{experiment_name}")
-            self.llm.set_logger(self.logger)
+            # modelname = self.model.replace(":", "_")
+            self.logger = ExperimentLogger(f"LLaMEA--{experiment_name}")
+            self.llms[self.llm_index].set_logger(self.logger)
         else:
             self.logger = None
         self.textlog = logging.getLogger(__name__)
         if max_workers > self.n_offspring:
             max_workers = self.n_offspring
         self.max_workers = max_workers
+
+    def _get_next_llm(self):
+        """Cycles through the list of LLM instances in a round-robin fashion."""
+        llm_instance = self.llms[self.llm_index]
+        self.textlog.info(f"Using LLM instance #{self.llm_index} (Model: {llm_instance.model})")
+        self.llm_index = (self.llm_index + 1) % len(self.llms)
+        return llm_instance
 
     def logevent(self, event):
         self.textlog.info(event)
@@ -136,6 +143,9 @@ class LLaMEA: # with key. rotations
         """
         Initializes a single solution.
         """
+        chosen_llm = self.llms[role_index % len(self.llms)] 
+        self.textlog.info(f"Using LLM api key #{chosen_llm.api_key})")
+
         current_role_prompt = self.role_prompt[role_index % len(self.role_prompt)]
         new_individual = Solution(name="", code="", generation=self.generation)
         session_messages = [
@@ -147,7 +157,7 @@ class LLaMEA: # with key. rotations
         ]
        
         try:
-            new_individual = self.llm.sample_solution(session_messages, role_index=role_index)
+            new_individual = chosen_llm.sample_solution(session_messages, role_index=role_index)
             new_individual.generation = self.generation
             new_individual = self.evaluate_fitness(new_individual)
         except Exception as e:
@@ -304,16 +314,19 @@ With code:
         print(f"After selection, new population is: {new_population}")
         return new_population
 
-    def evolve_solution(self, individual):
+    def evolve_solution(self, individual, worker_id: int):
         """
         Evolves a single solution by constructing a new prompt,
         querying the LLM, and evaluating the fitness.
         """
+        chosen_llm = self.llms[worker_id % len(self.llms)]
+        self.textlog.info(f"Using LLM api key #{chosen_llm.api_key})")
+
         new_prompt = self.construct_prompt(individual)
         evolved_individual = individual.copy()
 
         try:
-            evolved_individual = self.llm.sample_solution(
+            evolved_individual = chosen_llm.sample_solution(
                 new_prompt, evolved_individual.parent_ids, HPO=self.HPO
             )
             evolved_individual.generation = self.generation
@@ -365,8 +378,8 @@ With code:
                     backend="loky",
                     return_as="generator_unordered",
                 )(
-                    delayed(self.evolve_solution)(individual)
-                    for individual in new_offspring_population
+                    delayed(self.evolve_solution)(individual, i)
+                    for i, individual in enumerate(new_offspring_population)
                 )
             except Exception as e:
                 print("Parallel time out .")

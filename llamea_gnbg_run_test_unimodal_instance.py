@@ -3,7 +3,7 @@ import os
 import numpy as np
 import re
 from llamea import Gemini_LLM
-from llamea.llamea_multi_prompts import LLaMEA
+from llamea.llamea_api_rotations import LLaMEA
 from codes.gnbg_python.GNBG_instances import GNBG
 from calc_aocc_from_gnbg import calculate_aocc_from_gnbg_history
 from scipy.io import loadmat
@@ -17,11 +17,18 @@ if __name__ == "__main__":
     # AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs
     # AIzaSyCbiZx7Pmr5kWUihPXQ8nGvEsuo80kaiWE
     api_key = os.getenv("GEMINI_API_KEY")
+    api_keys = [
+        'AIzaSyAS4WrMPg7WNPXLpCYIOG49cIYOL7vTAl8',
+        'AIzaSyARJfdVOsI9AKUK6gxvUszL_bn5Z_lr5Wg',
+        'AIzaSyAEUmOe_NUQT_vGqRWH_9XnMDQuUe0CiKU',
+        'AIzaSyCbA5uIXRIIWnTv7HCUGX75WoYJ4PeZWd0'
+    ]
     # api_key = "AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs"
     ai_model = "gemini-1.5-flash"
     experiment_name = "pop1-5"
-    llm = Gemini_LLM("AIzaSyCK6miE77n6z7PUf0RNgj8seMiiVET-wqk", ai_model)
-    llm2 = Gemini_LLM("AIzaSyCK6miE77n6z7PUf0RNgj8seMiiVET-wqk", ai_model)
+
+    # llm = Gemini_LLM("AIzaSyCbA5uIXRIIWnTv7HCUGX75WoYJ4PeZWd0", ai_model)
+    llm_instances = [Gemini_LLM(key, ai_model) for key in api_keys]
     # llm = Ollama_LLM(model="llama3.2:3b-instruct-fp16")
     def evaluateGNBG(solution, explogger=None, details=True): # we need to change this function to GNBG 
         logger = logging.getLogger(__name__)
@@ -140,9 +147,9 @@ if __name__ == "__main__":
         # A 1+1 strategy
         es = LLaMEA(
             evaluateGNBG,
-            n_parents=30,
+            n_parents=5,
             n_offspring=10,
-            llm=llm,
+            llms=llm_instances,
             task_prompt=f7_f15_prompt,
             experiment_name=experiment_name,
             adaptive_mutation=True, # mutate the prompt
