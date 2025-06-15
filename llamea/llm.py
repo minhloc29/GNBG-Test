@@ -14,7 +14,7 @@ from ConfigSpace import ConfigurationSpace
 class LLM(ABC):
     def __init__(
         self,
-        api_key,
+        api_key: list,
         model="",
         base_url="",
         code_pattern=None,
@@ -82,7 +82,7 @@ class LLM(ABC):
         self.logger = logger
         self.log = True
 
-    def sample_solution(self, session_messages: list, parent_ids=[], HPO=False):
+    def sample_solution(self, session_messages: list, parent_ids=[], HPO=False, role_index = 0):
         """
         Interacts with a language model to generate or mutate solutions based on the provided session messages.
 
@@ -124,6 +124,7 @@ class LLM(ABC):
             configspace=cs,
             code=code,
             parent_ids=parent_ids,
+            role_prompt_index=role_index
         )
 
         return new_individual

@@ -18,6 +18,7 @@ class Solution:
         generation=0,
         parent_ids=[],
         operator=None,
+        role_prompt_index = 0
     ):
         """
         Initializes an individual with optional attributes.
@@ -43,7 +44,7 @@ class Solution:
         self.parent_ids = parent_ids
         self.metadata = {}  # Dictionary to store additional metadata
         self.operator = operator
-
+        self.role_prompt_index = role_prompt_index
     def set_operator(self, operator):
         """
         Sets the operator name that generated this individual.
@@ -84,7 +85,7 @@ class Solution:
         Returns:
             str: A string representing the solution in a summary format.
         """
-        return f"{self.name}: {self.description} (Score: {self.fitness})"
+        return f"{self.name}: {self.description} (Score: {self.fitness}), RoleIdx: {self.role_prompt_index}"
 
     def copy(self):
         """
@@ -101,6 +102,7 @@ class Solution:
             generation=self.generation + 1,
             parent_ids=[self.id],  # Link this solution as the parent
             operator=self.operator,
+            role_prompt_index=self.role_prompt_index
         )
         new_solution.metadata = self.metadata.copy()  # Copy the metadata as well
         return new_solution

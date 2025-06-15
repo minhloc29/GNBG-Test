@@ -2,15 +2,15 @@ import logging
 import os
 import numpy as np
 import re
-from llamea import LLaMEA, Gemini_LLM, Ollama_LLM
+from llamea import Gemini_LLM
+from llamea.llamea_multi_prompts import LLaMEA
 from codes.gnbg_python.GNBG_instances import GNBG
 from calc_aocc_from_gnbg import calculate_aocc_from_gnbg_history
 from scipy.io import loadmat
-from task_prompt import task_prompt_gnbg, simplified_task_prompt
-from crispe_inspired_prompt import prompt
-from unimodal_specialist_prompt import unimodal_prompt
-
-
+from prompt.crispe_inspired_prompt import prompt
+from prompt.unimodal_specialist_prompt import unimodal_prompt
+from prompt.f7_f15_prompt import f7_f15_prompt
+from prompt.f16_f24_prompt import f16_f24_prompt
 if __name__ == "__main__":    
     
     # Execution code starts here
@@ -20,7 +20,8 @@ if __name__ == "__main__":
     # api_key = "AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs"
     ai_model = "gemini-1.5-flash"
     experiment_name = "pop1-5"
-    llm = Gemini_LLM("AIzaSyAl9PJULvholPUitUGMH7knztrQ7E4OKPc", ai_model)
+    llm = Gemini_LLM("AIzaSyCK6miE77n6z7PUf0RNgj8seMiiVET-wqk", ai_model)
+    llm2 = Gemini_LLM("AIzaSyCK6miE77n6z7PUf0RNgj8seMiiVET-wqk", ai_model)
     # llm = Ollama_LLM(model="llama3.2:3b-instruct-fp16")
     def evaluateGNBG(solution, explogger=None, details=True): # we need to change this function to GNBG 
         logger = logging.getLogger(__name__)
@@ -37,9 +38,9 @@ if __name__ == "__main__":
         aucs = []
         detail_aucs = []
         algorithm = None
-        problem_indices_to_test = [1, 2, 3] 
+        problem_indices_to_test = [1, 2, 3, 4, 5, 6] 
         
-        for fid in problem_indices_to_test: # cal 24 functions from GNBG
+        for fid in [8]: # cal 24 functions from GNBG
             # representative of 3 function group
             filename = f'f{fid}.mat'
             GNBG_tmp = loadmat(os.path.join("codes/gnbg_python", filename))['GNBG']
@@ -58,7 +59,7 @@ if __name__ == "__main__":
             RotationMatrix = np.array(GNBG_tmp['RotationMatrix'][0, 0])
             OptimumValue = np.array([item[0] for item in GNBG_tmp['OptimumValue'].flatten()])[0, 0]
             OptimumPosition = np.array(GNBG_tmp['OptimumPosition'][0, 0])
-            problem = GNBG(10000, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate, CompMinPos, CompSigma, CompH, Mu, Omega, Lambda, RotationMatrix, OptimumValue, OptimumPosition)
+            problem = GNBG(50000, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate, CompMinPos, CompSigma, CompH, Mu, Omega, Lambda, RotationMatrix, OptimumValue, OptimumPosition)
             # max eval is just 1000
             # len of FEhistory should be equal to MaxEval or budget
             log_content = (
@@ -74,7 +75,7 @@ if __name__ == "__main__":
             
             logger.info(log_content)
             try:
-                algorithm = globals()[algorithm_name](budget=10000, dim=problem.Dimension,
+                algorithm = globals()[algorithm_name](budget=problem.MaxEvals, dim=problem.Dimension,
                     lower_bounds = [problem.MinCoordinate] * problem.Dimension,
                     upper_bounds = [problem.MaxCoordinate] * problem.Dimension
                     )
@@ -88,7 +89,7 @@ if __name__ == "__main__":
                 
             current_run_aocc = calculate_aocc_from_gnbg_history(fe_history=problem.FEhistory,
                                                     optimum_value=problem.OptimumValue, 
-                                                budget_B=10000)
+                                                budget_B=problem.MaxEvals)
             
             logging.info(f"Run function {fid} complete. FEHistory len: {len(problem.FEhistory)}, AOCC: {current_run_aocc:.4f}")
             logging.info(f"FeHistory: {problem.FEhistory}")
@@ -100,16 +101,16 @@ if __name__ == "__main__":
             
             
             all_run_aocc_scores.append(current_run_aocc)
-            if 1 <= fid <= 6: unimodal_aoccs.append(current_run_aocc)
-            # elif 7 <= fid <= 15: multimodal_single_aoccs.append(current_run_aocc)
-            # elif 16 <= fid <= 24: multimodal_multi_aoccs.append(current_run_aocc)
+            # if 1 <= fid <= 6: unimodal_aoccs.append(current_run_aocc)
+            if 7 <= fid <= 15: multimodal_single_aoccs.append(current_run_aocc)
+            # if 16 <= fid <= 24: multimodal_multi_aoccs.append(current_run_aocc)
         
-        unimodal_means = np.mean(unimodal_aoccs)
-        # multimodal_single_means = np.mean(multimodal_single_aoccs)
+        # unimodal_means = np.mean(unimodal_aoccs)
+        multimodal_single_means = np.mean(multimodal_single_aoccs)
         # multimodal_multi_means = np.mean(multimodal_multi_aoccs)
         
-        logging.info(f"Unimodal AOCC mean: {unimodal_means:.4f}")
-        # logging.info(f"Multimodal (single component) AOCC mean: {multimodal_single_means:.4f}")
+        # logging.info(f"Unimodal AOCC mean: {unimodal_means:.4f}")
+        logging.info(f"Multimodal (single component) AOCC mean: {multimodal_single_means:.4f}")
         # logging.info(f"Multimodal (multiple components) AOCC mean: {multimodal_multi_means:.4f}")
 
         auc_mean = np.mean(all_run_aocc_scores)
@@ -124,9 +125,9 @@ if __name__ == "__main__":
         feedback = f"The algorithm {algorithm_name} got an average Area over the convergence curve (AOCC, 1.0 is the best) score of {auc_mean:0.2f} with standard deviation {auc_std:0.2f}."
         if details:
             feedback = (
-                f"{feedback}\nThe mean AOCC score of the algorithm {algorithm_name} on Unimodal instances was {unimodal_means:.02f}, "
-                # f"on Multimodal instances with a single component {multimodal_single_means:.02f}, "
-                # f"on Multimodal instances with multiple components {multimodal_multi_means:.02f}" 
+                # f"{feedback}\nThe mean AOCC score of the algorithm {algorithm_name} on Unimodal instances was {unimodal_means:.02f}, "
+                f"The mean AOCC score of the algorithm {algorithm_name} on Multimodal instances with a single component {multimodal_single_means:.02f}, "
+                # f"The mean AOCC score of the algorithm {algorithm_name} on Multimodal instances with multiple components {multimodal_multi_means:.02f}" 
             )
 
         print(algorithm_name, algorithm, auc_mean, auc_std)
@@ -139,10 +140,10 @@ if __name__ == "__main__":
         # A 1+1 strategy
         es = LLaMEA(
             evaluateGNBG,
-            n_parents=5,
+            n_parents=30,
             n_offspring=10,
             llm=llm,
-            task_prompt=unimodal_prompt,
+            task_prompt=f7_f15_prompt,
             experiment_name=experiment_name,
             adaptive_mutation=True, # mutate the prompt
             elitism=True,
