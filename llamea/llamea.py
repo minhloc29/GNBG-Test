@@ -17,11 +17,8 @@ from .solution import Solution
 from .loggers import ExperimentLogger
 from .utils import NoCodeException, handle_timeout, discrete_power_law_distribution
 
-
-# TODOs:
-# Implement diversity selection mechanisms (none, prefer short code, update population only when (distribution of) results is different, AST / code difference)
-
-log_filename = f"logging/run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+folder = "logs/log_algorithms_details"
+log_filename = f"{folder}/run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 
 logging.basicConfig(
     filename=log_filename,
@@ -29,7 +26,6 @@ logging.basicConfig(
     format="%(asctime)s %(levelname)s %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S"
 )
-
 
 class LLaMEA:
     """

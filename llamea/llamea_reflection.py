@@ -20,8 +20,8 @@ from prompt.multi_role_prompts import *
 
 # TODOs:
 # Implement diversity selection mechanisms (none, prefer short code, update population only when (distribution of) results is different, AST / code difference)
-
-log_filename = f"log_run_algorithms/run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+folder = "log/log_run_algorithms"
+log_filename = f"{folder}/run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 
 logging.basicConfig(
     filename=log_filename,
@@ -128,7 +128,8 @@ class LLaMEA: # with key. rotations
         if max_workers > self.n_offspring:
             max_workers = self.n_offspring
         self.max_workers = max_workers
-
+        with open("prompt/reflective_prompt.txt", 'r') as f:
+            self.reflection_prompt = f.read()
     def _get_next_llm(self):
         """Cycles through the list of LLM instances in a round-robin fashion."""
         llm_instance = self.llms[self.llm_index]
@@ -170,7 +171,7 @@ class LLaMEA: # with key. rotations
             if hasattr(self.f, "log_individual"):
                 self.f.log_individual(new_individual)
         
-        return new_individual
+        return new_individual # = Solution class
 
     def initialize(self):
         """
@@ -198,6 +199,41 @@ class LLaMEA: # with key. rotations
         self.population = population  # Save the entire population
         self.update_best()
 
+    def perform_reflection(self):
+        chosen_llm = self.llms[0] 
+        self.textlog.info(f"--- Performing Long-Term Reflection at Generation {self.generation} ---")
+        sorted_population = sorted(
+            [p for p in self.population if np.isfinite(p.fitness)], 
+            key=lambda x: x.fitness, 
+            reverse=not self.minimization
+        )
+        if not sorted_population:
+            self.textlog.warning("Skipping reflection: No valid individuals in population.")
+            return
+        
+        lst_method_str = ""
+        for i, sol in enumerate(sorted_population):
+            lst_method_str += f"### Rank {i+1} (Score: {sol.fitness:.4e})\n"
+            lst_method_str += f"# Name: {sol.name}\n"
+            lst_method_str += f"# Description: {sol.description}\n"
+            lst_method_str += f"# Code:\n```python\n{sol.code}\n```\n\n"
+            
+        full_reflection_prompt = self.reflection_prompt.format(lst_method=lst_method_str)
+        try:
+            # It's recommended to use a powerful model for this reasoning task if possible
+            response_text = chosen_llm.sample_solution([{"role": "user", "content": full_reflection_prompt}], role_index = 0)
+            
+            # 4. Parse the response and update the strategy
+            if response_text and "**Experience:**" in response_text:
+                # Extract the text after "**Experience:**"
+                experience_part = response_text.split("**Experience:**", 1)[1].strip()
+                self.long_term_experience = experience_part
+                self.textlog.info(f"Updated Long-Term Experience: {self.long_term_experience}")
+            else:
+                self.textlog.warning("Long-term reflection response did not contain 'Experience:'. Using previous strategy.")
+        except Exception as e:
+            self.textlog.error(f"Failed to perform long-term reflection: {e}", exc_info=True)
+            
     def evaluate_fitness(self, individual):
         """
         Evaluates the fitness of the provided individual by invoking the evaluation function `f`.
@@ -396,6 +432,9 @@ With code:
 
             # Update population and the best solution
             self.population = self.selection(self.population, new_population)
+            # add reflection here
+            print("Perform Reflection!!!!!!!!!!!!!!!!")
+            self.perform_reflection()
             self.update_best()
             self.logevent(
                 f"Generation {self.generation}, best so far: {self.best_so_far.fitness}"

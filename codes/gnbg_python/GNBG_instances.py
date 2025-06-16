@@ -38,8 +38,6 @@ import numpy as np
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
 from scipy.optimize import differential_evolution
-from calc_aocc_from_gnbg import calculate_aocc_from_gnbg_history
-
 
 # Define the GNBG class
 class GNBG:

@@ -1,0 +1,23 @@
+### Problem Description
+The algorithms below were designed to solve problems from the GNBG (Generalized Numerical Benchmark Generator) test suite. This is a highly challenging set of 24 box-constrained numerical minimization problems in 30 dimensions. The suite is designed to test a wide range of an algorithm's capabilities. Key challenges include:
+Diverse Modality: The suite contains simple unimodal functions (like f1), highly rugged single-basin multimodal functions (like f8), and deceptive multi-component functions with competing basins of attraction (like f16, f21).
+Ill-Conditioning: Several functions have very narrow, elongated, and rotated valleys that are difficult to navigate.
+Deception: Many functions are designed to trap algorithms in large, attractive, but suboptimal regions.
+An ideal algorithm must have a robust balance of global exploration (to handle the multi-component and deceptive problems) and efficient local exploitation (to handle the ill-conditioned and rugged problems).
+
+### List heuristics
+Below is a list of design heuristics ranked from best to worst based on their average AOCC score across a subset of the GNBG benchmark.
+{lst_method}
+
+### Guide
+Keep in mind, this is a list of design heuristics ranked from best to worst. The first algorithm in the list is the best performing on average, and the last is the worst.
+Your response must be in Markdown format and contain nothing else. It must have the following structure:
+"**Analysis:**
+**Experience:**"
+In there:
++ Meticulously analyze comments, docstrings and source code of several pairs (Better code - Worse code) in List heuristics to fill values for **Analysis:**.
+Example: "Comparing (best) vs (worst), we see ...;  (second best) vs (second worst) ...; Comparing (1st) vs (2nd), we see ...; (3rd) vs (4th) ...; Comparing (second worst) vs (worst), we see ...; Overall:"
+
++ Self-reflect to extract useful experience for design better heuristics and fill to **Experience:** (<60 words).
+
+I'm going to tip $999K for a better heuristics! Let's think step by step.

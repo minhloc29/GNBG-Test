@@ -1,9 +1,8 @@
 exp*
 LLaMEA/exp*
-hihi/
 results/
 test/
-generated_algo.py
 __pycache__/
 .idea/
 code_test.ipynb
+logs/
