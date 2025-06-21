@@ -29,10 +29,7 @@ logging.basicConfig(
 
 import random
 
-class AdaptiveGaussianSamplingEAwithArchive:
-    """
-    Combines adaptive Gaussian sampling with an archive to enhance exploration and exploitation in multimodal landscapes.
-    """
+class AdaptiveMultimodalOptimizer: #f24, aocc: 0.03 on 70.000
     def __init__(self, budget: int, dim: int, lower_bounds: list[float], upper_bounds: list[float]):
         self.budget = int(budget)
         self.dim = int(dim)
@@ -42,110 +39,89 @@ class AdaptiveGaussianSamplingEAwithArchive:
         self.eval_count = 0
         self.best_solution_overall = None
         self.best_fitness_overall = float('inf')
-        self.population_size = 100
-        self.archive_size = 200
-        self.sigma = 0.2 * (self.upper_bounds - self.lower_bounds)
-        self.sigma_decay = 0.99
-        self.archive = []
+        self.population_size = 100  # Adjust as needed
+        self.population = None
+        self.fitness_values = None
+        self.F = 0.8 #Differential Evolution scaling factor
+        self.CR = 0.9 #Differential Evolution crossover rate
+        self.niche_radius = 0.1 # Adjust based on problem scaling.
+
 
     def optimize(self, objective_function: callable, acceptance_threshold: float = 1e-8) -> tuple:
         self.eval_count = 0
-        self.best_solution_overall = np.random.uniform(self.lower_bounds, self.upper_bounds, self.dim)
-        self.best_fitness_overall = objective_function(self.best_solution_overall.reshape(1, -1))[0]
-        self.eval_count += 1
-
-        population = self._initialize_population()
-        fitness_values = objective_function(population)
+        self.population = np.random.uniform(self.lower_bounds, self.upper_bounds, (self.population_size, self.dim))
+        self.fitness_values = objective_function(self.population)
         self.eval_count += self.population_size
 
-        self.archive = self._update_archive(population, fitness_values)
+        self.best_solution_overall = self.population[np.argmin(self.fitness_values)]
+        self.best_fitness_overall = np.min(self.fitness_values)
 
         while self.eval_count < self.budget:
-            parents = self._tournament_selection(population, fitness_values)
-            offspring = self._gaussian_recombination(parents)
-            offspring = self._adaptive_mutation(offspring)
+            offspring = self.generate_offspring()
             offspring_fitness = objective_function(offspring)
             self.eval_count += len(offspring)
 
-            population, fitness_values = self._select_next_generation(
-                population, fitness_values, offspring, offspring_fitness
-            )
+            # Selection with Niching
+            combined_population = np.vstack((self.population, offspring))
+            combined_fitness = np.concatenate((self.fitness_values, offspring_fitness))
+            
+            sorted_indices = np.argsort(combined_fitness)
+            
+            new_population = []
+            new_fitness = []
+            
+            for i in sorted_indices:
+                is_duplicate = False
+                for j in range(len(new_population)):
+                    if np.linalg.norm(combined_population[i] - new_population[j]) < self.niche_radius:
+                         is_duplicate = True
+                         break
+                if not is_duplicate:
+                    new_population.append(combined_population[i])
+                    new_fitness.append(combined_fitness[i])
+                    if len(new_population) >= self.population_size:
+                        break
 
-            self.archive = self._update_archive(
-                np.vstack((population, offspring)),
-                np.concatenate((fitness_values, offspring_fitness))
-            )
 
-            self._update_best(offspring, offspring_fitness)
-            self.sigma *= self.sigma_decay
+            self.population = np.array(new_population)
+            self.fitness_values = np.array(new_fitness)
+
+            best_index = np.argmin(self.fitness_values)
+            if self.fitness_values[best_index] < self.best_fitness_overall:
+                self.best_solution_overall = self.population[best_index]
+                self.best_fitness_overall = self.fitness_values[best_index]
+
+            #Adaptive Mutation (adjust F based on progress)
+            if self.eval_count % (self.budget //10) == 0: #adjust every 10% of the budget
+                if self.best_fitness_overall < np.median(self.fitness_values):
+                  self.F *= 0.9  # Reduce exploration if making good progress
+                else:
+                  self.F *= 1.1 #Increase exploration if stuck
+
+            self.F = max(0.1, min(1, self.F)) #keep F within reasonable range
+
+
 
         optimization_info = {
             'function_evaluations_used': self.eval_count,
             'final_best_fitness': self.best_fitness_overall
         }
-
         return self.best_solution_overall, self.best_fitness_overall, optimization_info
 
-    def _initialize_population(self):
-        center = np.random.uniform(self.lower_bounds, self.upper_bounds, self.dim)
-        population = np.random.normal(center, self.sigma, size=(self.population_size, self.dim))
-        return np.clip(population, self.lower_bounds, self.upper_bounds)
+    def generate_offspring(self):
+        offspring = np.zeros((self.population_size, self.dim))
+        for i in range(self.population_size):
+            a, b, c = random.sample(range(self.population_size), 3)
+            while a == b or b == c or a ==c:
+                a, b, c = random.sample(range(self.population_size), 3)
+            mutant = self.population[a] + self.F * (self.population[b] - self.population[c])
+            
+            #Bound Constraints Handling
+            mutant = np.clip(mutant, self.lower_bounds, self.upper_bounds)
 
-    def _tournament_selection(self, population, fitness_values):
-        tournament_size = 5
-        num_parents = self.population_size // 2
-        selected_parents = []
-
-        for _ in range(num_parents):
-            tournament = np.random.choice(len(population), tournament_size, replace=False)
-            winner_index = tournament[np.argmin(fitness_values[tournament])]
-            selected_parents.append(population[winner_index])
-
-        return np.array(selected_parents)
-
-    def _gaussian_recombination(self, parents):
-        offspring = []
-
-        for i in range(0, len(parents), 2):
-            parent1 = parents[i]
-            parent2 = parents[i + 1]
-            midpoint = (parent1 + parent2) / 2
-            child1 = midpoint + np.random.normal(0, self.sigma / 2, self.dim)
-            child2 = midpoint + np.random.normal(0, self.sigma / 2, self.dim)
-            offspring.extend([child1, child2])
-
-        return np.clip(np.array(offspring), self.lower_bounds, self.upper_bounds)
-
-    def _adaptive_mutation(self, offspring):
-        mutated = offspring + np.random.normal(0, self.sigma, size=offspring.shape)
-        return np.clip(mutated, self.lower_bounds, self.upper_bounds)
-
-    def _select_next_generation(self, population, fitness_values, offspring, offspring_fitness):
-        combined_pop = np.vstack((population, offspring))
-        combined_fit = np.concatenate((fitness_values, offspring_fitness))
-        sorted_indices = np.argsort(combined_fit)
-
-        next_gen = combined_pop[sorted_indices[:self.population_size]]
-        next_fit = combined_fit[sorted_indices[:self.population_size]]
-        return next_gen, next_fit
-
-    def _update_best(self, offspring, offspring_fitness):
-        for i, fitness in enumerate(offspring_fitness):
-            if fitness < self.best_fitness_overall:
-                self.best_fitness_overall = fitness
-                self.best_solution_overall = offspring[i]
-
-    def _update_archive(self, population, fitness_values):
-        combined = np.column_stack((population, fitness_values))
-        new_archive = []
-
-        for sol in combined:
-            already_present = any(np.allclose(sol[:-1], arch[:-1], atol=1e-6) for arch in self.archive)
-            if not already_present:
-                new_archive.append(sol)
-
-        new_archive.sort(key=lambda x: x[-1])
-        return np.array(new_archive[:self.archive_size])
+            crossover_points = np.random.rand(self.dim) < self.CR
+            offspring[i] = np.where(crossover_points, mutant, self.population[i])
+        return offspring
 
 
 
@@ -185,7 +161,7 @@ def run_optimization(MaxEvals, AcceptanceThreshold,
         # Initialize algorithm
        
         
-        optimizer = AdaptiveGaussianSamplingEAwithArchive(
+        optimizer = AdaptiveMultimodalOptimizer(
             budget=MaxEvals,
             dim=gnbg.Dimension,
             lower_bounds=[gnbg.MinCoordinate for _ in range(gnbg.Dimension)],
@@ -207,7 +183,14 @@ def run_optimization(MaxEvals, AcceptanceThreshold,
         aoccs.append(aocc)
         
         logging.info(f"Run {run + 1} completed. Best fitness: {best_fitness:.6e}, AOCC: {aocc:.4f}")
-            
+        logging.info(f"\nResults for Problem {ProblemIndex}:")
+        logging.info(f"Best solution: {best_solutions}")
+        logging.info(f"Optimun Solution: {OptimumValue}")
+        logging.info(f"Best fitness values: {best_values[1:]}")
+        logging.info(f"Mean fitness: {np.mean(best_values[1:])}")
+        logging.info(f"Std fitness: {np.std(best_values[1:])}") 
+        logging.info(f"Mean AOCC:         {np.mean(aoccs):.4f} (Higher is better)")
+        logging.info(f"Std Dev AOCC:      {np.std(aoccs):.4f}")
     return best_values, best_solutions, aoccs
 if __name__ == "__main__":
     folder_path = "codes/gnbg_python"
@@ -233,7 +216,7 @@ if __name__ == "__main__":
         OptimumValue = np.array([item[0] for item in GNBG_tmp['OptimumValue'].flatten()])[0, 0]
         OptimumPosition = np.array(GNBG_tmp['OptimumPosition'][0, 0])
         
-        best_values, best_solutions, aoccs = run_optimization(200000, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate,
+        best_values, best_solutions, aoccs = run_optimization(700000, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate,
                                                        CompMinPos, CompSigma, CompH, Mu, Omega, Lambda, RotationMatrix, OptimumValue, OptimumPosition)
     else:
         raise ValueError('ProblemIndex must be between 1 and 24.')

@@ -1,7 +1,3 @@
-"""LLaMEA - LLM powered Evolutionary Algorithm for code optimization
-This module integrates OpenAI's language models to generate and evolve
-algorithms to automatically evaluate (for example metaheuristics evaluated on BBOB).
-"""
 import copy
 import os
 

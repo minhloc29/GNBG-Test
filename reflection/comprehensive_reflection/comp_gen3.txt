@@ -1,0 +1,7 @@
+* **Keywords:**  High-dimensional, multimodal, diversity, adaptive mutation, archive, selection, distribution, DE (Differential Evolution).
+
+* **Advice:** Focus on quantifiable metrics for evaluating diversity and exploitation/exploration balance.  Develop rigorous methods for selecting mutation distributions based on problem characteristics (e.g., dimensionality, modality).  Experiment with different archive management strategies (size, update frequency).  Benchmark against simple, well-tuned baselines.
+
+* **Avoid:** Vague statements like "complex strategies," "effective balance," and problem-dependent advice without concrete implementation details.  Avoid subjective judgments about complexity without empirical evidence.
+
+* **Explanation:** The goal is to move beyond qualitative observations towards a more rigorous, data-driven approach to heuristic design.  By focusing on measurable quantities and comparative analysis, we can create heuristics that are demonstrably superior and less susceptible to overfitting to specific problems.

@@ -13,7 +13,6 @@ if __name__ == "__main__":
     # Execution code starts here
     # AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs
     # AIzaSyCbiZx7Pmr5kWUihPXQ8nGvEsuo80kaiWE
-    api_key = os.getenv("GEMINI_API_KEY")
     api_keys = [
           'AIzaSyCK6miE77n6z7PUf0RNgj8seMiiVET-wqk',
           'AIzaSyARJfdVOsI9AKUK6gxvUszL_bn5Z_lr5Wg'
