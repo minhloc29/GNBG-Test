@@ -4,6 +4,7 @@ algorithms to automatically evaluate (for example metaheuristics evaluated on BB
 """
 import concurrent.futures
 import logging
+import multiprocessing as mp
 import random
 import re
 import traceback
@@ -13,9 +14,9 @@ from ConfigSpace import ConfigurationSpace
 from joblib import Parallel, delayed
 from datetime import datetime
 
-from .solution import Solution
-from .loggers import ExperimentLogger
-from .utils import NoCodeException, handle_timeout, discrete_power_law_distribution
+from llamea.solution import Solution
+from llamea.loggers import ExperimentLogger
+from llamea.utils import NoCodeException, handle_timeout, discrete_power_law_distribution, file_to_string
 from prompt.multi_role_prompts import *
 
 # TODOs:
@@ -44,8 +45,6 @@ class LLaMEA: # with key. rotations
         llms: list,
         n_parents=5,
         n_offspring=10,
-        role_prompt="",
-        task_prompt="",
         experiment_name="",
         elitism=False,
         HPO=False,
@@ -58,41 +57,13 @@ class LLaMEA: # with key. rotations
         minimization=False,
         _random=False,
     ):
-        """
-        Initializes the LLaMEA instance with provided parameters. Note that by default LLaMEA maximizes the objective.
-
-        Args:
-            f (callable): The evaluation function to measure the fitness of algorithms.
-            n_parents (int): The number of parents in the population.
-            n_offspring (int): The number of offspring each iteration.
-            elitism (bool): Flag to decide if elitism (plus strategy) should be used in the evolutionary process or comma strategy.
-            role_prompt (str): A prompt that defines the role of the language model in the optimization task.
-            task_prompt (str): A prompt describing the task for the language model to generate optimization algorithms.
-            experiment_name (str): The name of the experiment for logging purposes.
-            elitism (bool): Flag to decide if elitism should be used in the evolutionary process.
-            HPO (bool): Flag to decide if hyper-parameter optimization is part of the evaluation function.
-                In case it is, a configuration space should be asked from the LLM as additional output in json format.
-            mutation_prompts (list): A list of prompts to specify mutation operators to the LLM model. Each mutation, a random choice from this list is made.
-            adaptive_mutation (bool): If set to True, the mutation prompt 'Change X% of the lines of code' will be used in an adaptive control setting.
-                This overwrites mutation_prompts.
-            budget (int): The number of generations to run the evolutionary algorithm.
-            eval_timeout (int): The number of seconds one evaluation can maximum take (to counter infinite loops etc.). Defaults to 1 hour.
-            log (bool): Flag to switch of the logging of experiments.
-            minimization (bool): Whether we minimize or maximize the objective function. Defaults to False.
-            _random (bool): Flag to switch to random search (purely for debugging).
-        """
+       
         self.llms = llms
         self.llm_index = 0
-        self.i = 0 # circle the role prompt around
         self.eval_timeout = eval_timeout
         self.f = f  # evaluation function, provides an individual as output.
-        self.role_prompt = role_prompt
-        if role_prompt == "":
-            self.role_prompt = [role1]
-        if task_prompt == "":
-            self.task_prompt = "Hihi"
-        else:
-            self.task_prompt = task_prompt
+     
+       
         self.mutation_prompts = mutation_prompts
         self.adaptive_mutation = adaptive_mutation
         if mutation_prompts == None:
@@ -117,7 +88,7 @@ class LLaMEA: # with key. rotations
         self.best_so_far = Solution(name="", code="")
         self.best_so_far.set_scores(self.worst_value, "", "")
         self.experiment_name = experiment_name
-
+        self.elitist = None # the best solution object found
         if self.log:
             # modelname = self.model.replace(":", "_")
             self.logger = ExperimentLogger(f"LLaMEA--{experiment_name}")
@@ -128,8 +99,14 @@ class LLaMEA: # with key. rotations
         if max_workers > self.n_offspring:
             max_workers = self.n_offspring
         self.max_workers = max_workers
-        with open("prompt/reflective_prompt.txt", 'r') as f:
-            self.reflection_prompt = f.read()
+        # Define prompt
+        self.reflection_prompt = file_to_string("prompt/reflective_prompt.txt")
+        self.crossover_prompt = file_to_string("prompt/crossover.txt")
+        self.role_prompt = file_to_string("prompt/role_generator.txt")
+        self.task_prompt = file_to_string("prompt/task_output_generator.txt")
+        self.comprehensive_reflection_prompt = file_to_string("prompt/comprehensive_reflection.txt")
+        self.str_comprehensive_memory = ""
+        
     def _get_next_llm(self):
         """Cycles through the list of LLM instances in a round-robin fashion."""
         llm_instance = self.llms[self.llm_index]
@@ -139,6 +116,7 @@ class LLaMEA: # with key. rotations
 
     def logevent(self, event):
         self.textlog.info(event)
+
 
     def initialize_single(self, role_index: int):
         """
@@ -152,7 +130,7 @@ class LLaMEA: # with key. rotations
         session_messages = [
             {
                 "role": "user",
-                "content": current_role_prompt
+                "content": self.role_prompt
                 + self.task_prompt
             },
         ]
@@ -177,13 +155,12 @@ class LLaMEA: # with key. rotations
         """
         Initializes the evolutionary process by generating the first parent population.
         """
-       
         population = []
         population_gen = []
         try:
             timeout = self.eval_timeout
             population_gen = Parallel( # maybe this
-                n_jobs=self.max_workers,
+                n_jobs=2,
                 backend="loky",
                 timeout=timeout + 15,
                 return_as="generator_unordered",
@@ -196,10 +173,10 @@ class LLaMEA: # with key. rotations
             population.append(p)
 
         self.generation += 1
-        self.population = population  # Save the entire population
+        self.population.extend(population)  # Save the entire population
         self.update_best()
 
-    def perform_reflection(self):
+    def flash_reflection(self, selected_population: list[Solution]):
         chosen_llm = self.llms[0] 
         self.textlog.info(f"--- Performing Long-Term Reflection at Generation {self.generation} ---")
         sorted_population = sorted(
@@ -213,27 +190,45 @@ class LLaMEA: # with key. rotations
         
         lst_method_str = ""
         for i, sol in enumerate(sorted_population):
-            lst_method_str += f"### Rank {i+1} (Score: {sol.fitness:.4e})\n"
+            lst_method_str += f"### Rank {i+1} (AOCC Score: {sol.fitness:.4e})\n"
             lst_method_str += f"# Name: {sol.name}\n"
             lst_method_str += f"# Description: {sol.description}\n"
             lst_method_str += f"# Code:\n```python\n{sol.code}\n```\n\n"
             
-        full_reflection_prompt = self.reflection_prompt.format(lst_method=lst_method_str)
+        full_reflection_prompt = self.reflection_prompt.format(problem_desc = self.role_prompt,
+                                                               lst_method=lst_method_str)
+        print(f"Reflection Prompt: {full_reflection_prompt}")
         try:
             # It's recommended to use a powerful model for this reasoning task if possible
-            response_text = chosen_llm.sample_solution([{"role": "user", "content": full_reflection_prompt}], role_index = 0)
-            
+            response_text = chosen_llm.query([{"role": "user", "content": full_reflection_prompt}])
+            self.textlog.info(f"Full response text: {response_text}")
             # 4. Parse the response and update the strategy
-            if response_text and "**Experience:**" in response_text:
+            if response_text and "**Experience:**" in response_text and "**Analysis:**" in response_text:
                 # Extract the text after "**Experience:**"
-                experience_part = response_text.split("**Experience:**", 1)[1].strip()
-                self.long_term_experience = experience_part
-                self.textlog.info(f"Updated Long-Term Experience: {self.long_term_experience}")
+                analyze_start = response_text.find("**Analysis:**") + len("**Analysis:**")
+                exp_start = response_text.find("**Experience:**")
+                
+                analysis_text = response_text[analyze_start:exp_start].strip()
+                experience_text = response_text[exp_start + len("**Experience:**"):].strip()
+                
+                flash_reflection_json = {
+                    "analyze": analysis_text,
+                    "exp": experience_text
+                }
+                
+                self.str_flash_memory = flash_reflection_json # user this later in comprehensive reflection, to compare this with previous reflection
+                file_name = f"reflection/problem_iter_flash_reflection.txt"
+                with open(file_name, 'w') as file:
+                    file.writelines(response_text)
             else:
                 self.textlog.warning("Long-term reflection response did not contain 'Experience:'. Using previous strategy.")
         except Exception as e:
             self.textlog.error(f"Failed to perform long-term reflection: {e}", exc_info=True)
-            
+    
+    # def comprehensive_reflection(self):
+    #     user_prompt = self.comprehensive_reflection_prompt.format(
+    #         curr_reflection = self.str_flash_memory['exp'],
+    #     )
     def evaluate_fitness(self, individual):
         """
         Evaluates the fitness of the provided individual by invoking the evaluation function `f`.
@@ -245,65 +240,78 @@ class LLaMEA: # with key. rotations
         Returns:
             tuple: Updated individual with "_feedback", "_fitness" (float), and "_error" (string) filled.
         """
-        updated_individual = self.f(individual, self.logger)
-        print(f"Update_individual is: {updated_individual}")
+        timeout_seconds = 60
 
-        return updated_individual
+        def run_evaluation():
+            try:
+                return self.f(individual, self.logger)
+            except Exception as e:
+                return e
 
-    def construct_prompt(self, individual):
-        """
-        Constructs a new session prompt for the language model based on a selected individual.
+        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+            future = executor.submit(run_evaluation)
+            try:
+                result = future.result(timeout=timeout_seconds)
+            except concurrent.futures.TimeoutError:
+                msg = f"[TIMEOUT] Evaluation exceeded {timeout_seconds} seconds and was skipped."
+                individual.set_scores(self.worst_value, msg, msg)
+                self.logevent(msg)
+                if hasattr(self.f, "log_individual"):
+                    self.f.log_individual(individual)
+                return individual
 
-        Args:
-            individual (dict): The individual to mutate.
+        if isinstance(result, Exception):
+            msg = f"[ERROR] Evaluation failed: {repr(result)}"
+            individual.set_scores(self.worst_value, msg, msg)
+            self.logevent(msg)
+            if hasattr(self.f, "log_individual"):
+                self.f.log_individual(individual)
+            return individual
 
-        Returns:
-            list: A list of dictionaries simulating a conversation with the language model for the next evolutionary step.
-        """
-        # Generate the current population summary
-        current_role_prompt = self.role_prompt[individual.role_prompt_index % len(self.role_prompt)]
-        population_summary = "\n".join([ind.get_summary() for ind in self.population])
-        solution = individual.code
-        description = individual.description
-        feedback = individual.feedback
-        if self.adaptive_mutation == True:
-            num_lines = len(solution.split("\n"))
-            prob = discrete_power_law_distribution(num_lines, 1.5)
-            new_mutation_prompt = f"""Refine the strategy of the selected solution to improve it. 
-Make sure you only change {(prob*100):.1f}% of the code, which means if the code has 100 lines, you can only change {prob*100} lines, and the rest of the lines should remain unchanged. 
-This input code has {num_lines} lines, so you can only change {max(1, int(prob*num_lines))} lines, the rest {num_lines-max(1, int(prob*num_lines))} lines should remain unchanged. 
-This changing rate {(prob*100):.1f}% is a mandatory requirement, you cannot change more or less than this rate.
-"""
-            self.mutation_prompts = [new_mutation_prompt]
+        return result
 
-        mutation_operator = random.choice(self.mutation_prompts)
-        individual.set_operator(mutation_operator)
 
-        final_prompt = f"""{self.task_prompt}
-The current population of algorithms already evaluated (name, description, score) is:
-{population_summary}
 
-The selected solution to update is:
-{description}
 
-With code:
-{solution}
 
-{feedback}
-
-{mutation_operator}
-"""
-        print(f"Feedback is: {feedback}")
-        session_messages = [
-            {"role": "user", "content": current_role_prompt + final_prompt},
-        ]
-
-        if self._random:  # not advised to use, only for debugging purposes
+    def crossover(self, parents: list[dict]) -> list[dict]:
+        if len(parents) % 2 != 0:
+            parents.pop()
+        offspring_list = []
+        chosen_llm = self.llms[0]
+        self.textlog.info(f"Generating offspring via Crossover...")
+        for i in range(0, len(parents), 2):
+            # Select two individuals
+            if parents[i].fitness < parents[i + 1].fitness:
+                parent_1 = parents[i]
+                parent_2 = parents[i + 1]
+            else:
+                parent_1 = parents[i + 1]
+                parent_2 = parents[i]
+            
+            full_crossover_prompt = self.crossover_prompt.format(
+                role = self.role_prompt,
+                func_signature_m1 = parent_1.name,
+                func_signature_m2 = parent_2.name,
+                code_method1 = parent_1.code,
+                code_method2 = parent_2.code,
+                analyze = self.str_flash_memory['analyze'], # str flash is a json with 2 keys
+                exp = self.str_flash_memory['exp']
+            )
+            # print(f"Full: {full_crossover_prompt}")
             session_messages = [
-                {"role": "user", "content": self.task_prompt},
+                {
+                    "role": "user", 
+                    "content": full_crossover_prompt + self.task_prompt
+                },
             ]
-        # Logic to construct the new prompt based on current evolutionary state.
-        return session_messages
+            offspring = chosen_llm.sample_solution(session_messages)
+            print("Sample in crossover sucessfully!")
+            offspring.generation = self.generation
+            offspring = self.evaluate_fitness(offspring)
+            offspring_list.append(offspring)
+        logging.info("Crossover Prompt: " + full_crossover_prompt)
+        return offspring_list            
 
     def update_best(self):
         """
@@ -320,7 +328,8 @@ With code:
             if best_individual.fitness < self.best_so_far.fitness:
                 self.best_so_far = best_individual
         print(f"Best individual fitness is: {best_individual.fitness}")
-    def selection(self, parents, offspring):
+        
+    def selection(self, parents, offspring): # sort the parents and offsprings and choose the new population = parent length
         """
         Select the new population based on the parents and the offspring and the current strategy.
 
@@ -331,6 +340,7 @@ With code:
         Returns:
             list: List of new selected population.
         """
+        print(f"parent: {parents}")
         reverse = self.minimization == False
 
         # TODO filter out non-diverse solutions
@@ -340,7 +350,7 @@ With code:
             # Sort by fitness
             combined_population.sort(key=lambda x: x.fitness, reverse=reverse)
             # Select the top individuals to form the new population
-            new_population = combined_population[: self.n_parents]
+            new_population = combined_population[: 5]
         else:
             # Sort offspring by fitness
             offspring.sort(key=lambda x: x.fitness, reverse=reverse)
@@ -379,19 +389,18 @@ With code:
         # self.progress_bar.update(1)
         return evolved_individual
 
-    def run(self):
-        """
-        Main loop to evolve the solutions until the evolutionary budget is exhausted.
-        The method iteratively refines solutions through interaction with the language model,
-        evaluates their fitness, and updates the best solution found.
-
+    def run(self): 
+        """ 
+        initialization -> selection -> flash reflection -> comprehensive reflection -> crossover -> elitist mutation
+        flash reflection = 
+        1. comprehensive description on ranking pairs
+        2. compare the analysis at time step t to that of time step t-1 => guide information
+        
         Returns:
             tuple: A tuple containing the best solution and its fitness at the end of the evolutionary process.
         """
-        # self.progress_bar = tqdm(total=self.budget)
         self.logevent("Initializing first population")
         self.initialize()  # Initialize a population
-        # self.progress_bar.update(self.n_parents)
 
         if self.log:
             self.logger.log_population(self.population)
@@ -400,45 +409,23 @@ With code:
             f"Started evolutionary loop, best so far: {self.best_so_far.fitness}"
         )
         while len(self.run_history) < self.budget:
-            # pick a new offspring population using random sampling
-            new_offspring_population = np.random.choice(
-                self.population, self.n_offspring, replace=True
-            )
 
-            new_population = []
-            try:
-                timeout = self.eval_timeout
-                new_population_gen = Parallel(
-                    n_jobs=self.max_workers,
-                    timeout=timeout + 15,
-                    backend="loky",
-                    return_as="generator_unordered",
-                )(
-                    delayed(self.evolve_solution)(individual, i)
-                    for i, individual in enumerate(new_offspring_population)
-                )
-            except Exception as e:
-                print("Parallel time out .")
-
-            for p in new_population_gen:
+            population_to_select = self.population
+            selected_population = self.selection(self.population, population_to_select) # if choose as the parents length
+            self.flash_reflection(selected_population) 
+            offsprings = self.crossover(selected_population)
+            
+            for p in offsprings:
                 self.run_history.append(p)
-                new_population.append(p)
                 print(f"Run history: {self.run_history}") # run history [1, 2, 3]
-                print(f"New_population: {new_population}") # return 3, as 3 is the latest
+                print(f"New_population: {offsprings}") # return 3, as 3 is the latest
             self.generation += 1
-
             if self.log:
-                self.logger.log_population(new_population)
-
-            # Update population and the best solution
-            self.population = self.selection(self.population, new_population)
-            # add reflection here
-            print("Perform Reflection!!!!!!!!!!!!!!!!")
-            self.perform_reflection()
+                self.logger.log_population(offsprings)
+            self.population = self.selection(self.population, offsprings)
             self.update_best()
             self.logevent(
                 f"Generation {self.generation}, best so far: {self.best_so_far.fitness}"
             )
             
-
         return self.best_so_far

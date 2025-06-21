@@ -51,3 +51,7 @@ def calculate_aocc_from_gnbg_history(fe_history, optimum_value, budget_B,
         aocc_terms.append(score_at_fe)
         
     return np.mean(aocc_terms) if aocc_terms else 0.0
+
+def file_to_string(filename):
+    with open(filename, 'r') as file:
+        return file.read()

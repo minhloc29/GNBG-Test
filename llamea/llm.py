@@ -107,13 +107,23 @@ class LLM(ABC):
 
         if self.log:
             self.logger.log_conversation(self.model, message)
+        try:
+            code = self.extract_algorithm_code(message)
+        except NoCodeException:
+            if self.log:
+                self.logger.log_conversation("system", "[ERROR] No code block found in LLM response.")
+            raise
+        try:
+            name = re.findall(
+                "class\\s*(\\w*)(?:\\(\\w*\\))?\\:",
+                code,
+                re.IGNORECASE,
+            )[0]
+        except IndexError:
+            name = "UnnamedAlgorithm"
+            if self.log:
+                self.logger.log_conversation("system", "[WARNING] No class name found in code block.")
 
-        code = self.extract_algorithm_code(message)
-        name = re.findall(
-            "class\\s*(\\w*)(?:\\(\\w*\\))?\\:",
-            code,
-            re.IGNORECASE,
-        )[0]
         desc = self.extract_algorithm_description(message)
         cs = None
         if HPO:

@@ -1,3 +1,5 @@
+import numpy as np
+import random
 class AdaptiveMultimodalOptimizerImproved:
     def __init__(self, budget: int, dim: int, lower_bounds: list[float], upper_bounds: list[float]):
         self.budget = int(budget)

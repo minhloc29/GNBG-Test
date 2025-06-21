@@ -38,3 +38,7 @@ def discrete_power_law_distribution(n, beta):
     else:
         sample = np.random.choice(elements, p=probabilities)
         return sample / n
+
+def file_to_string(filename):
+    with open(filename, 'r') as file:
+        return file.read()

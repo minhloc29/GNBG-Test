@@ -1,5 +1,4 @@
-task_prompt = '''
-Provide a complete, standalone Python function. The Python class **must** adhere to the following structure:
+Provide a complete, standalone Python function. The Python class must adhere to the following structure:
 
 1.  `__init__(self, budget: int, dim: int, lower_bounds: list[float], upper_bounds: list[float])`:
     * `budget`: Max function evaluations.
@@ -62,4 +61,3 @@ class YourUniqueAlgorithmName:
             'final_best_fitness': self.best_fitness_overall
         }
         return self.best_solution_overall, self.best_fitness_overall, optimization_info
-'''

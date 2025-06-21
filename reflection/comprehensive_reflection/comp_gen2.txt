@@ -1,0 +1,8 @@
+* **Keywords:**  Adaptive heuristics,  diversity metrics,  selection pressure,  exploration-exploitation balance,  memory mechanisms.
+
+* **Advice:** Focus on quantifiable metrics (e.g.,  diversity indices,  solution quality improvements) to guide adaptation.  Experiment with different selection methods and memory structures to find optimal balance between exploration and exploitation.  Analyze the impact of parameter settings on performance.
+
+* **Avoid:**  Subjective evaluations,  unquantifiable terms ("good" or "bad"),  over-reliance on single metrics,  ignoring negative feedback,  premature convergence.
+
+
+* **Explanation:** Effective self-reflection requires objective data analysis. By rigorously tracking performance and diversity, we can identify weaknesses in existing heuristics and iteratively improve their design based on empirical evidence, avoiding biases and subjective judgments.
