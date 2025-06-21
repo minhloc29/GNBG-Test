@@ -3,6 +3,8 @@ This module integrates OpenAI's language models to generate and evolve
 algorithms to automatically evaluate (for example metaheuristics evaluated on BBOB).
 """
 import copy
+import os
+
 import concurrent.futures
 import logging
 import multiprocessing as mp
@@ -40,7 +42,6 @@ class LLaMEA: # with key. rotations
         pop_size=10, # population size then
         mutation_rate = 0.5,
         experiment_name="",
-        elitism=False,
         adaptive_mutation=False,
         budget=100,
         eval_timeout=3600,
@@ -61,7 +62,6 @@ class LLaMEA: # with key. rotations
         self.init_pop_size = init_pop_size
         self.pop_size = pop_size
         self.population = []
-        self.elitism = elitism
         self.generation = 0
         self.run_history = []
         self.log = log
@@ -88,6 +88,7 @@ class LLaMEA: # with key. rotations
         self.task_prompt = file_to_string("prompt/task_output_generator.txt")
         self.mutation_prompt = file_to_string("prompt/mutation.txt")
         self.comprehensive_reflection_prompt = file_to_string("prompt/comprehensive_reflection.txt")
+        
         self.str_comprehensive_memory = ""
         self.good_reflections_list = []
         self.bad_reflections_list = []
@@ -110,13 +111,13 @@ class LLaMEA: # with key. rotations
             reflection = self.str_comprehensive_memory
         )
         session_messages = [
-                {
-                    "role": "user", 
-                    "content": full_mutation_prompt + self.task_prompt
-                },
-            ]
+            {
+                "role": "user", 
+                "content": full_mutation_prompt + self.task_prompt
+            },
+        ]
         logging.info("Mutation prompt: " + full_mutation_prompt)
-        offsprings = [self.llms[0].sample_solution(copy.deepcopy(session_messages)) for _ in range(self.pop_size * self.mutation_rate)] # generate 5 mutated version of the best solution
+        offsprings = [self.llms[0].sample_solution(copy.deepcopy(session_messages)) for _ in range(int(self.pop_size * self.mutation_rate))] # generate 5 mutated version of the best solution
         print("Sample in mutation sucessfully!")
         evaluated_offsprings = []
         for offspring in offsprings:
@@ -127,9 +128,11 @@ class LLaMEA: # with key. rotations
         return evaluated_offsprings
     
     def initialize_population_from_seeds(self):
-        self.seed_files = ['seed_algorithms/f4.py', 'seed_algorithms/f7.py', 'seed_algorithms/f8.py', 'seed_algorithms/f24.py', 
-                           'seed_algorithms/f_4_7_8_24_aocc_0.51.py', 'seed_algorithms/f6.py', 'seed_algorithms/f20_aocc_0.23_eval_100000.py']
-        """Loads the initial population from the provided seed files."""
+        seed_dir = "seed_algorithms"
+        self.seed_files = sorted(
+            [os.path.join(seed_dir, f) for f in os.listdir(seed_dir) if f.endswith(".py")]
+        )
+        
         self.textlog.info(f"Initializing population from {len(self.seed_files)} seed files...")
         initial_solutions = []
         for file_path in self.seed_files:
@@ -311,6 +314,7 @@ class LLaMEA: # with key. rotations
         crossed_population = []
         chosen_llm = self.llms[0]
         self.textlog.info(f"Generating offspring via Crossover...")
+        
         for i in range(0, len(parents), 2):
             # Select two individuals
             if parents[i].fitness < parents[i + 1].fitness:

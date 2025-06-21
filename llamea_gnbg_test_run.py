@@ -40,7 +40,7 @@ if __name__ == "__main__":
         aucs = []
         detail_aucs = []
         algorithm = None
-        problem_indices_to_test = [9] 
+        problem_indices_to_test = [24] 
         
         for fid in problem_indices_to_test: # cal 24 functions from GNBG
             # representative of 3 function group
@@ -147,7 +147,6 @@ if __name__ == "__main__":
             llms=llm_instances,
             experiment_name=experiment_name,
             adaptive_mutation=True, # mutate the prompt
-            elitism=True,
             budget=100,
         )
         print(es.run())
