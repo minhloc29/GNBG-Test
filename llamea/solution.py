@@ -45,6 +45,7 @@ class Solution:
         self.metadata = {}  # Dictionary to store additional metadata
         self.operator = operator
         self.role_prompt_index = role_prompt_index
+        self.try_hs = False
     def set_operator(self, operator):
         """
         Sets the operator name that generated this individual.
