@@ -16,7 +16,7 @@ from llamea.solution import Solution
 from llamea.loggers import ExperimentLogger
 from llamea.utils import file_to_string
 from my_utils.utils import extract_to_hs, extract_class_name_and_code
-
+from harmony_search import HarmonySearchOptimizer
 folder = "log/log_run_algorithms"
 log_filename = f"{folder}/run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 
@@ -32,14 +32,12 @@ class LLaMEA: # with key. rotations
 
     def __init__(self,
         f, llms: list,
-        init_pop_size=20, pop_size=10, mutation_rate = 0.5,
+        init_pop_size=15, pop_size=10, mutation_rate = 0.5,
         experiment_name="",
         budget=100,
         eval_timeout=3600,
         log=True,
-        minimization=False,
-        hs_size = 5, hs_max_iter = 5, hmcr = 0.7, par = 0.5, bandwitdth = 0.2
-    ):
+        minimization=False):
        
         self.llms = llms
         self.llm_index = 0
@@ -75,106 +73,11 @@ class LLaMEA: # with key. rotations
         self.task_prompt = file_to_string("prompt/task_output_generator.txt")
         self.mutation_prompt = file_to_string("prompt/mutation.txt")
         self.comprehensive_reflection_prompt = file_to_string("prompt/comprehensive_reflection.txt")
-        self.hs_prompt = file_to_string("prompt/harmony_search.txt")
         
         self.str_comprehensive_memory = ""
         self.good_reflections_list = []
         self.bad_reflections_list = []
-        # Harmony search variables
-        self.hs_size = hs_size
-        self.hs_max_iter = hs_max_iter
-        self.hmcr = hmcr
-        self.par = par
-        self.bandwidth = 0.2
-    
-    def set_individual_hs(self):
-        candidate_hs = [individual for individual in self.population if individual.try_hs is False]
-        best_candidate_hs = max(candidate_hs, key=lambda individual: individual.fitness)
-        best_candidate_hs.try_hs = True
-        self.local_hs = best_candidate_hs
-        return self.local_hs.code
-        
-    def initialize_harmony_memory(self, bounds: dict):
-        '''
-        bound is dict of param from a function like this:
-        {'population_size': (10, 1000),
-        'archive_size': (10, 1000),
-        'sigma_decay': (0.9, 0.999),
-        'sigma_init_factor': (0.01, 0.5),
-        'tournament_size': (2, 20),
-        'acceptance_threshold': (1e-10, 0.01),
-        'atol': (1e-10, 0.1)}
-        '''
-        problem_size = len(bounds)
-        harmony_memory = np.zeros((self.hs_size, problem_size))
-        for i in range(problem_size):
-            lower_bound, upper_bound = bounds[i]
-            harmony_memory[:, i] = np.random.uniform(lower_bound, upper_bound, self.hs_size)
-        return harmony_memory # (hs_size, problem_size)
-
-    def create_population_hs(self, str_code: str, parameter_ranges: dict, harmony_memory) -> list[Solution]:
-        hs_pop = []
-        for i in range(len(harmony_memory)): # harmony_memory: (hs_size, problem_size)
-            tmp_str = str_code
-            for j in range(len(list(parameter_ranges))):
-                tmp_str = tmp_str.replace(('{' + list(parameter_ranges)[j] + '}'), str(harmony_memory[i][j]))
-                if tmp_str == str_code:
-                    return None
-            name, code = extract_class_name_and_code(tmp_str)
-            temp_sol = Solution(name=name, code=code, generation=self.generation)
-            temp_sol = self.evaluate_fitness(temp_sol)
-            hs_pop.append(temp_sol)
-        return hs_pop 
-    
-    def create_new_harmony(self, harmony_memory, bounds):
-        new_harmony = np.zeros((harmony_memory.shape[1],))
-        for i in range(harmony_memory.shape[1]):
-            if np.random.rand() < self.hmcr:
-                new_harmony[i] = harmony_memory[np.random.randint(0, harmony_memory.shape[0]), i]
-                if np.random.rand() < self.par:
-                    adjustment = np.random.uniform(-1, 1) * (bounds[i][1] - bounds[i][0]) * self.bandwidth
-                    new_harmony[i] += adjustment
-            else:
-                new_harmony[i] = np.random.uniform(bounds[i][0], bounds[i][1])
-        return new_harmony
-
-    def update_harmony_memory(self, population_hs, harmony_memory, new_harmony, func_block, parameter_ranges):
-        objs = [individual.fitness for individual in population_hs]
-        worst_index = np.argmax(np.array(objs))
-
-        new_individual = self.create_population_hs(func_block, parameter_ranges, [new_harmony.tolist()])[0]
-
-        if new_individual.fitness < population_hs[worst_index].fitness:
-            population_hs[worst_index] = new_individual
-            harmony_memory[worst_index] = new_harmony
-        return population_hs, harmony_memory
-    
-    def harmony_search(self):
-                    # response_text = chosen_llm.query([{"role": "user", "content": full_reflection_prompt}])
-
-        full_hs_prompt = self.hs_prompt.format(code_extract = self.set_individual_hs()) 
-        responses = self.llms[0].query([{"role": "user", "content": full_hs_prompt}])
-        parameter_ranges, func_block = extract_to_hs(responses)
-        logging.info("Extract parameters for HS step: " + parameter_ranges)
-        if parameter_ranges is None or func_block is None:
-            return None
-        bounds = [value for value in parameter_ranges.values()]
-
-        harmony_memory = self.initialize_harmony_memory(bounds) # (hs_size, problem_size)
-        population_hs = self.create_population_hs(func_block, parameter_ranges, harmony_memory)
-
-        if population_hs is None:
-            return None
-        # elif len([individual for individual in population_hs if individual["exec_success"] is True]) == 0:
-        #     self.function_evals -= self.cfg.hm_size
-        #     return None
-        for iteration in range(self.hs_max_iter):
-            new_harmony = self.create_new_harmony(harmony_memory, bounds)
-            population_hs, harmony_memory = self.update_harmony_memory(population_hs, harmony_memory, new_harmony,
-                                                                       func_block, parameter_ranges)
-        best_obj_id = max(population_hs, lambda x : x.fitness)
-        population_hs[best_obj_id]["tryHS"] = True
-        return population_hs[best_obj_id]
+        self.harmony_optimizer = HarmonySearchOptimizer(f, self.llms[1])
     
     def _get_next_llm(self):
         """Cycles through the list of LLM instances in a round-robin fashion."""
@@ -307,7 +210,10 @@ class LLaMEA: # with key. rotations
         
         lst_method_str = ""
         for i, sol in enumerate(sorted_population):
-            lst_method_str += f"### Rank {i+1} (AOCC Score: {sol.fitness:.4e})\n"
+            lst_method_str += f"### Rank {i+1} (Overall AOCC Score: {sol.fitness:.4e} | \
+            AOCC Score on Unimodal instances: {sol.aocc1:.4e} | \
+            AOCC Score on Multimodal instances with a single component: {sol.aocc2:.4e} | \
+            AOCC Score on Multimodal instances with multiple components: {sol.aocc3:.4e})\n"
             lst_method_str += f"# Name: {sol.name}\n"
             lst_method_str += f"# Description: {sol.description}\n"
             lst_method_str += f"# Code:\n```python\n{sol.code}\n```\n\n"
@@ -516,7 +422,17 @@ class LLaMEA: # with key. rotations
                     
             with open(f"reflection/comprehensive_reflection/comp_gen{self.generation}.txt", "w") as f:
                 f.write(self.str_comprehensive_memory)
-
+            try_hs_num = 3
+            while try_hs_num:
+                individual_hs = self.harmony_optimizer.run_hs(self.best_so_far)
+                if individual_hs is not None:
+                    self.population.extend([individual_hs])
+                        # self.update_iter()
+                    self.save_log_population([individual_hs], True)
+                    break
+                else:
+                    try_hs_num -= 1
+            self.update_best()
             self.logevent(
                 f"Generation {self.generation}, best so far: {self.best_so_far.fitness}"
             )

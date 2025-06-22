@@ -39,6 +39,9 @@ class Solution:
         self.configspace = configspace
         self.generation = generation
         self.fitness = -np.Inf
+        self.aocc_1 = -np.Inf
+        self.aocc_2 = -np.Inf
+        self.aocc_3 = -np.Inf
         self.feedback = ""
         self.error = ""
         self.parent_ids = parent_ids
@@ -74,8 +77,11 @@ class Solution:
         """
         return self.metadata[key] if key in self.metadata.keys() else None
 
-    def set_scores(self, fitness, feedback="", error=""):
+    def set_scores(self, fitness, feedback="", error="", aocc1 = None, aocc2 = None, aocc3 = None):
         self.fitness = fitness
+        self.aocc1 = aocc1
+        self.aocc2 = aocc2
+        self.aocc3 = aocc3
         self.feedback = feedback
         self.error = error
 

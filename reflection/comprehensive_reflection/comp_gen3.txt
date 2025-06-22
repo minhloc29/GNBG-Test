@@ -1,7 +1,7 @@
-* **Keywords:**  High-dimensional, multimodal, diversity, adaptive mutation, archive, selection, distribution, DE (Differential Evolution).
+* **Keywords:**  Adaptive, Exploration/Exploitation, Multimodal, High-Dimensional, Niching, Parameter Tuning, Local Search.
 
-* **Advice:** Focus on quantifiable metrics for evaluating diversity and exploitation/exploration balance.  Develop rigorous methods for selecting mutation distributions based on problem characteristics (e.g., dimensionality, modality).  Experiment with different archive management strategies (size, update frequency).  Benchmark against simple, well-tuned baselines.
+* **Advice:** Focus on hybrid algorithms blending global and local search methods.  Incorporate adaptive mechanisms for population size and parameter tuning. Carefully select base optimization algorithms known for their strengths in high-dimensional, multimodal spaces. Experiment with various niching techniques to maintain diversity but avoid over-reliance.
 
-* **Avoid:** Vague statements like "complex strategies," "effective balance," and problem-dependent advice without concrete implementation details.  Avoid subjective judgments about complexity without empirical evidence.
+* **Avoid:**  Premature convergence, stagnation in local optima, neglecting the base algorithm's impact, overly complex niching that slows down computation.
 
-* **Explanation:** The goal is to move beyond qualitative observations towards a more rigorous, data-driven approach to heuristic design.  By focusing on measurable quantities and comparative analysis, we can create heuristics that are demonstrably superior and less susceptible to overfitting to specific problems.
+* **Explanation:** Effective heuristics require a balance.  Global search prevents premature convergence, while local search refines solutions. Adaptive components ensure robustness across diverse problem landscapes.  Sophisticated niching can improve exploration, but it should complement, not replace, a strong foundation.

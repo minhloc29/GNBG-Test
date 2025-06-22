@@ -1,7 +1,7 @@
-* **Keywords:**  Heuristic Design, High-Dimensional Optimization, Exploration-Exploitation Balance, Adaptive Mechanisms, Archive Management, Selection Strategies.
+**Keywords:** Heuristic design,  adaptive algorithms,  multimodal optimization, exploration-exploitation tradeoff,  parameter control.
 
-* **Advice:** Focus on quantifiable metrics for exploration and exploitation.  Develop modular designs allowing easy swapping of components (e.g., different selection methods, archive structures).  Rigorously test heuristics across diverse problem instances.  Prioritize clarity and simplicity in the heuristic's logic.
+**Advice:** Focus on specific algorithm weaknesses.  Quantify exploration/exploitation balance.  Design adaptive mechanisms with clear triggers (e.g., fitness stagnation, diversity loss).  Systematically compare different local search methods and their parameterizations.
 
-* **Avoid:** Vague terms like "adaptive mutation" or "strong optimization frameworks."  Avoid problem-specific tuning without careful justification.  Don't over-engineer; simpler heuristics can often outperform complex ones.  Avoid claims of universal superiority without comprehensive empirical evidence.
+**Avoid:** Vague generalizations ("crucial," "greatly enhances").  Overreliance on adaptive mechanisms without a strong base algorithm.  Ignoring the computational cost of adaptation.  Failing to empirically validate design choices.
 
-* **Explanation:**  The ineffective reflections are too general and lack specific actionable steps.  The improved approach emphasizes measurable criteria and modularity, enabling systematic improvement and comparison.  Simplicity and rigorous testing are prioritized to ensure robust performance and avoid overfitting to specific problem characteristics.
+**Explanation:**  The ineffective reflection lacks concrete action.  Effective heuristics require detailed analysis, controlled experiments, and rigorous evaluation of specific components, not just general assertions about hybrid approaches.  The improved reflection guides the design process by identifying areas needing precise attention and measurement.

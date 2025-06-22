@@ -1,7 +1,7 @@
-* **Keywords:** Adaptive mutation, population diversity, exploration-exploitation balance, problem-specific heuristics.
+* **Keywords:**  High-dimensional optimization, multimodal functions, exploration-exploitation balance, adaptive algorithms, niching methods.
 
-* **Advice:**  Focus on designing heuristics that dynamically adjust mutation rates and selection pressures based on problem characteristics (e.g., landscape ruggedness, dimensionality).  Empirically evaluate different balance strategies (e.g., ε-greedy, Boltzmann exploration).  Consider incorporating problem-specific knowledge into the heuristic design.
+* **Advice:** Focus on designing hybrid algorithms combining global exploration (e.g., DE, CMA-ES) with efficient local search (e.g., gradient descent, Nelder-Mead).  Prioritize adaptive mechanisms that dynamically adjust the exploration-exploitation balance based on problem characteristics.  Consider theoretical analysis to understand algorithm behavior.
 
-* **Avoid:**  Generic, one-size-fits-all approaches. Overly complex heuristics without rigorous justification or empirical validation.  Ignoring the interplay between exploration and exploitation.
+* **Avoid:**  Over-reliance on niching as a primary exploration strategy; neglecting theoretical underpinnings;  using fixed parameters without adaptive tuning; ignoring the base algorithm's inherent strengths and weaknesses.
 
-* **Explanation:** Effective heuristics require a delicate balance.  A tailored approach, adapting to the specific problem landscape, will consistently outperform a generic algorithm.  Rigorous testing is crucial to validate the effectiveness of any new heuristic.
+* **Explanation:** Effective heuristics require a deep understanding of the optimization landscape.  Combining diverse techniques with adaptive control, guided by theoretical analysis, leads to more robust and efficient solutions than simply relying on a single method or heuristic.  The goal is to create algorithms that are both effective at finding good solutions and computationally efficient.

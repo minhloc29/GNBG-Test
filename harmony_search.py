@@ -81,7 +81,7 @@ class HarmonySearchOptimizer:
             harmony_memory[worst_index] = new_harmony
         return population_hs, harmony_memory
 
-    def harmony_search(self, elitist: Solution, code_str = None):
+    def run_hs(self, elitist: Solution, code_str = None):
                  # response_text = chosen_llm.query([{"role": "user", "content": full_reflection_prompt}])
         if self.str_input:
             full_hs_prompt = self.hs_prompt.format(code_extract = code_str) 

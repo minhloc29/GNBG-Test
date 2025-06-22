@@ -4,7 +4,7 @@ import numpy as np
 import re
 from llamea import Gemini_LLM
 # from llamea_evolve_multiple import LLaMEA
-from llamea_evolve_multiple import LLaMEA
+from llamea_with_hs import LLaMEA
 from codes.gnbg_python.GNBG_instances import GNBG
 from my_utils.utils import * # include calculate aocc
 from scipy.io import loadmat
@@ -38,7 +38,7 @@ def evaluateGNBG(solution, explogger=None, details=True): # we need to change th
     aucs = []
     detail_aucs = []
     algorithm = None
-    problem_indices_to_test = [23] 
+    problem_indices_to_test = [5, 12, 23] 
     
     for fid in problem_indices_to_test: # cal 24 functions from GNBG
         # representative of 3 function group
@@ -94,7 +94,7 @@ def evaluateGNBG(solution, explogger=None, details=True): # we need to change th
         logging.info(f"Run function {fid} complete. FEHistory len: {len(problem.FEhistory)}, AOCC: {current_run_aocc:.4f}")
         logging.info(f"FeHistory: {problem.FEhistory}")
         logging.info(f"Expected Optimum FE: {problem.OptimumValue}")
-        if current_run_aocc >= 0.02:
+        if current_run_aocc >= 0.1:
             logging.info(f"Good algorithm:\nAlgorithm Name: {algorithm_name}\n{code}")
         # budget of auc and algorithm must match 
             
@@ -134,7 +134,7 @@ def evaluateGNBG(solution, explogger=None, details=True): # we need to change th
 
     print(algorithm_name, algorithm, auc_mean, auc_std)
     solution.add_metadata("aucs", aucs)
-    solution.set_scores(auc_mean, feedback)
+    solution.set_scores(auc_mean, feedback, aocc1 = unimodal_means, aocc2 = multimodal_single_means, aocc3 = multimodal_multi_means)
 
     return solution
 if __name__ == "__main__":
