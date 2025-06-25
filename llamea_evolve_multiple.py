@@ -271,7 +271,7 @@ class LLaMEA: # with key. rotations
         
     def evaluate_fitness(self, individual):
      
-        timeout_seconds = 60
+        timeout_seconds = 10
 
         def run_evaluation():
             try:

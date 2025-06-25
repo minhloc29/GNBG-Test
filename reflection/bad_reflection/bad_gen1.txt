@@ -1,0 +1,2 @@
+For multi-component landscapes, effective heuristics involve archive-guided local search within subpopulations that are balanced against global island architectures to share memory between isolated local searches and promote overall diversity, and with minimal adjustments to account complex adaptation factors such as normalized diversity.
+```

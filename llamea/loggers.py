@@ -72,6 +72,10 @@ class ExperimentLogger:
 
     def log_population(self, population):
         for p in population:
+            if p.name is None:
+                p.name = "UnknownAlgorithm"
+            if p.code is None:
+                p.code = "UnknownCode"
             self.log_code(self.attempt, p.name, p.code)
             if p.configspace != None:
                 self.log_configspace(self.attempt, p.name, p.configspace)

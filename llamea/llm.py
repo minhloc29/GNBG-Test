@@ -248,9 +248,9 @@ class Gemini_LLM(LLM):
         super().__init__(api_key, model, None, **kwargs)
         genai.configure(api_key=api_key)
         generation_config = {
-            "temperature": 1,
-            "top_p": 0.95,
-            "top_k": 64,
+            "temperature": 1.2,
+            "top_p": 0.98,
+            "top_k": 80,
             "max_output_tokens": 8192,
             "response_mime_type": "text/plain",
         }
@@ -258,7 +258,7 @@ class Gemini_LLM(LLM):
         self.client = genai.GenerativeModel(
             model_name=self.model,  # "gemini-1.5-flash","gemini-2.0-flash",
             generation_config=generation_config,
-            system_instruction="You are a computer scientist and excellent Python programmer.",
+            system_instruction="You are a computer scientist and excellent Python programmer. Make sure every new class has a unique, descriptive name not used before.",
         )
 
     def query(self, session_messages):

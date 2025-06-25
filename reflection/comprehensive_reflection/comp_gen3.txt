@@ -1,7 +1,11 @@
-* **Keywords:**  Adaptive, Exploration/Exploitation, Multimodal, High-Dimensional, Niching, Parameter Tuning, Local Search.
+Okay, I understand. Let's craft a definition of "Effective Self-Reflection" focused on designing better heuristics, specifically avoiding the pitfalls of the provided "Ineffective Self-Reflection." We want a definition that translates into actionable strategies and insights.
 
-* **Advice:** Focus on hybrid algorithms blending global and local search methods.  Incorporate adaptive mechanisms for population size and parameter tuning. Carefully select base optimization algorithms known for their strengths in high-dimensional, multimodal spaces. Experiment with various niching techniques to maintain diversity but avoid over-reliance.
+**Current Effective Self-Reflection Definition:**
 
-* **Avoid:**  Premature convergence, stagnation in local optima, neglecting the base algorithm's impact, overly complex niching that slows down computation.
+*   **Keywords:** Balancing exploitation and exploration, adaptive mechanisms, diversity maintenance, landscape characteristics, performance bottlenecks, problem-specific knowledge, objective measurements, hypothesis generation, performance analysis.
 
-* **Explanation:** Effective heuristics require a balance.  Global search prevents premature convergence, while local search refines solutions. Adaptive components ensure robustness across diverse problem landscapes.  Sophisticated niching can improve exploration, but it should complement, not replace, a strong foundation.
+*   **Advice:** Instead of simply listing mechanisms (archive, migration, restart), focus on *why* they are (or aren't) effective. Analyze *where* the algorithm spends its time. Form hypotheses about performance based on landscape *characteristics* (deceptiveness, multi-modality, ruggedness, dimensionality). Gather objective measurements to test those hypotheses rigorously. Use problem specific knowledge to improve the heuristic.
+
+*   **Avoid:** Generic statements about "exploration and exploitation," vague claims of "diversity," and mere recitation of algorithmic components. Avoid circular reasoning where the algorithm's performance is attributed to the features that were designed to achieve that performance.
+
+*   **Explanation:** Effective self-reflection requires a hypothesis-driven approach. Don't just describe *what* the algorithm does; analyze *why* it performs as it does on specific landscape features. Then think on how to improve it. Use objective measurements (e.g., solution distance to optima, population entropy, wall clock time), landscape characteristics, and problem-specific knowledge as diagnostic tools.

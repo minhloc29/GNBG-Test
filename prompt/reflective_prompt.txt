@@ -1,7 +1,7 @@
 ### Problem Description
 {problem_desc}
 ### List heuristics
-Below is a list of design heuristics ranked from best to worst based on their average AOCC score, where higher is better, across a subset of the GNBG benchmark. To enable a detailed analysis of their specializations, the performance breakdown on each of the three GNBG function groups is also provided.
+Below is a list of design heuristics ranked from best to worst based on their average weighted AOCC score, where higher is better, across a subset of the GNBG benchmark. To enable a detailed analysis of their specializations, the performance breakdown on each of the three GNBG function groups is also provided.
 {lst_method}
 
 ### Guide

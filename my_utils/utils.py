@@ -3,7 +3,7 @@ import re
 import textwrap
 def calculate_aocc_from_gnbg_history(fe_history, optimum_value, budget_B, 
                                      log_error_lower_bound=-8.0,  # Corresponds to 10^-8 error
-                                     log_error_upper_bound=2.0):   # Corresponds to 10^2 error
+                                     log_error_upper_bound=2.0, early_stop = False):   # Corresponds to 10^2 error
     # To evaluate this, we consider the fe-history length up to budget B
     """
     Calculates Area Over the Convergence Curve (AOCC) from GNBG FEhistory.

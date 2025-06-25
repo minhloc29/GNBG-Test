@@ -17,6 +17,9 @@ from llamea.loggers import ExperimentLogger
 from llamea.utils import file_to_string
 from my_utils.utils import extract_to_hs, extract_class_name_and_code
 from harmony_search import HarmonySearchOptimizer
+import dill
+import joblib
+joblib.parallel.DEFAULT_SERIALIZER = dill
 folder = "log/log_run_algorithms"
 log_filename = f"{folder}/run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 
@@ -27,12 +30,41 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S"
 )
 
+def safe_evaluate_fitness(individual, f, logger, worst_value, timeout_seconds=3600):
+    def run_evaluation():
+        try:
+            return f(individual, logger)
+        except Exception as e:
+            return e
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+        future = executor.submit(run_evaluation)
+        try:
+            result = future.result(timeout=timeout_seconds)
+        except concurrent.futures.TimeoutError:
+            msg = f"[TIMEOUT] Evaluation exceeded {timeout_seconds} seconds and was skipped."
+            individual.set_scores(worst_value, msg, msg)
+            if logger:
+                logger.log_event(msg)
+            if hasattr(f, "log_individual"):
+                f.log_individual(individual)
+            return individual
+
+    if isinstance(result, Exception):
+        msg = f"[ERROR] Evaluation failed: {repr(result)}"
+        individual.set_scores(worst_value, msg, msg)
+        if hasattr(f, "log_individual"):
+            f.log_individual(individual)
+        return individual
+
+    return result
+
 
 class LLaMEA: # with key. rotations
 
     def __init__(self,
         f, llms: list,
-        init_pop_size=15, pop_size=10, mutation_rate = 0.5,
+        init_pop_size=20, pop_size=10, mutation_rate = 0.5,
         experiment_name="",
         budget=100,
         eval_timeout=3600,
@@ -108,9 +140,9 @@ class LLaMEA: # with key. rotations
         evaluated_offsprings = []
         for offspring in offsprings:
             offspring.generation = self.generation
-            offspring = self.evaluate_fitness(offspring)
+            # offspring = self.evaluate_fitness(offspring)
             evaluated_offsprings.append(offspring)
-            
+        evaluated_offsprings = self.evaluate_population_parallel(evaluated_offsprings)
         return evaluated_offsprings
     
     def initialize_population_from_seeds(self):
@@ -129,11 +161,11 @@ class LLaMEA: # with key. rotations
                 match = re.search(r'class\s+(\w+)', code)
                 name = match.group(1)
                 sol = Solution(code=code, name=name, generation=self.generation, description=f"Seed from {name}")
-                sol = self.evaluate_fitness(sol)
                 self.population.append(sol)
                 self.run_history.append(sol)
             except Exception as e:
                 self.textlog.error(f"Failed to load seed file: {file_path}", exc_info=True)
+        self.population = self.evaluate_population_parallel(self.population)
         
         self.update_best()
 
@@ -157,7 +189,7 @@ class LLaMEA: # with key. rotations
         try:
             new_individual = chosen_llm.sample_solution(session_messages, role_index=role_index)
             new_individual.generation = self.generation
-            new_individual = self.evaluate_fitness(new_individual)
+            # new_individual = self.evaluate_fitness(new_individual)
         except Exception as e:
             new_individual.set_scores(
                 self.worst_value,
@@ -169,7 +201,15 @@ class LLaMEA: # with key. rotations
                 self.f.log_individual(new_individual)
         
         return new_individual # = Solution class
-
+    
+    def evaluate_population_parallel(self, population: list[Solution], n_jobs=5, timeout=5000):
+        evaluated_population = Parallel(n_jobs=n_jobs, backend="loky", timeout=timeout)(
+            delayed(safe_evaluate_fitness)(
+                ind, self.f, self.logger, self.worst_value, self.eval_timeout
+            ) for ind in population
+        )
+        return evaluated_population
+    
     def initialize(self):
         """
         Initializes the evolutionary process by generating the first parent population.
@@ -191,7 +231,7 @@ class LLaMEA: # with key. rotations
         for p in population_gen:
             self.run_history.append(p)  # update the history
             population.append(p)
-
+        population = self.evaluate_population_parallel(population)
         self.generation += 1
         self.population.extend(population)  # Save the entire population
         self.update_best()
@@ -220,7 +260,7 @@ class LLaMEA: # with key. rotations
             
         full_reflection_prompt = self.reflection_prompt.format(problem_desc = self.role_prompt,
                                                                lst_method=lst_method_str)
-        print(f"Reflection Prompt: {full_reflection_prompt}")
+        logging.info(f"Reflection Prompt: {full_reflection_prompt}")
         try:
             # It's recommended to use a powerful model for this reasoning task if possible
             response_text = chosen_llm.query([{"role": "user", "content": full_reflection_prompt}])
@@ -262,37 +302,37 @@ class LLaMEA: # with key. rotations
         self.textlog.info(f"Full response text: {response_text}")
         self.str_comprehensive_memory = response_text
         
-    def evaluate_fitness(self, individual):
+    # def evaluate_fitness(self, individual):
      
-        timeout_seconds = 60
+    #     timeout_seconds = 60
 
-        def run_evaluation():
-            try:
-                return self.f(individual, self.logger)
-            except Exception as e:
-                return e
+    #     def run_evaluation():
+    #         try:
+    #             return self.f(individual, self.logger)
+    #         except Exception as e:
+    #             return e
 
-        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
-            future = executor.submit(run_evaluation)
-            try:
-                result = future.result(timeout=timeout_seconds)
-            except concurrent.futures.TimeoutError:
-                msg = f"[TIMEOUT] Evaluation exceeded {timeout_seconds} seconds and was skipped."
-                individual.set_scores(self.worst_value, msg, msg)
-                self.logevent(msg)
-                if hasattr(self.f, "log_individual"):
-                    self.f.log_individual(individual)
-                return individual
+    #     with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+    #         future = executor.submit(run_evaluation)
+    #         try:
+    #             result = future.result(timeout=timeout_seconds)
+    #         except concurrent.futures.TimeoutError:
+    #             msg = f"[TIMEOUT] Evaluation exceeded {timeout_seconds} seconds and was skipped."
+    #             individual.set_scores(self.worst_value, msg, msg)
+    #             self.logevent(msg)
+    #             if hasattr(self.f, "log_individual"):
+    #                 self.f.log_individual(individual)
+    #             return individual
 
-        if isinstance(result, Exception):
-            msg = f"[ERROR] Evaluation failed: {repr(result)}"
-            individual.set_scores(self.worst_value, msg, msg)
-            self.logevent(msg)
-            if hasattr(self.f, "log_individual"):
-                self.f.log_individual(individual)
-            return individual
+    #     if isinstance(result, Exception):
+    #         msg = f"[ERROR] Evaluation failed: {repr(result)}"
+    #         individual.set_scores(self.worst_value, msg, msg)
+    #         self.logevent(msg)
+    #         if hasattr(self.f, "log_individual"):
+    #             self.f.log_individual(individual)
+    #         return individual
 
-        return result
+    #     return result
 
     def crossover(self, parents: list[Solution]) -> list[Solution]:
         if not parents:
@@ -303,7 +343,7 @@ class LLaMEA: # with key. rotations
         crossed_population = []
         chosen_llm = self.llms[0]
         self.textlog.info(f"Generating offspring via Crossover...")
-        
+        offsprings = []
         for i in range(0, len(parents), 2):
             # Select two individuals
             if parents[i].fitness < parents[i + 1].fitness:
@@ -332,8 +372,12 @@ class LLaMEA: # with key. rotations
             offspring = chosen_llm.sample_solution(session_messages)
             print("Sample in crossover sucessfully!")
             offspring.generation = self.generation
-            offspring = self.evaluate_fitness(offspring)
-            crossed_population.append(offspring)
+            offsprings.append(offspring)
+            # offspring = self.evaluate_fitness(offspring)
+            # crossed_population.append(offspring)
+        offsprings = self.evaluate_population_parallel(offsprings)
+        crossed_population.extend(offsprings)
+        
         assert len(crossed_population) == self.pop_size, "Crossed population does not equal to population size"
         logging.info("Crossover Prompt: " + full_crossover_prompt)
         return crossed_population # = pop_size         
@@ -370,6 +414,31 @@ class LLaMEA: # with key. rotations
                 return None
         return selected_population # selected_population = 2 * pop_size
 
+    def tournament_selection(self, population: list[Solution], k=3, num_winners=None) -> list[Solution]:
+        """
+        Perform tournament selection to choose a subset of individuals.
+        """
+        if not population:
+            self.textlog.warning("Tournament selection skipped: Empty population.")
+            return []
+
+        valid_pop = [s for s in population if hasattr(s, 'fitness') and np.isfinite(s.fitness)]
+        if not valid_pop:
+            return []
+
+        if num_winners is None:
+            num_winners = self.pop_size * 2
+
+        selected = []
+        for _ in range(num_winners):
+            contenders = random.sample(valid_pop, min(k, len(valid_pop)))
+            if self.minimization:
+                winner = min(contenders, key=lambda x: x.fitness)
+            else:
+                winner = max(contenders, key=lambda x: x.fitness)
+            selected.append(winner)
+
+        return selected
 
     def run(self): 
        
@@ -386,7 +455,7 @@ class LLaMEA: # with key. rotations
 
             population_to_select = self.population if (self.best_so_far is None or self.best_so_far in self.population) else [
                                                                                                                          self.best_so_far] + self.population  # add elitist to population for selection
-            selected_population = self.random_select(population_to_select)
+            selected_population = self.tournament_selection(population_to_select)
             logging.info(f"Population length is: {len(population_to_select)}")
             if not selected_population:
                 print("Skipping this generation due to no valid selection.")
@@ -397,9 +466,11 @@ class LLaMEA: # with key. rotations
             curr_good_code = self.best_so_far # best solution before update
             
             crossed_population = self.crossover(selected_population) # len(crossed_population) = len(self.population)
+            self.logger.log_population(crossed_population)
             self.population = crossed_population
             self.update_best()
             mutated_population = self.mutate() # get a list of mutation solution of best so far
+            self.logger.log_population(mutated_population)
             self.population.extend(mutated_population)
             self.update_best()
             
@@ -407,7 +478,6 @@ class LLaMEA: # with key. rotations
 
             self.run_history.extend(self.population)
               
-            self.generation += 1
             if self.log:
                 self.logger.log_population(self.population)
             
@@ -422,13 +492,14 @@ class LLaMEA: # with key. rotations
                     
             with open(f"reflection/comprehensive_reflection/comp_gen{self.generation}.txt", "w") as f:
                 f.write(self.str_comprehensive_memory)
+            logging.info("Perform Harmony Search...")
             try_hs_num = 3
             while try_hs_num:
                 individual_hs = self.harmony_optimizer.run_hs(self.best_so_far)
+                self.logger.log_population([individual_hs])
                 if individual_hs is not None:
                     self.population.extend([individual_hs])
                         # self.update_iter()
-                    self.save_log_population([individual_hs], True)
                     break
                 else:
                     try_hs_num -= 1
@@ -436,5 +507,5 @@ class LLaMEA: # with key. rotations
             self.logevent(
                 f"Generation {self.generation}, best so far: {self.best_so_far.fitness}"
             )
-            
+            self.generation += 1
         return self.best_so_far

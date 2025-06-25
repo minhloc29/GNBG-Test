@@ -1,0 +1,1 @@
+Effective heuristics for multimodal optimization involve adaptive parameters for exploration/exploitation balance, robust population diversity mechanisms like differential evolution or external archives, and techniques to avoid local optima like tabu lists, perturbation, or simulated annealing acceptance criteria. Domain knowledge (if available) can improve initial population.

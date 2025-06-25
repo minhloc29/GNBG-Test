@@ -3,8 +3,8 @@ import os
 import numpy as np
 import re
 from llamea import Gemini_LLM
-# from llamea_evolve_multiple import LLaMEA
-from llamea_with_hs import LLaMEA
+# from llamea_with_hs import LLaMEA
+from llamea_with_hs_single_func import LLaMEA
 from codes.gnbg_python.GNBG_instances import GNBG
 from my_utils.utils import * # include calculate aocc
 from scipy.io import loadmat
@@ -13,11 +13,11 @@ from scipy.io import loadmat
 # AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs
 # AIzaSyCbiZx7Pmr5kWUihPXQ8nGvEsuo80kaiWE
 api_keys = [
-        'AIzaSyCK6miE77n6z7PUf0RNgj8seMiiVET-wqk',
-        'AIzaSyARJfdVOsI9AKUK6gxvUszL_bn5Z_lr5Wg'
+        'AIzaSyARJfdVOsI9AKUK6gxvUszL_bn5Z_lr5Wg',
+        'AIzaSyAS4WrMPg7WNPXLpCYIOG49cIYOL7vTAl8'
 ]
 # api_key = "AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs"
-ai_model = "gemini-1.5-flash"
+ai_model = "gemini-2.0-flash"
 experiment_name = "pop1-5"
 
 # llm = Gemini_LLM("AIzaSyCbA5uIXRIIWnTv7HCUGX75WoYJ4PeZWd0", ai_model)
@@ -38,8 +38,8 @@ def evaluateGNBG(solution, explogger=None, details=True): # we need to change th
     aucs = []
     detail_aucs = []
     algorithm = None
-    problem_indices_to_test = [5, 12, 23] 
-    
+    problem_indices_to_test = [16, 18, 19] 
+    # 15, 24
     for fid in problem_indices_to_test: # cal 24 functions from GNBG
         # representative of 3 function group
         filename = f'f{fid}.mat'
@@ -59,7 +59,7 @@ def evaluateGNBG(solution, explogger=None, details=True): # we need to change th
         RotationMatrix = np.array(GNBG_tmp['RotationMatrix'][0, 0])
         OptimumValue = np.array([item[0] for item in GNBG_tmp['OptimumValue'].flatten()])[0, 0]
         OptimumPosition = np.array(GNBG_tmp['OptimumPosition'][0, 0])
-        problem = GNBG(100000, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate, CompMinPos, CompSigma, CompH, Mu, Omega, Lambda, RotationMatrix, OptimumValue, OptimumPosition)
+        problem = GNBG(150000, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate, CompMinPos, CompSigma, CompH, Mu, Omega, Lambda, RotationMatrix, OptimumValue, OptimumPosition)
         # max eval is just 1000
         # len of FEhistory should be equal to MaxEval or budget
         log_content = (
@@ -120,10 +120,6 @@ def evaluateGNBG(solution, explogger=None, details=True): # we need to change th
     print(f'Auc_mean is: {auc_mean}')
     print(f'Auc_std is: {auc_std}')
     
-    logging.info(f"AOCC mean: {auc_mean:.4f}")
-
-    
-
     feedback = f"The algorithm {algorithm_name} got an average Area over the convergence curve (AOCC, 1.0 is the best) score of {auc_mean:0.2f} with standard deviation {auc_std:0.2f}."
     if details:
         feedback = (
@@ -134,7 +130,17 @@ def evaluateGNBG(solution, explogger=None, details=True): # we need to change th
 
     print(algorithm_name, algorithm, auc_mean, auc_std)
     solution.add_metadata("aucs", aucs)
+    weights = {
+    'unimodal': 0.1,        # f1-f6
+    'multimodal_single': 0.2, # f7-f15
+    'multimodal_multi': 0.7   # f16-f24 (The most important group)
+    }
+    weighed_aoccs = weights['unimodal'] * unimodal_means + weights['multimodal_single'] * multimodal_single_means \
+        + weights['multimodal_multi'] * multimodal_multi_means
+    # solution.set_scores(weighed_aoccs, feedback, aocc1 = unimodal_means, aocc2 = multimodal_single_means, aocc3 = multimodal_multi_means)
     solution.set_scores(auc_mean, feedback, aocc1 = unimodal_means, aocc2 = multimodal_single_means, aocc3 = multimodal_multi_means)
+    logging.info(f"AOCC mean: {auc_mean:.4f}")
+    logging.info(f"Weighed AOCC mean: {weighed_aoccs:.4f}")
 
     return solution
 if __name__ == "__main__":
