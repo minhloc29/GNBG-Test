@@ -1,37 +1,3 @@
-from scipy.io import loadmat
-import os
-import logging
-from typing import Optional, Tuple, List
-from my_utils.utils import calculate_aocc_from_gnbg_history
-import numpy as np
-import random
-from codes.gnbg_python.GNBG_instances import GNBG
-from datetime import datetime
-import random
-import matplotlib.pyplot as plt
-from scipy.stats import multivariate_normal
-from sklearn.mixture import GaussianMixture
-
-folder = "log_test_algorithms"
-os.makedirs(folder, exist_ok=True)
-
-# Unique log filename based on timestamp
-log_filename = datetime.now().strftime(f"{folder}/run_%Y%m%d_%H%M%S.log")
-
-# Configure logging
-logging.basicConfig(
-    filename=log_filename,
-    filemode='w',  # overwrite if exists
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-
-
-import numpy as np
-import random
-from scipy.optimize import minimize
-
-import numpy as np
 
 import numpy as np
 import random
@@ -43,7 +9,7 @@ class AdaptiveIslandDE:
     def __init__(self, budget: int, dim: int, lower_bounds: list[float], upper_bounds: list[float],
                  num_islands: int = 5, population_size: int = 20, crossover_rate: float = 0.8719572569354708,
                  mutation_rate: float = 0.6113964692124271, migration_interval: int = 896.9508697672186, migration_size: int = 2.414743986796276,
-                 local_search_iterations: int = 5.957280686848644, local_search_perturbation_scale: float = 0.1446330223199665, restart_percentage: float = 0.7,stagnation_threshold: float = 1e-2, stagnation_patient: int = 200):
+                 local_search_iterations: int = 5.957280686848644, local_search_perturbation_scale: float = 0.1446330223199665, restart_percentage: float = 0.8606737890095179):
         """
         Initializes the AdaptiveIslandDE optimizer.
 
@@ -71,17 +37,12 @@ class AdaptiveIslandDE:
         self.population_size = population_size
         self.crossover_rate = crossover_rate
         self.mutation_rate = mutation_rate
-        self.migration_interval = int(migration_interval)
-        self.migration_size = int(migration_size)
-        self.local_search_iterations = int(local_search_iterations)
+        self.migration_interval = migration_interval
+        self.migration_size = migration_size
+        self.local_search_iterations = local_search_iterations
         self.local_search_perturbation_scale = local_search_perturbation_scale
         self.restart_percentage = restart_percentage
 
-        # Restart parameters
-        self.stagnation_patience = stagnation_patient
-        self.stagnation_threshold = stagnation_threshold
-        self.fitness_history = [[] for _ in range(num_islands)]
-        
         self.eval_count = 0
         self.best_solution_overall = None
         self.best_fitness_overall = float('inf')
@@ -220,30 +181,21 @@ class AdaptiveIslandDE:
                     self.best_solution_overall = sol
 
 
-    def detect_stagnation(self, fitness_history: list[float]) -> bool:
-        if len(fitness_history) < self.stagnation_patience:
-            return False
-        recent = fitness_history[-self.stagnation_patience:]
-        return np.std(recent) < self.stagnation_threshold
 
+    def optimize(self, objective_function: callable, acceptance_threshold: float = 1e-8, optimum_value = None) -> tuple:
+        """
+        Optimizes the given objective function using the island model differential evolution algorithm.
 
-    def restart_island(self, i: int, objective_function: callable):
-        logging.info(f"Restarting island {i} due to stagnation at FE={self.eval_count}")
-        self.populations[i] = np.random.uniform(self.lower_bounds, self.upper_bounds, (self.population_size, self.dim))
-        self.fitness_values[i] = objective_function(self.populations[i])
-        self.eval_count += self.population_size
-        best_index = np.argmin(self.fitness_values[i])
-        self.best_fitnesses[i] = self.fitness_values[i][best_index]
-        self.best_solutions[i] = self.populations[i][best_index]
+        Args:
+            objective_function (callable): The objective function to optimize.
+            acceptance_threshold (float): Not used in this implementation, but included for compliance.
 
-        if self.best_fitnesses[i] < self.best_fitness_overall:
-            self.best_fitness_overall = self.best_fitnesses[i]
-            self.best_solution_overall = self.best_solutions[i]
-
-    def optimize(self, objective_function: callable, acceptance_threshold: float = 1e-8, optimum_value=None) -> tuple:
-        self.eval_count = 0
-        self.best_solution_overall = None
-        self.best_fitness_overall = float('inf')
+        Returns:
+            tuple: A tuple containing the best solution found, its fitness, and optimization information.
+        """
+        self.eval_count = 0  # Reset for this run
+        self.best_solution_overall = None # Reset for this run
+        self.best_fitness_overall = float('inf') # Reset for this run
 
         # Initialize fitness values for each island
         for i in range(self.num_islands):
@@ -252,164 +204,39 @@ class AdaptiveIslandDE:
             best_index = np.argmin(self.fitness_values[i])
             self.best_fitnesses[i] = self.fitness_values[i][best_index]
             self.best_solutions[i] = self.populations[i][best_index]
-            self.fitness_history[i].append(self.best_fitnesses[i])
 
             if self.best_fitnesses[i] < self.best_fitness_overall:
                 self.best_fitness_overall = self.best_fitnesses[i]
                 self.best_solution_overall = self.best_solutions[i]
+
 
         # Main optimization loop
         while self.eval_count < self.budget:
             if optimum_value is not None and abs(self.best_fitness_overall - optimum_value) <= acceptance_threshold:
                 logging.info(f"Stopping early: Acceptance threshold {acceptance_threshold} reached at FE {self.eval_count}.")
                 break
-
             for i in range(self.num_islands):
                 self.differential_evolution_step(i, objective_function)
-                self.fitness_history[i].append(self.best_fitnesses[i])
 
             if self.eval_count % self.migration_interval == 0:
                 self.migrate(objective_function)
 
-            # Restart islands based on stagnation detection
-            for i in range(self.num_islands):
-                if self.detect_stagnation(self.fitness_history[i]):
-                    self.restart_island(i, objective_function)
+            #Restart Mechanism if stagnating
+            if self.eval_count > self.budget * self.restart_percentage:  # Restart towards the end
+                for i in range(self.num_islands):
+                    self.populations[i] = np.random.uniform(self.lower_bounds, self.upper_bounds, (self.population_size, self.dim))
+                    self.fitness_values[i] = objective_function(self.populations[i])
+                    self.eval_count += self.population_size
+                    best_index = np.argmin(self.fitness_values[i])
+                    self.best_fitnesses[i] = self.fitness_values[i][best_index]
+                    self.best_solutions[i] = self.populations[i][best_index]
+                    if self.best_fitnesses[i] < self.best_fitness_overall:
+                        self.best_fitness_overall = self.best_fitnesses[i]
+                        self.best_solution_overall = self.best_solutions[i]
+
 
         optimization_info = {
             'function_evaluations_used': self.eval_count,
             'final_best_fitness': self.best_fitness_overall,
         }
         return self.best_solution_overall, self.best_fitness_overall, optimization_info
-
-
-
-
-def run_optimization(MaxEvals, AcceptanceThreshold, 
-                     Dimension, CompNum, MinCoordinate, MaxCoordinate,
-                     CompMinPos, CompSigma, CompH, Mu, Omega,
-                     Lambda, RotationMatrix, OptimumValue, OptimumPosition,
-                    num_runs: int = 5,
-                    seed: Optional[int] = None) -> Tuple[List[float], List[np.ndarray]]:
-    """
-    Run multiple optimization runs for a given problem
-    
-    Args:
-        problem_index: GNBG problem index (1-24)
-        num_runs: Number of independent runs
-        seed: Random seed for reproducibility
-        
-    Returns:
-        Tuple of (best_fitness_values, best_solutions)
-    """
-    base_seed = 42
-    
-    # Load problem instance
-    from codes.gnbg_python.GNBG_instances import GNBG
-    # Set up bounds
-    
-    # Initialize results storage
-    best_values = []
-    best_solutions = []
-    aoccs = []
-    for run in range(num_runs):
-        run_seed = base_seed + run  # Vary seed per run
-        np.random.seed(run_seed)
-        random.seed(run_seed)
-        gnbg = GNBG(MaxEvals, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate, CompMinPos, CompSigma, CompH, Mu, Omega, Lambda, RotationMatrix, OptimumValue, OptimumPosition)
-        bounds = (gnbg.MinCoordinate, gnbg.MaxCoordinate)
-        logging.info(f"Starting run {run + 1}/{num_runs}")
-        
-        # Initialize algorithm
-       
-        try:
-            optimizer = AdaptiveIslandDE(
-                budget=MaxEvals,
-                dim=gnbg.Dimension,
-                lower_bounds=[gnbg.MinCoordinate for _ in range(gnbg.Dimension)],
-                upper_bounds=[gnbg.MaxCoordinate for _ in range(gnbg.Dimension)],
-            )
-            
-            # Run optimization
-            best_solution, best_fitness, _ = optimizer.optimize(
-                objective_function=gnbg.fitness, optimum_value = OptimumValue
-            )
-            
-            aocc = calculate_aocc_from_gnbg_history(
-                fe_history=gnbg.FEhistory,
-                optimum_value=gnbg.OptimumValue,
-                budget_B=gnbg.MaxEvals
-            )
-            best_values.append(best_fitness)
-            best_solutions.append(best_solution)
-            aoccs.append(aocc)
-            
-            logging.info(f"Run {run + 1} completed. Best fitness: {best_fitness:.6e}, AOCC: {aocc:.4f}")
-            logging.info(f"\nResults for Problem {ProblemIndex}:")
-            logging.info(f"Best solution: {best_solutions}")
-            logging.info(f"Optimun Solution: {OptimumValue}")
-            logging.info(f"Best fitness values: {best_values}")
-            logging.info(f"Mean fitness: {np.mean(best_values)}")
-            logging.info(f"Std fitness: {np.std(best_values)}") 
-            logging.info(f"Mean AOCC:         {np.mean(aoccs):.4f} (Higher is better)")
-            logging.info(f"Std Dev AOCC:      {np.std(aoccs):.4f}")
-            
-        except Exception as e:
-            logging.error(f"Run {run + 1} failed due to: {e}", exc_info=True)
-            print(f"Run {run + 1} failed: {e}")
-        
-        convergence = []
-        best_error = float('inf')
-        for value in gnbg.FEhistory:
-            error = abs(value - OptimumValue)
-            if error < best_error:
-                best_error = error
-            convergence.append(best_error)
-
-        # Plotting the convergence
-        plt.plot(range(1, len(convergence) + 1), convergence)
-        plt.xlabel('Function Evaluation Number (FE)')
-        plt.ylabel('Error')
-        plt.title('Convergence Plot')
-        plt.yscale('log')  # Set y-axis to logarithmic scale  
-        plt.tight_layout()
-        plt.savefig(f"{folder}/convergence_problem{ProblemIndex}_run{run + 1}.png")
-        plt.close()
-if __name__ == "__main__":
-    folder_path = "codes/gnbg_python"
-    # Example usage
-    problem_list = [19, 21, 22]
-    for ProblemIndex in problem_list:
-        
-        filename = f'f{ProblemIndex}.mat'
-        GNBG_tmp = loadmat(os.path.join(folder_path, filename))['GNBG']
-        MaxEvals = np.array([item[0] for item in GNBG_tmp['MaxEvals'].flatten()])[0, 0]
-        AcceptanceThreshold = np.array([item[0] for item in GNBG_tmp['AcceptanceThreshold'].flatten()])[0, 0]
-        Dimension = np.array([item[0] for item in GNBG_tmp['Dimension'].flatten()])[0, 0]
-        CompNum = np.array([item[0] for item in GNBG_tmp['o'].flatten()])[0, 0]  # Number of components
-        MinCoordinate = np.array([item[0] for item in GNBG_tmp['MinCoordinate'].flatten()])[0, 0]
-        MaxCoordinate = np.array([item[0] for item in GNBG_tmp['MaxCoordinate'].flatten()])[0, 0]
-        CompMinPos = np.array(GNBG_tmp['Component_MinimumPosition'][0, 0])
-        CompSigma = np.array(GNBG_tmp['ComponentSigma'][0, 0], dtype=np.float64)
-        CompH = np.array(GNBG_tmp['Component_H'][0, 0])
-        Mu = np.array(GNBG_tmp['Mu'][0, 0])
-        Omega = np.array(GNBG_tmp['Omega'][0, 0])
-        Lambda = np.array(GNBG_tmp['lambda'][0, 0])
-        RotationMatrix = np.array(GNBG_tmp['RotationMatrix'][0, 0])
-        OptimumValue = np.array([item[0] for item in GNBG_tmp['OptimumValue'].flatten()])[0, 0]
-        OptimumPosition = np.array(GNBG_tmp['OptimumPosition'][0, 0])
-        
-        run_optimization(1000000, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate,
-                                                       CompMinPos, CompSigma, CompH, Mu, Omega, Lambda, RotationMatrix, OptimumValue, OptimumPosition)
-    
-    
-    # print(f"\nResults for Problem {ProblemIndex}:")
-    # print(f"Best solution: {best_solutions}")
-    # print(f"Optimun Solution: {OptimumValue}")
-    # print(f"Best fitness values: {best_values[1:]}")
-    # print(f"Mean fitness: {np.mean(best_values[1:])}")
-    # print(f"Std fitness: {np.std(best_values[1:])}") 
-    # print(f"Mean AOCC:         {np.mean(aoccs):.4f} (Higher is better)")
-    # print(f"Std Dev AOCC:      {np.std(aoccs):.4f}")
-    
-# python test_generated_algorithm.py

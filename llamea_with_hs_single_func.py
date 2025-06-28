@@ -63,15 +63,16 @@ class LLaMEA: # with key. rotations
 
     def __init__(self,
         f, llms: list,
-        init_pop_size=15, pop_size=8, mutation_rate = 0.3,
+        init_pop_size=2, pop_size=2, mutation_rate = 0.3,
         experiment_name="",
         budget=100,
         eval_timeout=3600,
         log=True,
         minimization=False):
-       
+        self.default_llm = llms[0]
+        self.crossover_llm = llms[1]
+        self.mutate_llm = llms[2]
         self.llms = llms
-        self.llm_index = 0
         self.eval_timeout = eval_timeout
         self.f = f  # evaluation function, provides an individual as output.        
         self.mutation_rate = mutation_rate
@@ -93,7 +94,9 @@ class LLaMEA: # with key. rotations
         if self.log:
             # modelname = self.model.replace(":", "_")
             self.logger = ExperimentLogger(f"LLaMEA--{experiment_name}")
-            self.llms[self.llm_index].set_logger(self.logger)
+            self.default_llm.set_logger(self.logger)
+            self.crossover_llm.set_logger(self.logger)
+            self.mutate_llm.set_logger(self.logger)
         else:
             self.logger = None
         self.textlog = logging.getLogger(__name__)
@@ -108,14 +111,7 @@ class LLaMEA: # with key. rotations
         self.str_comprehensive_memory = ""
         self.good_reflections_list = []
         self.bad_reflections_list = []
-        self.harmony_optimizer = HarmonySearchOptimizer(f, self.llms[1])
-    
-    def _get_next_llm(self):
-        """Cycles through the list of LLM instances in a round-robin fashion."""
-        llm_instance = self.llms[self.llm_index]
-        self.textlog.info(f"Using LLM instance #{self.llm_index} (Model: {llm_instance.model})")
-        self.llm_index = (self.llm_index + 1) % len(self.llms)
-        return llm_instance
+        self.harmony_optimizer = HarmonySearchOptimizer(f, self.default_llm)
 
     def logevent(self, event):
         self.textlog.info(event)
@@ -134,7 +130,7 @@ class LLaMEA: # with key. rotations
             },
         ]
         logging.info("Mutation prompt: " + full_mutation_prompt)
-        offsprings = [self.llms[0].sample_solution(copy.deepcopy(session_messages)) for _ in range(int(self.pop_size * self.mutation_rate))] # generate 5 mutated version of the best solution
+        offsprings = [self.mutate_llm.sample_solution(copy.deepcopy(session_messages)) for _ in range(int(self.pop_size * self.mutation_rate))] # generate 5 mutated version of the best solution
         print("Sample in mutation sucessfully!")
         evaluated_offsprings = []
         for offspring in offsprings:
@@ -145,11 +141,11 @@ class LLaMEA: # with key. rotations
         return evaluated_offsprings
     
     def initialize_population_from_seeds(self):
-        seed_dir = "seed_algorithms_func_3"
-        self.seed_files = sorted(
-            [os.path.join(seed_dir, f) for f in os.listdir(seed_dir) if f.endswith(".py")]
-        )
-        
+        # seed_dir = "seed_algorithms_func_3"
+        # self.seed_files = sorted(
+        #     [os.path.join(seed_dir, f) for f in os.listdir(seed_dir) if f.endswith(".py")]
+        # )
+        self.seed_files = ['seed_algorithms/group3_func.py']
         self.textlog.info(f"Initializing population from {len(self.seed_files)} seed files...")
         initial_solutions = []
         for file_path in self.seed_files:
@@ -172,8 +168,7 @@ class LLaMEA: # with key. rotations
         """
         Initializes a single solution.
         """
-        chosen_llm = self.llms[role_index % len(self.llms)] 
-        self.textlog.info(f"Using LLM api key #{chosen_llm.api_key})")
+      
 
         current_role_prompt = self.role_prompt[role_index % len(self.role_prompt)]
         new_individual = Solution(name="", code="", generation=self.generation)
@@ -186,7 +181,7 @@ class LLaMEA: # with key. rotations
         ]
        
         try:
-            new_individual = chosen_llm.sample_solution(session_messages, role_index=role_index)
+            new_individual = self.default_llm.sample_solution(session_messages, role_index=role_index)
             new_individual.generation = self.generation
             # new_individual = self.evaluate_fitness(new_individual)
         except Exception as e:
@@ -236,7 +231,7 @@ class LLaMEA: # with key. rotations
         self.update_best()
 
     def flash_reflection(self, selected_population: list[Solution]):
-        chosen_llm = self.llms[0] 
+        chosen_llm = self.mutate_llm 
         self.textlog.info(f"--- Performing Long-Term Reflection at Generation {self.generation} ---")
         sorted_population = sorted(
             [p for p in self.population if np.isfinite(p.fitness)], 
@@ -294,7 +289,7 @@ class LLaMEA: # with key. rotations
             curr_reflection = self.str_flash_memory['exp'],
         )
         
-        response_text = self.llms[0].query([{"role": "user", "content": full_comprehensive_reflection_prompt}])
+        response_text = self.mutate_llm.query([{"role": "user", "content": full_comprehensive_reflection_prompt}])
         self.textlog.info(f"Full response text: {response_text}")
         self.str_comprehensive_memory = response_text
 
@@ -305,7 +300,6 @@ class LLaMEA: # with key. rotations
         if len(parents) % 2 != 0:
             parents.pop()
         crossed_population = []
-        chosen_llm = self.llms[0]
         self.textlog.info(f"Generating offspring via Crossover...")
         offsprings = []
         for i in range(0, len(parents), 2):
@@ -333,7 +327,7 @@ class LLaMEA: # with key. rotations
                     "content": full_crossover_prompt + self.task_prompt
                 },
             ]
-            offspring = chosen_llm.sample_solution(session_messages)
+            offspring = self.crossover_llm.sample_solution(session_messages)
             print("Sample in crossover sucessfully!")
             offspring.generation = self.generation
             offsprings.append(offspring)

@@ -14,7 +14,8 @@ from scipy.io import loadmat
 # AIzaSyCbiZx7Pmr5kWUihPXQ8nGvEsuo80kaiWE
 api_keys = [
         'AIzaSyARJfdVOsI9AKUK6gxvUszL_bn5Z_lr5Wg',
-        'AIzaSyAS4WrMPg7WNPXLpCYIOG49cIYOL7vTAl8'
+        'AIzaSyAS4WrMPg7WNPXLpCYIOG49cIYOL7vTAl8',
+        'AIzaSyCK6miE77n6z7PUf0RNgj8seMiiVET-wqk'
 ]
 # api_key = "AIzaSyAmHOlzt0LgKmgr2Mu2Fu7dEpE7PFDeNTs"
 ai_model = "gemini-2.0-flash"

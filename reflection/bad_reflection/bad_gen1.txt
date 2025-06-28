@@ -1,2 +1,1 @@
-For multi-component landscapes, effective heuristics involve archive-guided local search within subpopulations that are balanced against global island architectures to share memory between isolated local searches and promote overall diversity, and with minimal adjustments to account complex adaptation factors such as normalized diversity.
-```
+Effective handling of deceptive landscapes requires aggressive local search upon migration and strategic restart mechanisms. Adapting parameters such as crossover rate can contribute to performance, however, local search is more important. The AdaptiveIslandDE algorithm more aggressive in promoting better outcomes than AdaptiveIslandDifferentialEvolution.

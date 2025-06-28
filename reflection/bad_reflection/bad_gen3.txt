@@ -1,1 +1,2 @@
-Multi-population methods offer effective diversity in deceptive landscapes. Archive-guided mutation and adaptive migration rates help balance exploration and exploitation. Restarting stagnated islands also ensures progress. Always add self adapting mechanisms when applicable to cover unknown aspects of benchmark.
+Fitness-aware migration and strategically restarts enhances exploration. Adjusting population size dynamically helps exploit promising regions. Local search adaptation after migration can improve final results in complex landscapes. Careful design of DE and local search exploitation-exploration balance is paramount for addressing deceptive multi-component instances.
+```
