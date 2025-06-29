@@ -1,0 +1,70 @@
+2025-06-29 08:08:35,377 - INFO - Starting run 1/5
+2025-06-29 08:08:46,669 - ERROR - Run 1 failed due to: Range exceeds valid bounds
+Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 193, in run_optimization
+    best_solution, best_fitness, _ = optimizer.optimize(
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 93, in optimize
+    current_solution = self._perturb(current_solution)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 116, in _perturb
+    perturbation = np.random.uniform(-self.perturbation_strength, self.perturbation_strength, self.dim) * (self.upper_bounds - self.lower_bounds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/mtrand.pyx", line 1156, in numpy.random.mtrand.RandomState.uniform
+OverflowError: Range exceeds valid bounds
+2025-06-29 08:08:46,936 - INFO - Starting run 2/5
+2025-06-29 08:08:58,320 - ERROR - Run 2 failed due to: Range exceeds valid bounds
+Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 193, in run_optimization
+    best_solution, best_fitness, _ = optimizer.optimize(
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 93, in optimize
+    current_solution = self._perturb(current_solution)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 116, in _perturb
+    perturbation = np.random.uniform(-self.perturbation_strength, self.perturbation_strength, self.dim) * (self.upper_bounds - self.lower_bounds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/mtrand.pyx", line 1156, in numpy.random.mtrand.RandomState.uniform
+OverflowError: Range exceeds valid bounds
+2025-06-29 08:08:58,434 - INFO - Starting run 3/5
+2025-06-29 08:09:09,591 - ERROR - Run 3 failed due to: Range exceeds valid bounds
+Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 193, in run_optimization
+    best_solution, best_fitness, _ = optimizer.optimize(
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 93, in optimize
+    current_solution = self._perturb(current_solution)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 116, in _perturb
+    perturbation = np.random.uniform(-self.perturbation_strength, self.perturbation_strength, self.dim) * (self.upper_bounds - self.lower_bounds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/mtrand.pyx", line 1156, in numpy.random.mtrand.RandomState.uniform
+OverflowError: Range exceeds valid bounds
+2025-06-29 08:09:09,698 - INFO - Starting run 4/5
+2025-06-29 08:09:20,987 - ERROR - Run 4 failed due to: Range exceeds valid bounds
+Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 193, in run_optimization
+    best_solution, best_fitness, _ = optimizer.optimize(
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 93, in optimize
+    current_solution = self._perturb(current_solution)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 116, in _perturb
+    perturbation = np.random.uniform(-self.perturbation_strength, self.perturbation_strength, self.dim) * (self.upper_bounds - self.lower_bounds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/mtrand.pyx", line 1156, in numpy.random.mtrand.RandomState.uniform
+OverflowError: Range exceeds valid bounds
+2025-06-29 08:09:21,121 - INFO - Starting run 5/5
+2025-06-29 08:09:32,335 - ERROR - Run 5 failed due to: Range exceeds valid bounds
+Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 193, in run_optimization
+    best_solution, best_fitness, _ = optimizer.optimize(
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 93, in optimize
+    current_solution = self._perturb(current_solution)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 116, in _perturb
+    perturbation = np.random.uniform(-self.perturbation_strength, self.perturbation_strength, self.dim) * (self.upper_bounds - self.lower_bounds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/mtrand.pyx", line 1156, in numpy.random.mtrand.RandomState.uniform
+OverflowError: Range exceeds valid bounds

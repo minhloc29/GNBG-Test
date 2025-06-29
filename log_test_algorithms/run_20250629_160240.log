@@ -1,0 +1,7 @@
+2025-06-29 16:02:40,242 - INFO - Starting run 1/5
+2025-06-29 16:02:40,242 - ERROR - Run 1 failed due to: AdaptiveIslandDE.__init__() got an unexpected keyword argument 'optimum_value'
+Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 344, in run_optimization
+    optimizer = AdaptiveIslandDE(
+                ^^^^^^^^^^^^^^^^^
+TypeError: AdaptiveIslandDE.__init__() got an unexpected keyword argument 'optimum_value'

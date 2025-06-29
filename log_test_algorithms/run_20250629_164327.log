@@ -1,0 +1,322 @@
+2025-06-29 16:43:27,887 - INFO - Starting run 1/31
+2025-06-29 16:43:46,425 - INFO - Restarting island 2 due to stagnation at FE=67690
+2025-06-29 16:43:46,628 - INFO - Restarting island 0 due to stagnation at FE=68410
+2025-06-29 16:43:51,718 - INFO - Restarting island 4 due to stagnation at FE=86130
+2025-06-29 16:44:02,911 - INFO - Restarting island 3 due to stagnation at FE=125050
+2025-06-29 16:44:10,943 - INFO - Restarting island 1 due to stagnation at FE=152170
+2025-06-29 16:44:11,161 - INFO - Restarting island 2 due to stagnation at FE=152890
+2025-06-29 16:44:11,983 - INFO - Restarting island 4 due to stagnation at FE=155510
+2025-06-29 16:44:19,280 - INFO - Restarting island 0 due to stagnation at FE=179130
+2025-06-29 16:44:30,673 - INFO - Restarting island 1 due to stagnation at FE=209450
+2025-06-29 16:44:36,327 - INFO - Restarting island 0 due to stagnation at FE=221770
+2025-06-29 16:44:40,508 - INFO - Restarting island 3 due to stagnation at FE=231190
+2025-06-29 16:44:41,379 - INFO - Restarting island 2 due to stagnation at FE=233110
+2025-06-29 16:44:50,770 - INFO - Restarting island 4 due to stagnation at FE=253830
+2025-06-29 16:44:51,959 - INFO - Restarting island 0 due to stagnation at FE=256550
+2025-06-29 16:45:25,108 - INFO - Restarting island 3 due to stagnation at FE=322270
+2025-06-29 16:45:38,813 - INFO - Restarting island 2 due to stagnation at FE=347190
+2025-06-29 16:45:53,054 - INFO - Restarting island 1 due to stagnation at FE=371910
+2025-06-29 16:46:10,373 - INFO - Restarting island 0 due to stagnation at FE=401230
+2025-06-29 16:46:19,400 - INFO - Restarting island 3 due to stagnation at FE=416950
+2025-06-29 16:46:43,025 - INFO - Restarting island 2 due to stagnation at FE=456070
+2025-06-29 16:46:58,480 - INFO - Restarting island 4 due to stagnation at FE=479190
+2025-06-29 16:47:34,875 - INFO - Restarting island 3 due to stagnation at FE=530310
+2025-06-29 16:47:42,713 - INFO - Restarting island 1 due to stagnation at FE=541030
+2025-06-29 16:47:52,332 - INFO - Restarting island 2 due to stagnation at FE=554150
+2025-06-29 16:48:03,588 - INFO - Restarting island 0 due to stagnation at FE=569770
+2025-06-29 16:48:04,740 - INFO - Restarting island 1 due to stagnation at FE=571490
+2025-06-29 16:48:30,632 - INFO - Restarting island 4 due to stagnation at FE=606810
+2025-06-29 16:48:57,005 - INFO - Restarting island 3 due to stagnation at FE=644930
+2025-06-29 16:49:17,114 - INFO - Restarting island 1 due to stagnation at FE=671250
+2025-06-29 16:49:39,714 - INFO - Restarting island 0 due to stagnation at FE=703670
+2025-06-29 16:50:00,035 - INFO - Restarting island 2 due to stagnation at FE=729790
+2025-06-29 16:50:42,434 - INFO - Restarting island 3 due to stagnation at FE=776310
+2025-06-29 16:51:25,046 - INFO - Restarting island 0 due to stagnation at FE=822430
+2025-06-29 16:51:41,459 - INFO - Restarting island 4 due to stagnation at FE=838950
+2025-06-29 16:53:07,126 - INFO - Restarting island 2 due to stagnation at FE=920970
+2025-06-29 16:53:14,728 - INFO - Restarting island 0 due to stagnation at FE=929490
+2025-06-29 16:53:24,131 - INFO - Restarting island 3 due to stagnation at FE=939610
+2025-06-29 16:54:26,874 - INFO - Run 1 completed. Best fitness: -9.939055e+01, AOCC: 0.2015
+2025-06-29 16:54:26,874 - INFO - 
+Results for Problem 20:
+2025-06-29 16:54:26,875 - INFO - History: [-79.17601912 -77.8216998  -76.27506182 ... -96.59958137 -96.74882197
+ -96.43606143]
+2025-06-29 16:54:26,875 - INFO - Best solution: [array([-74.96935128, -57.72363647, -64.81368569, -46.93738065,
+       -59.25714452, -72.88179095, -27.00987346, -33.1422219 ,
+       -60.95811173, -60.06124056, -64.62845983, -67.67429786,
+       -40.39169964, -49.12084379, -68.38529524, -57.44961195,
+       -37.18646959, -26.82118689, -52.52728296, -46.15218791,
+       -30.75817177, -28.6065104 , -28.4442155 , -28.82216033,
+       -73.50610238, -32.9054032 , -46.95072271, -55.56010045,
+       -71.79663595, -39.38545581])]
+2025-06-29 16:54:26,875 - INFO - Optimun Solution: -100
+2025-06-29 16:54:26,875 - INFO - Best fitness values: [-99.39054840063065]
+2025-06-29 16:54:26,875 - INFO - Mean fitness: -99.39054840063065
+2025-06-29 16:54:26,875 - INFO - Std fitness: 0.0
+2025-06-29 16:54:26,875 - INFO - Mean AOCC:         0.2015 (Higher is better)
+2025-06-29 16:54:26,875 - INFO - Std Dev AOCC:      0.0000
+2025-06-29 16:54:27,474 - INFO - Starting run 2/31
+2025-06-29 16:54:39,888 - INFO - Restarting island 3 due to stagnation at FE=43590
+2025-06-29 16:54:42,815 - INFO - Restarting island 4 due to stagnation at FE=54810
+2025-06-29 16:54:44,083 - INFO - Restarting island 0 due to stagnation at FE=59830
+2025-06-29 16:54:44,998 - INFO - Restarting island 1 due to stagnation at FE=63150
+2025-06-29 16:55:09,223 - INFO - Restarting island 3 due to stagnation at FE=147970
+2025-06-29 16:55:12,616 - INFO - Restarting island 2 due to stagnation at FE=159290
+2025-06-29 16:55:18,135 - INFO - Restarting island 0 due to stagnation at FE=177510
+2025-06-29 16:55:18,990 - INFO - Restarting island 1 due to stagnation at FE=180330
+2025-06-29 16:55:23,930 - INFO - Restarting island 4 due to stagnation at FE=196950
+2025-06-29 16:55:35,554 - INFO - Restarting island 2 due to stagnation at FE=226070
+2025-06-29 16:55:50,923 - INFO - Restarting island 1 due to stagnation at FE=262990
+2025-06-29 16:55:53,853 - INFO - Restarting island 4 due to stagnation at FE=270010
+2025-06-29 16:55:55,654 - INFO - Restarting island 3 due to stagnation at FE=274230
+2025-06-29 16:58:49,449 - INFO - Restarting island 0 due to stagnation at FE=327250
+2025-06-29 17:33:52,956 - INFO - Restarting island 2 due to stagnation at FE=351070
+2025-06-29 17:33:55,991 - INFO - Restarting island 0 due to stagnation at FE=356690
+2025-06-29 17:50:46,271 - INFO - Restarting island 4 due to stagnation at FE=386810
+2025-06-29 17:51:01,163 - INFO - Restarting island 2 due to stagnation at FE=398930
+2025-06-29 17:51:13,495 - INFO - Restarting island 3 due to stagnation at FE=408750
+2025-06-29 18:07:19,054 - INFO - Restarting island 4 due to stagnation at FE=453970
+2025-06-29 18:07:27,238 - INFO - Restarting island 1 due to stagnation at FE=467990
+2025-06-29 18:07:39,900 - INFO - Restarting island 2 due to stagnation at FE=488010
+2025-06-29 18:07:45,163 - INFO - Restarting island 0 due to stagnation at FE=495830
+2025-06-29 18:08:27,785 - INFO - Restarting island 4 due to stagnation at FE=557850
+2025-06-29 18:08:34,448 - INFO - Restarting island 1 due to stagnation at FE=567470
+2025-06-29 18:08:39,599 - INFO - Restarting island 3 due to stagnation at FE=574690
+2025-06-29 18:08:54,397 - INFO - Restarting island 2 due to stagnation at FE=594410
+2025-06-29 18:09:02,814 - INFO - Restarting island 0 due to stagnation at FE=606330
+2025-06-29 18:09:10,667 - INFO - Restarting island 1 due to stagnation at FE=617450
+2025-06-29 18:09:49,104 - INFO - Restarting island 0 due to stagnation at FE=670070
+2025-06-29 18:09:53,616 - INFO - Restarting island 3 due to stagnation at FE=676290
+2025-06-29 18:10:23,048 - INFO - Restarting island 2 due to stagnation at FE=714410
+2025-06-29 18:10:52,933 - INFO - Restarting island 3 due to stagnation at FE=751530
+2025-06-29 18:11:15,394 - INFO - Restarting island 0 due to stagnation at FE=778950
+2025-06-29 18:11:37,440 - INFO - Restarting island 4 due to stagnation at FE=803870
+2025-06-29 18:12:04,215 - INFO - Restarting island 1 due to stagnation at FE=832990
+2025-06-29 18:12:19,814 - INFO - Restarting island 0 due to stagnation at FE=850010
+2025-06-29 18:12:38,899 - INFO - Restarting island 3 due to stagnation at FE=869930
+2025-06-29 18:12:58,853 - INFO - Restarting island 2 due to stagnation at FE=889450
+2025-06-29 18:13:37,352 - INFO - Restarting island 1 due to stagnation at FE=930470
+2025-06-29 18:14:07,195 - INFO - Restarting island 4 due to stagnation at FE=958790
+2025-06-29 18:14:38,651 - INFO - Restarting island 4 due to stagnation at FE=987310
+2025-06-29 18:14:38,790 - INFO - Restarting island 0 due to stagnation at FE=987430
+2025-06-29 18:14:48,905 - INFO - Restarting island 2 due to stagnation at FE=996350
+2025-06-29 18:14:57,069 - INFO - Run 2 completed. Best fitness: -9.916360e+01, AOCC: 0.1928
+2025-06-29 18:14:57,069 - INFO - 
+Results for Problem 20:
+2025-06-29 18:14:57,070 - INFO - History: [-77.69757538 -78.44049316 -79.71702771 ... -96.80075564 -96.74812582
+ -96.82959662]
+2025-06-29 18:14:57,070 - INFO - Best solution: [array([-74.96935128, -57.72363647, -64.81368569, -46.93738065,
+       -59.25714452, -72.88179095, -27.00987346, -33.1422219 ,
+       -60.95811173, -60.06124056, -64.62845983, -67.67429786,
+       -40.39169964, -49.12084379, -68.38529524, -57.44961195,
+       -37.18646959, -26.82118689, -52.52728296, -46.15218791,
+       -30.75817177, -28.6065104 , -28.4442155 , -28.82216033,
+       -73.50610238, -32.9054032 , -46.95072271, -55.56010045,
+       -71.79663595, -39.38545581]), array([-74.99530497, -57.72717581, -64.5761793 , -47.02142613,
+       -59.22176993, -73.29705406, -28.48260466, -33.04888729,
+       -60.57358081, -60.29808489, -64.44995706, -67.57726595,
+       -40.5067769 , -48.80134146, -68.10531055, -57.6430729 ,
+       -37.26994378, -26.8989987 , -52.49402767, -46.41496806,
+       -30.66498791, -28.47560613, -28.32437262, -28.97165546,
+       -73.57572306, -32.9328214 , -46.95841802, -55.87326316,
+       -72.10894576, -39.64516552])]
+2025-06-29 18:14:57,070 - INFO - Optimun Solution: -100
+2025-06-29 18:14:57,070 - INFO - Best fitness values: [-99.39054840063065, -99.16360047735931]
+2025-06-29 18:14:57,070 - INFO - Mean fitness: -99.27707443899499
+2025-06-29 18:14:57,070 - INFO - Std fitness: 0.1134739616356697
+2025-06-29 18:14:57,070 - INFO - Mean AOCC:         0.1971 (Higher is better)
+2025-06-29 18:14:57,070 - INFO - Std Dev AOCC:      0.0043
+2025-06-29 18:14:57,521 - INFO - Starting run 3/31
+2025-06-29 18:15:14,472 - INFO - Restarting island 0 due to stagnation at FE=57690
+2025-06-29 18:15:20,981 - INFO - Restarting island 3 due to stagnation at FE=79710
+2025-06-29 18:15:24,680 - INFO - Restarting island 4 due to stagnation at FE=92130
+2025-06-29 18:15:30,906 - INFO - Restarting island 2 due to stagnation at FE=112550
+2025-06-29 18:15:32,637 - INFO - Restarting island 1 due to stagnation at FE=118070
+2025-06-29 18:15:45,359 - INFO - Restarting island 0 due to stagnation at FE=158290
+2025-06-29 18:15:48,956 - INFO - Restarting island 4 due to stagnation at FE=169510
+2025-06-29 18:15:50,872 - INFO - Restarting island 3 due to stagnation at FE=175130
+2025-06-29 18:16:15,900 - INFO - Restarting island 3 due to stagnation at FE=234150
+2025-06-29 18:16:25,598 - INFO - Restarting island 4 due to stagnation at FE=253670
+2025-06-29 18:16:37,825 - INFO - Restarting island 0 due to stagnation at FE=275790
+2025-06-29 18:16:45,134 - INFO - Restarting island 2 due to stagnation at FE=290610
+2025-06-29 18:16:50,514 - INFO - Restarting island 4 due to stagnation at FE=300030
+2025-06-29 18:16:52,497 - INFO - Restarting island 1 due to stagnation at FE=303350
+2025-06-29 18:17:19,868 - INFO - Restarting island 0 due to stagnation at FE=344570
+2025-06-29 18:17:30,425 - INFO - Restarting island 3 due to stagnation at FE=361690
+2025-06-29 18:17:45,976 - INFO - Restarting island 4 due to stagnation at FE=389810
+2025-06-29 18:18:01,947 - INFO - Restarting island 2 due to stagnation at FE=419130
+2025-06-29 18:18:08,368 - INFO - Restarting island 3 due to stagnation at FE=430850
+2025-06-29 18:18:11,028 - INFO - Restarting island 1 due to stagnation at FE=435370
+2025-06-29 18:18:31,067 - INFO - Restarting island 4 due to stagnation at FE=468890
+2025-06-29 18:18:34,178 - INFO - Restarting island 0 due to stagnation at FE=473710
+2025-06-29 18:18:50,088 - INFO - Restarting island 1 due to stagnation at FE=500730
+2025-06-29 18:18:52,838 - INFO - Restarting island 2 due to stagnation at FE=504750
+2025-06-29 18:18:56,719 - INFO - Restarting island 3 due to stagnation at FE=510570
+2025-06-29 18:19:09,684 - INFO - Restarting island 0 due to stagnation at FE=529790
+2025-06-29 18:19:33,101 - INFO - Restarting island 0 due to stagnation at FE=562110
+2025-06-29 18:19:41,783 - INFO - Restarting island 4 due to stagnation at FE=573930
+2025-06-29 18:20:19,104 - INFO - Restarting island 1 due to stagnation at FE=624050
+2025-06-29 18:20:21,798 - INFO - Restarting island 3 due to stagnation at FE=627570
+2025-06-29 18:20:56,135 - INFO - Restarting island 0 due to stagnation at FE=670690
+2025-06-29 18:21:02,414 - INFO - Restarting island 4 due to stagnation at FE=678210
+2025-06-29 18:21:19,006 - INFO - Restarting island 2 due to stagnation at FE=698130
+2025-06-29 18:22:22,972 - INFO - Restarting island 0 due to stagnation at FE=771850
+2025-06-29 18:22:28,748 - INFO - Restarting island 2 due to stagnation at FE=777870
+2025-06-29 18:22:42,556 - INFO - Restarting island 1 due to stagnation at FE=791790
+2025-06-29 18:22:56,654 - INFO - Restarting island 4 due to stagnation at FE=805510
+2025-06-29 18:23:21,496 - INFO - Restarting island 3 due to stagnation at FE=829730
+2025-06-29 18:24:00,649 - INFO - Restarting island 0 due to stagnation at FE=868750
+2025-06-29 18:24:14,806 - INFO - Restarting island 3 due to stagnation at FE=882070
+2025-06-29 18:24:55,809 - INFO - Restarting island 4 due to stagnation at FE=920290
+2025-06-29 18:25:10,914 - INFO - Restarting island 2 due to stagnation at FE=934010
+2025-06-29 18:25:11,825 - INFO - Restarting island 3 due to stagnation at FE=935030
+2025-06-29 18:25:56,148 - INFO - Restarting island 0 due to stagnation at FE=976150
+2025-06-29 18:26:10,539 - INFO - Restarting island 2 due to stagnation at FE=988670
+2025-06-29 18:26:27,880 - INFO - Run 3 completed. Best fitness: -9.955929e+01, AOCC: 0.2276
+2025-06-29 18:26:27,881 - INFO - 
+Results for Problem 20:
+2025-06-29 18:26:27,881 - INFO - History: [-79.60992575 -76.62137177 -79.45309999 ... -93.10053141 -92.64523265
+ -92.74364796]
+2025-06-29 18:26:27,881 - INFO - Best solution: [array([-74.96935128, -57.72363647, -64.81368569, -46.93738065,
+       -59.25714452, -72.88179095, -27.00987346, -33.1422219 ,
+       -60.95811173, -60.06124056, -64.62845983, -67.67429786,
+       -40.39169964, -49.12084379, -68.38529524, -57.44961195,
+       -37.18646959, -26.82118689, -52.52728296, -46.15218791,
+       -30.75817177, -28.6065104 , -28.4442155 , -28.82216033,
+       -73.50610238, -32.9054032 , -46.95072271, -55.56010045,
+       -71.79663595, -39.38545581]), array([-74.99530497, -57.72717581, -64.5761793 , -47.02142613,
+       -59.22176993, -73.29705406, -28.48260466, -33.04888729,
+       -60.57358081, -60.29808489, -64.44995706, -67.57726595,
+       -40.5067769 , -48.80134146, -68.10531055, -57.6430729 ,
+       -37.26994378, -26.8989987 , -52.49402767, -46.41496806,
+       -30.66498791, -28.47560613, -28.32437262, -28.97165546,
+       -73.57572306, -32.9328214 , -46.95841802, -55.87326316,
+       -72.10894576, -39.64516552]), array([-75.00256891, -57.72833305, -64.7592782 , -47.04973738,
+       -59.37505232, -72.95638707, -27.06475367, -33.22366327,
+       -60.85160453, -60.25541223, -64.67543061, -67.73944665,
+       -40.32622054, -49.17232916, -68.03394496, -57.70262407,
+       -37.46991334, -26.8255941 , -52.4462852 , -46.32710468,
+       -30.77927177, -28.45576875, -28.26817314, -28.79788404,
+       -73.6000018 , -32.87317134, -47.11721735, -55.53349353,
+       -71.84817303, -39.27079743])]
+2025-06-29 18:26:27,881 - INFO - Optimun Solution: -100
+2025-06-29 18:26:27,881 - INFO - Best fitness values: [-99.39054840063065, -99.16360047735931, -99.55929494530196]
+2025-06-29 18:26:27,881 - INFO - Mean fitness: -99.37114794109732
+2025-06-29 18:26:27,881 - INFO - Std fitness: 0.16212302193639314
+2025-06-29 18:26:27,881 - INFO - Mean AOCC:         0.2073 (Higher is better)
+2025-06-29 18:26:27,881 - INFO - Std Dev AOCC:      0.0148
+2025-06-29 18:26:28,344 - INFO - Starting run 4/31
+2025-06-29 18:26:47,131 - INFO - Restarting island 4 due to stagnation at FE=61690
+2025-06-29 18:26:48,085 - INFO - Restarting island 0 due to stagnation at FE=64910
+2025-06-29 18:26:52,198 - INFO - Restarting island 2 due to stagnation at FE=78530
+2025-06-29 18:26:54,605 - INFO - Restarting island 1 due to stagnation at FE=86550
+2025-06-29 18:26:57,813 - INFO - Restarting island 0 due to stagnation at FE=97070
+2025-06-29 18:27:05,078 - INFO - Restarting island 3 due to stagnation at FE=119790
+2025-06-29 18:27:11,134 - INFO - Restarting island 2 due to stagnation at FE=138210
+2025-06-29 18:27:22,928 - INFO - Restarting island 1 due to stagnation at FE=172830
+2025-06-29 18:27:25,825 - INFO - Restarting island 4 due to stagnation at FE=181350
+2025-06-29 18:27:32,441 - INFO - Restarting island 0 due to stagnation at FE=199470
+2025-06-29 18:27:58,370 - INFO - Restarting island 3 due to stagnation at FE=257290
+2025-06-29 18:28:00,202 - INFO - Restarting island 2 due to stagnation at FE=261110
+2025-06-29 18:28:02,761 - INFO - Restarting island 1 due to stagnation at FE=266230
+2025-06-29 18:28:26,746 - INFO - Restarting island 4 due to stagnation at FE=313450
+2025-06-29 18:28:28,231 - INFO - Restarting island 0 due to stagnation at FE=316470
+2025-06-29 18:28:38,762 - INFO - Restarting island 1 due to stagnation at FE=337790
+2025-06-29 18:28:41,680 - INFO - Restarting island 0 due to stagnation at FE=343310
+2025-06-29 18:28:59,827 - INFO - Restarting island 2 due to stagnation at FE=376730
+2025-06-29 18:29:04,319 - INFO - Restarting island 1 due to stagnation at FE=384750
+2025-06-29 18:29:07,373 - INFO - Restarting island 3 due to stagnation at FE=389970
+2025-06-29 18:29:16,325 - INFO - Restarting island 0 due to stagnation at FE=405390
+2025-06-29 18:30:06,577 - INFO - Restarting island 1 due to stagnation at FE=486610
+2025-06-29 18:30:08,584 - INFO - Restarting island 0 due to stagnation at FE=489730
+2025-06-29 18:30:26,350 - INFO - Restarting island 2 due to stagnation at FE=517350
+2025-06-29 18:30:35,733 - INFO - Restarting island 4 due to stagnation at FE=530870
+2025-06-29 18:31:34,305 - INFO - Restarting island 3 due to stagnation at FE=605190
+2025-06-29 18:31:40,838 - INFO - Restarting island 2 due to stagnation at FE=613210
+2025-06-29 18:32:37,864 - INFO - Restarting island 1 due to stagnation at FE=680630
+2025-06-29 18:33:31,315 - INFO - Restarting island 0 due to stagnation at FE=738750
+2025-06-29 18:33:32,088 - INFO - Restarting island 3 due to stagnation at FE=739570
+2025-06-29 18:33:49,841 - INFO - Restarting island 1 due to stagnation at FE=758090
+2025-06-29 18:34:46,179 - INFO - Restarting island 4 due to stagnation at FE=816010
+2025-06-29 18:34:58,552 - INFO - Restarting island 2 due to stagnation at FE=828030
+2025-06-29 18:35:06,647 - INFO - Restarting island 0 due to stagnation at FE=836050
+2025-06-29 18:35:10,195 - INFO - Restarting island 3 due to stagnation at FE=839470
+2025-06-29 18:35:28,089 - INFO - Restarting island 2 due to stagnation at FE=856390
+2025-06-29 18:36:40,114 - INFO - Restarting island 2 due to stagnation at FE=924810
+2025-06-29 18:38:26,660 - INFO - Restarting island 3 due to stagnation at FE=974530
+2025-06-29 18:38:38,599 - INFO - Restarting island 4 due to stagnation at FE=986750
+2025-06-29 18:38:55,903 - INFO - Run 4 completed. Best fitness: -9.983943e+01, AOCC: 0.2035
+2025-06-29 18:38:55,904 - INFO - 
+Results for Problem 20:
+2025-06-29 18:38:55,905 - INFO - History: [-78.62162283 -77.39994113 -76.50793999 ... -99.81634199 -99.82990737
+ -99.81953572]
+2025-06-29 18:38:55,905 - INFO - Best solution: [array([-74.96935128, -57.72363647, -64.81368569, -46.93738065,
+       -59.25714452, -72.88179095, -27.00987346, -33.1422219 ,
+       -60.95811173, -60.06124056, -64.62845983, -67.67429786,
+       -40.39169964, -49.12084379, -68.38529524, -57.44961195,
+       -37.18646959, -26.82118689, -52.52728296, -46.15218791,
+       -30.75817177, -28.6065104 , -28.4442155 , -28.82216033,
+       -73.50610238, -32.9054032 , -46.95072271, -55.56010045,
+       -71.79663595, -39.38545581]), array([-74.99530497, -57.72717581, -64.5761793 , -47.02142613,
+       -59.22176993, -73.29705406, -28.48260466, -33.04888729,
+       -60.57358081, -60.29808489, -64.44995706, -67.57726595,
+       -40.5067769 , -48.80134146, -68.10531055, -57.6430729 ,
+       -37.26994378, -26.8989987 , -52.49402767, -46.41496806,
+       -30.66498791, -28.47560613, -28.32437262, -28.97165546,
+       -73.57572306, -32.9328214 , -46.95841802, -55.87326316,
+       -72.10894576, -39.64516552]), array([-75.00256891, -57.72833305, -64.7592782 , -47.04973738,
+       -59.37505232, -72.95638707, -27.06475367, -33.22366327,
+       -60.85160453, -60.25541223, -64.67543061, -67.73944665,
+       -40.32622054, -49.17232916, -68.03394496, -57.70262407,
+       -37.46991334, -26.8255941 , -52.4462852 , -46.32710468,
+       -30.77927177, -28.45576875, -28.26817314, -28.79788404,
+       -73.6000018 , -32.87317134, -47.11721735, -55.53349353,
+       -71.84817303, -39.27079743]), array([-74.99979521, -57.71883156, -64.79273909, -47.06552058,
+       -59.33167412, -73.04825251, -27.10513008, -33.26158349,
+       -60.97623278, -60.30622162, -64.40609063, -67.66360984,
+       -40.28901245, -49.25549953, -68.02350915, -57.61288631,
+       -37.45301878, -26.75289822, -52.50407197, -46.30430199,
+       -30.7110492 , -28.51639832, -28.37293272, -28.84926142,
+       -73.58562462, -32.88445478, -46.95420839, -55.5960142 ,
+       -72.0129703 , -39.35911392])]
+2025-06-29 18:38:55,905 - INFO - Optimun Solution: -100
+2025-06-29 18:38:55,905 - INFO - Best fitness values: [-99.39054840063065, -99.16360047735931, -99.55929494530196, -99.83942601023173]
+2025-06-29 18:38:55,905 - INFO - Mean fitness: -99.48821745838092
+2025-06-29 18:38:55,905 - INFO - Std fitness: 0.24663479339377764
+2025-06-29 18:38:55,906 - INFO - Mean AOCC:         0.2063 (Higher is better)
+2025-06-29 18:38:55,906 - INFO - Std Dev AOCC:      0.0129
+2025-06-29 18:38:56,318 - INFO - Starting run 5/31
+2025-06-29 18:39:15,745 - INFO - Restarting island 0 due to stagnation at FE=70490
+2025-06-29 18:39:17,403 - INFO - Restarting island 1 due to stagnation at FE=76310
+2025-06-29 18:39:17,930 - INFO - Restarting island 4 due to stagnation at FE=78130
+2025-06-29 18:39:32,873 - INFO - Restarting island 3 due to stagnation at FE=127850
+2025-06-29 18:39:37,396 - INFO - Restarting island 2 due to stagnation at FE=142270
+2025-06-29 18:39:48,320 - INFO - Restarting island 1 due to stagnation at FE=175990
+2025-06-29 18:39:56,717 - INFO - Restarting island 0 due to stagnation at FE=200410
+2025-06-29 18:39:58,198 - INFO - Restarting island 4 due to stagnation at FE=204030
+2025-06-29 18:40:02,973 - INFO - Restarting island 2 due to stagnation at FE=216250
+2025-06-29 18:40:11,583 - INFO - Restarting island 0 due to stagnation at FE=237970
+2025-06-29 18:40:18,092 - INFO - Restarting island 1 due to stagnation at FE=253690
+2025-06-29 18:40:37,758 - INFO - Restarting island 3 due to stagnation at FE=298610
+2025-06-29 18:40:59,946 - INFO - Restarting island 4 due to stagnation at FE=346330
+2025-06-29 18:41:05,696 - INFO - Restarting island 0 due to stagnation at FE=357950
+2025-06-29 18:41:07,202 - INFO - Restarting island 2 due to stagnation at FE=361070
+2025-06-29 18:41:38,026 - INFO - Restarting island 0 due to stagnation at FE=422390
+2025-06-29 18:41:40,909 - INFO - Restarting island 3 due to stagnation at FE=428410
+2025-06-29 18:41:56,533 - INFO - Restarting island 4 due to stagnation at FE=458130
+2025-06-29 18:42:04,076 - INFO - Restarting island 2 due to stagnation at FE=472150
+2025-06-29 19:29:29,550 - INFO - Restarting island 1 due to stagnation at FE=508670
+2025-06-29 19:36:10,231 - INFO - Restarting island 2 due to stagnation at FE=524390
+2025-06-29 19:36:40,132 - INFO - Restarting island 0 due to stagnation at FE=563610
+2025-06-29 19:37:27,107 - INFO - Restarting island 2 due to stagnation at FE=628230
+2025-06-29 19:37:46,892 - INFO - Restarting island 0 due to stagnation at FE=654750
+2025-06-29 19:37:47,122 - INFO - Restarting island 4 due to stagnation at FE=655070
+2025-06-29 19:37:52,930 - INFO - Restarting island 1 due to stagnation at FE=662790
+2025-06-29 19:38:00,227 - INFO - Restarting island 3 due to stagnation at FE=672610
+2025-06-29 19:39:06,686 - INFO - Restarting island 0 due to stagnation at FE=757230
+2025-06-29 19:39:51,420 - INFO - Restarting island 3 due to stagnation at FE=810150
+2025-06-29 19:40:02,645 - INFO - Restarting island 0 due to stagnation at FE=823170
+2025-06-29 19:40:30,157 - INFO - Restarting island 1 due to stagnation at FE=854590
+2025-06-29 19:41:14,451 - INFO - Restarting island 3 due to stagnation at FE=901210
+2025-06-29 19:41:20,441 - INFO - Restarting island 4 due to stagnation at FE=906730
+2025-06-29 19:42:24,714 - INFO - Restarting island 0 due to stagnation at FE=964950

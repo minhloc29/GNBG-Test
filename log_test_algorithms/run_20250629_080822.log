@@ -1,0 +1,35 @@
+2025-06-29 08:08:22,451 - INFO - Starting run 1/5
+2025-06-29 08:08:22,451 - ERROR - Run 1 failed due to: name 'EnhancedArchiveGuidedDE' is not defined
+Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 185, in run_optimization
+    optimizer = EnhancedArchiveGuidedDE(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'EnhancedArchiveGuidedDE' is not defined
+2025-06-29 08:08:22,678 - INFO - Starting run 2/5
+2025-06-29 08:08:22,678 - ERROR - Run 2 failed due to: name 'EnhancedArchiveGuidedDE' is not defined
+Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 185, in run_optimization
+    optimizer = EnhancedArchiveGuidedDE(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'EnhancedArchiveGuidedDE' is not defined
+2025-06-29 08:08:22,743 - INFO - Starting run 3/5
+2025-06-29 08:08:22,743 - ERROR - Run 3 failed due to: name 'EnhancedArchiveGuidedDE' is not defined
+Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 185, in run_optimization
+    optimizer = EnhancedArchiveGuidedDE(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'EnhancedArchiveGuidedDE' is not defined
+2025-06-29 08:08:22,806 - INFO - Starting run 4/5
+2025-06-29 08:08:22,806 - ERROR - Run 4 failed due to: name 'EnhancedArchiveGuidedDE' is not defined
+Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 185, in run_optimization
+    optimizer = EnhancedArchiveGuidedDE(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'EnhancedArchiveGuidedDE' is not defined
+2025-06-29 08:08:22,873 - INFO - Starting run 5/5
+2025-06-29 08:08:22,873 - ERROR - Run 5 failed due to: name 'EnhancedArchiveGuidedDE' is not defined
+Traceback (most recent call last):
+  File "/Users/macbook/Documents/Code/LLMdesignedEA-comp/test_generated_algorithm.py", line 185, in run_optimization
+    optimizer = EnhancedArchiveGuidedDE(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'EnhancedArchiveGuidedDE' is not defined
