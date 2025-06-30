@@ -312,7 +312,7 @@ def run_optimization(MaxEvals, AcceptanceThreshold,
                      Dimension, CompNum, MinCoordinate, MaxCoordinate,
                      CompMinPos, CompSigma, CompH, Mu, Omega,
                      Lambda, RotationMatrix, OptimumValue, OptimumPosition,
-                    num_runs: int = 10,
+                    num_runs: int = 20,
                     seed: Optional[int] = None) -> Tuple[List[float], List[np.ndarray]]:
     """
     Run multiple optimization runs for a given problem
@@ -416,7 +416,7 @@ def run_optimization(MaxEvals, AcceptanceThreshold,
 if __name__ == "__main__":
     folder_path = "codes/gnbg_python"
     # Example usage
-    problem_list = [16, 17]
+    problem_list = [17]
     for ProblemIndex in problem_list:
         
         filename = f'f{ProblemIndex}.mat'
