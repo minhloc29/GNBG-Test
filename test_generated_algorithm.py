@@ -312,7 +312,7 @@ def run_optimization(MaxEvals, AcceptanceThreshold,
                      Dimension, CompNum, MinCoordinate, MaxCoordinate,
                      CompMinPos, CompSigma, CompH, Mu, Omega,
                      Lambda, RotationMatrix, OptimumValue, OptimumPosition,
-                    num_runs: int = 20,
+                    num_runs: int = 15,
                     seed: Optional[int] = None) -> Tuple[List[float], List[np.ndarray]]:
     """
     Run multiple optimization runs for a given problem
@@ -342,7 +342,7 @@ def run_optimization(MaxEvals, AcceptanceThreshold,
     with open(value_filename, 'w') as vf, open(param_filename, 'w') as pf:
    
         for run in range(num_runs):
-            run_seed = base_seed + run  # Vary seed per run
+            run_seed = base_seed + run + 10  # Vary seed per run
             np.random.seed(run_seed)
             random.seed(run_seed)
             gnbg = GNBG(MaxEvals, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate, CompMinPos, CompSigma, CompH, Mu, Omega, Lambda, RotationMatrix, OptimumValue, OptimumPosition)
@@ -416,7 +416,7 @@ def run_optimization(MaxEvals, AcceptanceThreshold,
 if __name__ == "__main__":
     folder_path = "codes/gnbg_python"
     # Example usage
-    problem_list = [17]
+    problem_list = [13]
     for ProblemIndex in problem_list:
         
         filename = f'f{ProblemIndex}.mat'
@@ -437,7 +437,7 @@ if __name__ == "__main__":
         OptimumValue = np.array([item[0] for item in GNBG_tmp['OptimumValue'].flatten()])[0, 0]
         OptimumPosition = np.array(GNBG_tmp['OptimumPosition'][0, 0])
         
-        run_optimization(1000000, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate,
+        run_optimization(400000, AcceptanceThreshold, Dimension, CompNum, MinCoordinate, MaxCoordinate,
                                                        CompMinPos, CompSigma, CompH, Mu, Omega, Lambda, RotationMatrix, OptimumValue, OptimumPosition)
     
     
