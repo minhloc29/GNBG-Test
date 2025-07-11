@@ -1,5 +1,5 @@
 import numpy as np
-from llamea.solution import Solution
+from llamea_src.solution import Solution
 from my_utils.utils import extract_class_name_and_code, file_to_string, extract_to_hs
 import logging
 import os

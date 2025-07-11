@@ -2,6 +2,8 @@ Your task is to redefine 'Current self-reflection' paying attention to avoid all
 
 ### Current self-reflection
 {curr_reflection}
+
+###Good self-reflection
 {good_reflection}
 
 ### Ineffective self-reflection

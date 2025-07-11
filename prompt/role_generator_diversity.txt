@@ -4,4 +4,8 @@ Below are the function-specific details to guide your design:
 ### 📊 Function Detail:
 {metadata}
 
+n algorithms have been designed. The new algorithm should be as diverse as possible from
+the previous ones on every aspect.
+{n_algorithms}
+
 Provide a complete, novel Python class that implements a strategy to solve this challenge. The class must have an `__init__(...)` and `optimize(...)` method as specified in the main task description.

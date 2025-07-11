@@ -1,0 +1,9 @@
+"function_id": "f19",
+"modality": "Multimodal with multiple competing components",
+"basin_local_optima": true,
+"separability": "non-separable",
+"varying_variable_interactions": true,
+"symmetry": "asymmetric",
+"ill_conditioning": false,
+"basin_linearity": "super-linear",
+"deceptive": true

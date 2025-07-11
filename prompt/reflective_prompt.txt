@@ -1,7 +1,19 @@
 ### Problem Description
 {problem_desc}
 ### List heuristics
-Below is a list of design heuristics ranked from best to worst based on their average weighted AOCC score, where higher is better, across a subset of the GNBG benchmark. To enable a detailed analysis of their specializations, the performance breakdown on each of the three GNBG function groups is also provided.
+Below is a list of design heuristics ranked from best to worst based on their average weighted Hybrid score (AOCC and ICA), where higher is better, across a subset of the GNBG benchmark. 
+Hybrid metrics detail:
+
+Hybrid Score combines two metrics to evaluate an optimization algorithm:
+
+AOCC: Measures how well the algorithm minimizes the objective over time.
+ICA: Captures how often and how much the algorithm improves (avoids stagnation).
+Defined as:
+HybridScore = AOCC × 0.7 + ICA x 0.3
+
+This encourages both high solution quality and continuous improvement, rewarding early convergence and penalizing stagnation. AOCC and ICA are also reported separately for detailed feedback.
+
+List of heuristics:
 {lst_method}
 
 ### Guide
